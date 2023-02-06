@@ -19,21 +19,19 @@ void showList() {
     y += 40;
     outtextxy(50, y, "DFS");
     y += 40;
-    outtextxy(50, y, "Dijkstra's");
+    outtextxy(50, y, "Shortest path (Dijkstra's)");
     y += 40;
-    outtextxy(50, y, "Minimum spanning tree");
+    outtextxy(50, y, "Shortest path (A*)");
     y += 40;
-    outtextxy(50, y, "Topological sorting");
+    outtextxy(50, y, "Shortest path (Johnson's)");
     y += 40;
-    outtextxy(50, y, "Articulation point");
+    outtextxy(50, y, "Minimum spanning tree (Prim's)");
     y += 40;
-    outtextxy(50, y, "Euclerian path");
+    outtextxy(50, y, "Minimum spanning tree (Kruskal's)");
     y += 40;
-    outtextxy(50, y, "Greedy best first search");
+    outtextxy(50, y, "Connectivity Eulerian Path finding (Fleury's)");
     y += 40;
-    outtextxy(50, y, "Krusakal's algorithm");
-    y += 40;
-    outtextxy(50, y, "Prim's algorithm");
+    outtextxy(50, y, "Strongly Connected Components (Tarjan's)");
 }
 
 int main() {
