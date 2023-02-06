@@ -63,6 +63,15 @@ int main() {
 
 /* RANDOM RAW code
 
+the function rand_num implements a linear congruential generator (LCG) 
+and returns a random number. The seed value seed is updated every time rand_num is called,
+so the function generates a different random number each time it is called. 
+The a, c, and m values are the multiplier, increment, and modulus, respectively, 
+that are used in the LCG formula. The rest of the code is similar to the previous example, 
+with the exception of using rand_num instead of rand() to generate random numbers.
+
+
+
 unsigned int seed = 0; // initialize seed value
 unsigned int a = 1103515245; // multiplier
 unsigned int c = 12345; // increment
