@@ -6,8 +6,10 @@ using namespace std;
 
 int main() {
   int nodes, edges;
+
   cout << "Enter the number of nodes: ";
   cin >> nodes;
+
   cout << "Enter the number of edges: ";
   cin >> edges;
 
@@ -45,6 +47,7 @@ int main() {
   }
 
   cout << "Constructed random graph:\n";
+  
   for (int i = 0; i < nodes; i++) {
     cout << i << ": ";
 

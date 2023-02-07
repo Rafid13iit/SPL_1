@@ -36,10 +36,12 @@ int main()
     //step-2
     int queue[MAX_NODES];
     int start, end;
+
     start = 0;
     end = 0;
     queue[end] = sourceNode;
     end++;
+
     color[sourceNode] = 'g';
     level[sourceNode] = 0;
     parent[sourceNode] = -1;
@@ -47,10 +49,12 @@ int main()
 
     while (end - start > 0) {
         int u = queue[start];
+
         for (int i = 0; i < MAX_NODES; ++i) {
             int v = i;
 
             if (graph[u][v] == 1 && color[v] == 'w') {
+
                 queue[end] = v;
                 end++;
                 color[v] = 'g';
@@ -58,12 +62,14 @@ int main()
                 parent[v] = u;
             }
         }
+
         start++;
         color[u] = 'b';
     }
 
     cout << "Level, Parent and Color of each node:" << endl;
     for (int i = 0; i < MAX_NODES; ++i) {
+        
         cout << "Level[" << i << "] = " << level[i] << endl;
         cout << "Parent[" << i << "] = " << parent[i] << endl;
         cout << "Color[" << i << "] = " << color[i] << endl;

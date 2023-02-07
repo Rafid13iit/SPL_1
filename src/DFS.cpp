@@ -8,27 +8,34 @@ char color[MAX_NODES];
 int parent[MAX_NODES];
 
 void DFS(int node) {
+
     cout << "Visiting node " << node << endl;
     cout << "Parent array: [ ";
+
     for (int i = 0; i < MAX_NODES; ++i) {
         cout << parent[i] << " ";
     }
+
     cout << "]" << endl;
     cout << "Color array: [ ";
+
     for (int i = 0; i < MAX_NODES; ++i) {
         cout << color[i] << " ";
     }
+
     cout << "]" << endl;
     cout << "-----------------------------------------------" << endl;
 
     color[node] = 'g';
     for (int i = 0; i < MAX_NODES; ++i) {
         int adj = i;
+
         if (graph[node][adj] == 1 and color[adj] == 'w') {
             parent[adj] = node;
             DFS(adj);
         }
     }
+
     color[node] = 'b';
 }
 
@@ -59,14 +66,18 @@ int main()
     parent[source_node] = -1;
 
     cout << "Final parent array: [ ";
+
     for (int i = 0; i < MAX_NODES; ++i) {
         cout << parent[i] << " ";
     }
+
     cout << "]" << endl;
     cout << "Final color array: [ ";
+
     for (int i = 0; i < MAX_NODES; ++i) {
         cout << color[i] << " ";
     }
+    
     cout << "]" << endl;
 
     return 0;
