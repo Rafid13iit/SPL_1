@@ -4,9 +4,9 @@ using namespace std;
 #define MAX_NODES 6
 
 int graph[MAX_NODES][MAX_NODES];
-char color[MAX_NODES];
-int level[MAX_NODES];
-int parent[MAX_NODES];
+char color[MAX_NODES]; //to keep track of the color of each node.
+int level[MAX_NODES]; //to keep track of the level of each node.
+int parent[MAX_NODES]; //to keep track of the parent node of each node.
 
 int main()
 {
@@ -47,7 +47,7 @@ int main()
     parent[sourceNode] = -1;
 
 
-    while (end - start > 0) {
+    while (end - start > 0) { //continues until the queue is empty.
         int u = queue[start];
 
         for (int i = 0; i < MAX_NODES; ++i) {
@@ -69,7 +69,7 @@ int main()
 
     cout << "Level, Parent and Color of each node:" << endl;
     for (int i = 0; i < MAX_NODES; ++i) {
-        
+
         cout << "Level[" << i << "] = " << level[i] << endl;
         cout << "Parent[" << i << "] = " << parent[i] << endl;
         cout << "Color[" << i << "] = " << color[i] << endl;

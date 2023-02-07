@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <cstdlib> //it's used for the srand(), rand() functions, which generates random numbers.
-#include <ctime>
+#include <ctime> //for time(0) function
 
 using namespace std;
 
@@ -25,7 +25,8 @@ int main() {
 
   /* time(0) is a function from the ctime header file
    that returns the current calendar time as the number of seconds
-    elapsed since the epoch (00:00:00 UTC, January 1, 1970).*/
+   elapsed since the epoch (00:00:00 UTC, January 1, 1970).
+   This ensures that a different set of random numbers is generated every time the code is run.*/
 
   /* When used as an argument for srand, 
   time(0) serves as a seed for the random number generator rand()
@@ -47,7 +48,7 @@ int main() {
   }
 
   cout << "Constructed random graph:\n";
-  
+
   for (int i = 0; i < nodes; i++) {
     cout << i << ": ";
 

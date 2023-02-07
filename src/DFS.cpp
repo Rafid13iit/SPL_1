@@ -7,7 +7,7 @@ int graph[MAX_NODES][MAX_NODES];
 char color[MAX_NODES];
 int parent[MAX_NODES];
 
-void DFS(int node) {
+void DFS(int node) { //'node' as an argument, which represents the node to be visited
 
     cout << "Visiting node " << node << endl;
     cout << "Parent array: [ ";
@@ -27,10 +27,11 @@ void DFS(int node) {
     cout << "-----------------------------------------------" << endl;
 
     color[node] = 'g';
+    //This loop iterates over all the nodes in the graph.
     for (int i = 0; i < MAX_NODES; ++i) {
         int adj = i;
 
-        if (graph[node][adj] == 1 and color[adj] == 'w') {
+        if (graph[node][adj] == 1 && color[adj] == 'w') {
             parent[adj] = node;
             DFS(adj);
         }
@@ -77,7 +78,7 @@ int main()
     for (int i = 0; i < MAX_NODES; ++i) {
         cout << color[i] << " ";
     }
-    
+
     cout << "]" << endl;
 
     return 0;
