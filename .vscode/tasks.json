@@ -7,7 +7,7 @@
             "command": "g++",
             "args": [
                 "-o",
-                "${fileDirname}/output/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/output/${fileBasenameNoExtension}.exe",
                 "${file}",
                 "-lbgi",
                 "-lgdi32",
