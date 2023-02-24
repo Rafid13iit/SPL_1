@@ -1,7 +1,5 @@
 #include <graphics.h>
-#include <iostream>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -37,7 +35,8 @@ int main() {
   // Draw nodes as circles with numbers
   int radius = 20;
   int x[nodes], y[nodes];
-  settextstyle(DEFAULT_FONT, HORIZ_DIR, 1);
+
+  settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
   for (int i = 0; i < nodes; i++) {
     x[i] = (i+1) * (800 / (nodes+1));
     y[i] = rand() % 400 + 100;
@@ -64,4 +63,21 @@ int main() {
   return 0;
 }
 
-
+/*
+9
+14
+0 1
+1 2
+2 3
+3 4
+4 5
+5 6
+6 7
+7 8
+0 7
+1 7
+2 8
+6 8
+2 5
+3 5
+*/
