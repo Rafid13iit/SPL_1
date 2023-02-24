@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <graphics.h>
+#include <iostream>
+
 using namespace std;
 
 int main() {
@@ -28,19 +30,32 @@ int main() {
     adj_matrix[v][u] = 1; // we have to Comment this line for directed graph
   }
 
-  cout << "Constructed graph:\n";
+  // Initialize graphics window
+  initwindow(800, 600, "Graph");
 
+  // Draw nodes as circles
+  int radius = 20;
+  int x[nodes], y[nodes];
   for (int i = 0; i < nodes; i++) {
-    cout << i << ": ";
+    x[i] = (i+1) * (800 / (nodes+1));
+    y[i] = 400;
+    circle(x[i], y[i], radius);
+  }
 
-    for (int j = 0; j < nodes; j++) {
+  // Draw edges as lines
+  for (int i = 0; i < nodes; i++) {
+    for (int j = i+1; j < nodes; j++) {
       if (adj_matrix[i][j] == 1) {
-        cout << j << " ";
+        line(x[i], y[i], x[j], y[j]);
       }
     }
-    
-    cout << endl;
   }
+
+  // Wait for user to close the window
+  getch();
+
+  // Close the graphics window
+  closegraph();
 
   return 0;
 }
