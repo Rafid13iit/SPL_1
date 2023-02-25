@@ -45,11 +45,15 @@ int main() {
     outtextxy(x[i]-radius/2, y[i]-radius/2, const_cast<char*>(label.c_str()));
   }
 
+  // Wait for a delay before proceeding to the next step
+  delay(5000);
+
   // Draw edges as lines
   for (int i = 0; i < nodes; i++) {
     for (int j = i+1; j < nodes; j++) {
       if (adj_matrix[i][j] == 1) {
         line(x[i], y[i], x[j], y[j]);
+        delay(2000);
       }
     }
   }
