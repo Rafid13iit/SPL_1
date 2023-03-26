@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include "header.h"
+
 int main ()
 {
-  return 0;
+    display();
+
+    return 0;
 }
