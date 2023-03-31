@@ -10,9 +10,9 @@ Graphs are used to represent relationships between data, and graph algorithms ar
 To visualize the algorithms, I will create interactive visualizations that allow the user to see the steps of the algorithm as it progresses. This can be done using different graph libraries and functions.
 
 ### Deliverables: 
-Code for implementing the selected graph algorithms\n
-Interactive visualizations for each algorithm, showing the steps of the algorithm as it progresses\n
-A report or presentation explaining the algorithms, the visualizations and any insights gained from the project
+1. Code for implementing the selected graph algorithms
+2. Interactive visualizations for each algorithm, showing the steps of the algorithm as it progresses
+3. A report or presentation explaining the algorithms, the visualizations and any insights gained from the project
 
 ### Languages or Tools to be used:
 C, C++, Visual Studio, Codeblocks, Git, Github
