@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
 const int dx[4] = {0, 0, 1, -1};
 const int dy[4] = {1, -1, 0, 0};
@@ -60,7 +59,7 @@ int Astar(int sx, int sy, int ex, int ey, int width, int height) {
     return -1;
 }
 
-int main() {
+void A_star_algorithm() {
     int sx, sy, ex, ey;
     int width, height;
 
@@ -68,5 +67,5 @@ int main() {
 
     int distance = Astar(sx, sy, ex, ey, width, height);
     cout << distance << endl;
-    return 0;
+
 }

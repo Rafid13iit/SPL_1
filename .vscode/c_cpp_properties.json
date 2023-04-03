@@ -4,7 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}",
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +16,8 @@
             "compilerPath": "C:\\MinGW\\bin\\g++.exe",
             "cStandard": "c11",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "windows-gcc-x86"
+            "intelliSenseMode": "windows-gcc-x86",
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

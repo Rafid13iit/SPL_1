@@ -1,1 +1,1 @@
-bin/DFS.o: src/DFS.cpp
+bin/DFS.o: src/DFS.cpp include/header.h

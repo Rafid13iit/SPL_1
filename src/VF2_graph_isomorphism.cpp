@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-#include <unordered_map>
-
-using namespace std;
+#include <header.h>
 
 #define N 100
 
@@ -66,7 +63,7 @@ bool isIsomorphic() {
     return false;
 }
 
-int main() {
+void VF2_graph_isomorphism() {
     cin >> n >> m;
 
     for (int i = 0; i < m; i++) {
@@ -90,7 +87,6 @@ int main() {
     if (isIsomorphic()) cout << "The two graphs are isomorphic." << endl;
     else cout << "The two graphs are not isomorphic." << endl;
     
-    return 0;
 }
 
 //Example 1

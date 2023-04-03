@@ -1,1 +1,1 @@
-bin/A_star_algorithm.o: src/A_star_algorithm.cpp
+bin/A_star_algorithm.o: src/A_star_algorithm.cpp include/header.h

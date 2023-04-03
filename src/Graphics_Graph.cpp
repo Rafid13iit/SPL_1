@@ -1,5 +1,6 @@
 #include <graphics.h>
 #include <conio.h>
+#include <header.h>
 
 void drawButton(int x, int y, int width, int height) {
     line(x, y, width, height);
@@ -34,7 +35,7 @@ void showList() {
     outtextxy(50, y, "Strongly Connected Components (Tarjan's)");
 }
 
-int main() {
+void Graphics_Graph() {
     int gd = DETECT, gm;
     //initgraph(&gd, &gm, "");
     initwindow(900, 600);
@@ -61,5 +62,5 @@ int main() {
     }
     getch();
     closegraph();
-    return 0;
+ 
 }

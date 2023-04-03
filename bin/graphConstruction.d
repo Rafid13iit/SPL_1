@@ -1,1 +1,1 @@
-bin/graphConstruction.o: src/graphConstruction.cpp
+bin/graphConstruction.o: src/graphConstruction.cpp include/header.h

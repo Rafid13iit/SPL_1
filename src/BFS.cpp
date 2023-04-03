@@ -1,25 +1,24 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
-#define MAX_NODES 6
+#define MAX 6
 
-int graph[MAX_NODES][MAX_NODES];
-char color[MAX_NODES]; //to keep track of the color of each node.
-int level[MAX_NODES]; //to keep track of the level of each node.
-int parent[MAX_NODES]; //to keep track of the parent node of each node.
+int Graph[MAX][MAX];
+char Color[MAX]; //to keep track of the Color of each node.
+int Level[MAX]; //to keep track of the Level of each node.
+int Parent[MAX]; //to keep track of the Parent node of each node.
 
-int main()
+void BFS()
 {
     int edgeCount;
     cout << "Enter the number of edges: ";
     cin >> edgeCount;
 
-    cout << "Enter the edges (u v) in the graph: " << endl;
+    cout << "Enter the edges (u v) in the Graph: " << endl;
     for (int i = 0; i < edgeCount; ++i) {
         int u, v;
         cin >> u >> v;
 
-        graph[u][v] = 1;
+        Graph[u][v] = 1;
     }
 
     int sourceNode;
@@ -27,14 +26,14 @@ int main()
     cin >> sourceNode;
 
     //step-1
-    for (int i = 0; i < MAX_NODES; ++i) {
-        color[i] = 'w';
-        level[i] = 99999999;
-        parent[i] = -1;
+    for (int i = 0; i < MAX; ++i) {
+        Color[i] = 'w';
+        Level[i] = 99999999;
+        Parent[i] = -1;
     }
 
     //step-2
-    int queue[MAX_NODES];
+    int queue[MAX];
     int start, end;
 
     start = 0;
@@ -42,41 +41,40 @@ int main()
     queue[end] = sourceNode;
     end++;
 
-    color[sourceNode] = 'g';
-    level[sourceNode] = 0;
-    parent[sourceNode] = -1;
+    Color[sourceNode] = 'g';
+    Level[sourceNode] = 0;
+    Parent[sourceNode] = -1;
 
 
     while (end - start > 0) { //continues until the queue is empty.
         int u = queue[start];
 
-        for (int i = 0; i < MAX_NODES; ++i) {
+        for (int i = 0; i < MAX; ++i) {
             int v = i;
 
-            if (graph[u][v] == 1 && color[v] == 'w') {
+            if (Graph[u][v] == 1 && Color[v] == 'w') {
 
                 queue[end] = v;
                 end++;
-                color[v] = 'g';
-                level[v] = level[u] + 1;
-                parent[v] = u;
+                Color[v] = 'g';
+                Level[v] = Level[u] + 1;
+                Parent[v] = u;
             }
         }
 
         start++;
-        color[u] = 'b';
+        Color[u] = 'b';
     }
 
     cout << "Level, Parent and Color of each node:" << endl;
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
 
-        cout << "Level[" << i << "] = " << level[i] << endl;
-        cout << "Parent[" << i << "] = " << parent[i] << endl;
-        cout << "Color[" << i << "] = " << color[i] << endl;
+        cout << "Level[" << i << "] = " << Level[i] << endl;
+        cout << "Parent[" << i << "] = " << Parent[i] << endl;
+        cout << "Color[" << i << "] = " << Color[i] << endl;
         cout << endl;
     }
-
-    return 0;
+    
 }
 
 

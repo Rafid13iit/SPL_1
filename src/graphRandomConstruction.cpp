@@ -1,10 +1,11 @@
-#include <bits/stdc++.h>
+#include <graphics.h>
+#include <header.h>
+
 #include <cstdlib> //it's used for the srand(), rand() functions, which generates random numbers.
 #include <ctime> //for time(0) function
 
-using namespace std;
 
-int main() {
+void graphRandomConstruction() {
   int nodes, edges;
 
   cout << "Enter the number of nodes: ";
@@ -61,7 +62,6 @@ int main() {
     cout << endl;
   }
 
-  return 0;
 }
 
 

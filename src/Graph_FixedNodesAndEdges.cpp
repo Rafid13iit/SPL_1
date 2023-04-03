@@ -1,8 +1,7 @@
 #include <graphics.h>
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
-int main() {
+void Graph_FixedNodesAndEdges() {
   int nodes = 6, edges = 9;
 
 
@@ -114,6 +113,5 @@ int main() {
   // Close the graphics window
   closegraph();
 
-  return 0;
 }
 

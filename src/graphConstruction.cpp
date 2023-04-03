@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <graphics.h>
+#include <header.h>
 
-int main() {
+void graphConstruction() {
   int nodes, edges;
 
   cout << "Enter the number of nodes: ";
@@ -42,5 +42,4 @@ int main() {
     cout << endl;
   }
 
-  return 0;
 }

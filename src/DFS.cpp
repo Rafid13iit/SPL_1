@@ -1,25 +1,24 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
-#define MAX_NODES 7
+#define MAX 7
 
-int graph[MAX_NODES][MAX_NODES];
-char color[MAX_NODES];
-int parent[MAX_NODES];
+int graph[MAX][MAX];
+char color[MAX];
+int parent[MAX];
 
-void DFS(int node) { //'node' as an argument, which represents the node to be visited
+void DFS_algorithm(int node) { //'node' as an argument, which represents the node to be visited
 
     cout << "Visiting node " << node << endl;
     cout << "Parent array: [ ";
 
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         cout << parent[i] << " ";
     }
 
     cout << "]" << endl;
     cout << "Color array: [ ";
 
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         cout << color[i] << " ";
     }
 
@@ -28,19 +27,19 @@ void DFS(int node) { //'node' as an argument, which represents the node to be vi
 
     color[node] = 'g';
     //This loop iterates over all the nodes in the graph.
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         int adj = i;
 
         if (graph[node][adj] == 1 && color[adj] == 'w') {
             parent[adj] = node;
-            DFS(adj);
+            DFS_algorithm(adj);
         }
     }
 
     color[node] = 'b';
 }
 
-int main()
+void DFS()
 {
     int edge_count;
     cout << "Enter the number of edges in the graph: ";
@@ -54,7 +53,7 @@ int main()
         graph[u][v] = 1;
     }
 
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         color[i] = 'w';
         parent[i] = -1;
     }
@@ -63,25 +62,24 @@ int main()
     cout << "Enter the source node: ";
     cin >> source_node;
 
-    DFS(source_node);
+    DFS_algorithm(source_node);
     parent[source_node] = -1;
 
     cout << "Final parent array: [ ";
 
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         cout << parent[i] << " ";
     }
 
     cout << "]" << endl;
     cout << "Final color array: [ ";
 
-    for (int i = 0; i < MAX_NODES; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         cout << color[i] << " ";
     }
 
     cout << "]" << endl;
 
-    return 0;
 }
 
 /*

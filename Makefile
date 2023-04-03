@@ -30,7 +30,7 @@ USE_STRICT			:=	false
 # define the executable output name (if set to 'auto' it will automatically be assigned the main file name)
 TARGET_NAME			:=	auto
 # custom flags:
-LFLAGS				:=
+LFLAGS				:=	-lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
 CCXFLAGS			:=
 # debug
 DEBUG				:=	-g
@@ -38,9 +38,6 @@ DEBUG				:=	-g
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath.
-
-LFLAGS				:= -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
-  
 
 # define executable directory
 TARGET_DIR			:=	output

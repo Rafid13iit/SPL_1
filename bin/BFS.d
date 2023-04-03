@@ -1,1 +1,1 @@
-bin/BFS.o: src/BFS.cpp
+bin/BFS.o: src/BFS.cpp include/header.h

@@ -1,9 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
-#define MAX 1000
-
-int graph[MAX][MAX];
+int GRAPH[MAX][MAX];
 int v, edges;
 
 int selectMinVertex (vector<int>& value, vector<bool>& setMST)
@@ -23,7 +20,7 @@ int selectMinVertex (vector<int>& value, vector<bool>& setMST)
 	return vertex;
 }
 
-int findMST (int graph[MAX][MAX])
+int findMST (int GRAPH[MAX][MAX])
 {
 	int parent[v], sum = 0;
 	vector<int> value (v, INT_MAX); //used edged relaxation
@@ -45,9 +42,9 @@ int findMST (int graph[MAX][MAX])
 		for (int j = 0; j < v; j++)
 		{
 			
-			if (graph[u][j] != 0 && setMST[j] == false && graph[u][j] < value[j])
+			if (GRAPH[u][j] != 0 && setMST[j] == false && GRAPH[u][j] < value[j])
 			{
-				value[j] = graph[u][j];
+				value[j] = GRAPH[u][j];
 				parent[j] = u;
 			}
 		}
@@ -56,19 +53,19 @@ int findMST (int graph[MAX][MAX])
 	//print MST
 	for (int i = 1; i < v; i++)
 	{
-		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << graph[parent[i]][i] << endl;
+		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << GRAPH[parent[i]][i] << endl;
 	}
 
 	for (int i = 1; i < v; i++)
 	{
-		sum += graph[parent[i]][i];
+		sum += GRAPH[parent[i]][i];
 	}
 
 	return sum;
 	
 }
 
-int main ()
+void MST_Prims_Algorithm ()
 {
     cout << "Enter the number of nodes: ";
     cin >> v;
@@ -77,7 +74,7 @@ int main ()
 
     for (int i = 0; i < v; i++) {
         for (int j = 0; j < v; j++) {
-            graph[i][j] = 0;
+            GRAPH[i][j] = 0;
         }
     }
 
@@ -87,13 +84,12 @@ int main ()
     for (int i = 0; i < edges; i++) 
 	{
         cin >> u1 >> u2 >> weight;
-        graph[u1][u2] = weight;
-		graph[u2][u1] = weight;
+        GRAPH[u1][u2] = weight;
+		GRAPH[u2][u1] = weight;
     }
 
-	cout << "MST cost is : " << findMST(graph) << endl;
-	
-	return 0;
+	cout << "MST cost is : " << findMST(GRAPH) << endl;
+
 }
 
 //time complexity : O(V^2)

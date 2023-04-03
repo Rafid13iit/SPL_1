@@ -1,8 +1,8 @@
 #include <graphics.h>
-#include <bits/stdc++.h>
-using namespace std;
+#include <header.h>
 
-int main() {
+void graphConsUsingGraphicalWindow()
+{
   int nodes, edges;
 
   cout << "Enter the number of nodes: ";
@@ -64,7 +64,6 @@ int main() {
   // Close the graphics window
   closegraph();
 
-  return 0;
 }
 
 /*

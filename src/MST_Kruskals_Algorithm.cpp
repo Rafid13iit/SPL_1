@@ -1,28 +1,22 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define MX 100
-
-typedef long long int ll;
-typedef unsigned long long int llu;
-
+#include <header.h>
 struct EdgesAndWeight{
     ll u, v, weight;
-} edgesAndweight[MX];
+} edgesAndweight[MAX];
 
-ll parent[MX];
-ll setRank[MX] = {0};
+ll ParenT[MAX];
+ll setRank[MAX] = {0};
 
 
 //Disjoint Set starts
 void makeSet(int x)
 {
-    parent[x] = x;
+    ParenT[x] = x;
 }
 
-ll findParent (ll x)
+ll findParenT (ll x)
 {
-    if (x != parent[x]){
-        return parent[x] = findParent(parent[x]);
+    if (x != ParenT[x]){
+        return ParenT[x] = findParenT(ParenT[x]);
     }
     else{
         return x;
@@ -31,19 +25,19 @@ ll findParent (ll x)
 
 void makeUnion (ll u, ll v)
 {
-    ll uP = findParent(u);
-    ll vP = findParent(v);
+    ll uP = findParenT(u);
+    ll vP = findParenT(v);
 
     if (uP == vP) return ;
 
     if (setRank[uP] < setRank[vP]){
-        parent[uP] = vP;
+        ParenT[uP] = vP;
     }
     else if (setRank[uP] > setRank[vP]){
-        parent[vP] = uP;
+        ParenT[vP] = uP;
     }
     else {
-        parent[vP] = uP;
+        ParenT[vP] = uP;
         setRank[uP]++;
     }
 
@@ -65,7 +59,7 @@ ll kruskal (ll nodes, ll edges)
         ll v = edgesAndweight[i].v;
         ll w = edgesAndweight[i].weight;
 
-        if(findParent(u) != findParent(v))
+        if(findParenT(u) != findParenT(v))
         {
             makeUnion(u, v);
 
@@ -79,7 +73,7 @@ ll kruskal (ll nodes, ll edges)
     return answer;
 }
 
-int main ()
+void MST_Kruskals_Algorithm ()
 {
     ll nodes, edges;
     cout << "Enter the number of nodes: ";
@@ -121,7 +115,6 @@ int main ()
     
     cout << "MST cost is : " << kruskal(nodes, edges) << endl;
 
-    return 0;
 }
 
 /*

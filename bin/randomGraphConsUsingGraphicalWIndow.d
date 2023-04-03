@@ -1,2 +1,2 @@
 bin/randomGraphConsUsingGraphicalWIndow.o: \
- src/randomGraphConsUsingGraphicalWIndow.cpp
+ src/randomGraphConsUsingGraphicalWIndow.cpp include/header.h
