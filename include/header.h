@@ -14,18 +14,14 @@ typedef unsigned long long int llu;
 #define MAX 1000
 
 
-void display();
-int sum (int a, int b);
-void show();
+void Graphics_Graph();
+void drawButton(int x, int y, int width, int height);
+void showList();
 
 void VF2_graph_isomorphism();
 bool check(int u1, int u2);
 bool dfs(int u1, int u2);
 bool isIsomorphic();
-
-void Graphics_Graph();
-void drawButton(int x, int y, int width, int height);
-void showList();
 
 void A_star_algorithm();
 int Astar(int sx, int sy, int ex, int ey, int width, int height);

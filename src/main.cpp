@@ -2,15 +2,13 @@
 
 int main ()
 {
-    display();
+    Graphics_Graph();   
 
     VF2_graph_isomorphism();
 
-    Graphics_Graph();
-
     A_star_algorithm();
 
-    BFS();
+    //BFS();
 
     Graph_FixedNodesAndEdges();
 
