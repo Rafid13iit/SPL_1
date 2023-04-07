@@ -2,14 +2,25 @@
 #include <conio.h>
 #include <header.h>
 
-void drawButton(int x, int y, int width, int height) {
+void openGraphicalWindow()
+{
+    int gd = DETECT, gm;
+    //initgraph(&gd, &gm, "");
+    initwindow(900, 600, "Graph Algorithm implementation & Visualization");
+    //initwindow() function is used instead of initgraph()
+
+}
+
+void drawButton(int x, int y, int width, int height) 
+{
     line(x, y, width, height);
     line(x, y+20, width, height+20);
     line(x, y+40, width, height+40);
 }
 
 
-void showList() {
+void showList() 
+{
     int y = 50;
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
 
@@ -123,12 +134,9 @@ void showList() {
 
 }
 
-void Graphics_Graph() {
-    int gd = DETECT, gm;
-    //initgraph(&gd, &gm, "");
-    initwindow(900, 600);
-    //initwindow() function is used instead of initgraph()
-
+void Graphics_Graph() 
+{
+    
     drawButton(50, 50, 100, 50);
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 4);
@@ -144,13 +152,11 @@ void Graphics_Graph() {
                 // button was clicked
                 cleardevice();
                 delay(100);
+                //getch();
                 showList();
                 break;
             }
-        }
-        
-        
-        
+        }    
     }
     getch();
     closegraph();

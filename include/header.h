@@ -14,6 +14,7 @@ typedef unsigned long long int llu;
 #define MAX 1000
 
 
+void openGraphicalWindow();
 void Graphics_Graph();
 void drawButton(int x, int y, int width, int height);
 void showList();

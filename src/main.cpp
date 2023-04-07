@@ -2,6 +2,7 @@
 
 int main ()
 {
+    openGraphicalWindow();
     Graphics_Graph();   
 
     VF2_graph_isomorphism();
