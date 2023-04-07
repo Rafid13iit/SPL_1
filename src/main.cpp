@@ -23,6 +23,8 @@ int main ()
 
     MST_Prims_Algorithm ();
 
+    Dijkstras_algorithm();
+
     randomGraphConsUsingGraphicalWindow ();
  
 

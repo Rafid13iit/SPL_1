@@ -52,4 +52,9 @@ int findMST (int graph[MAX][MAX]);
 
 void randomGraphConsUsingGraphicalWindow ();
 
+void Dijkstras_algorithm();
+int minDistance(int distance[], bool sptSet[]);
+void printSolution(int src, int dst, int distance[]);
+void dijkstra(int src, int dst);
+
 #endif // HEADER_H
