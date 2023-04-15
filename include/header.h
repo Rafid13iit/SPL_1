@@ -32,6 +32,7 @@ void BFS();
 void DFS();
 void DFS_algorithm(int node);
 
+void graphConnection (int u, int v);
 void Graph_FixedNodesAndEdges();
 
 void graphConstruction();

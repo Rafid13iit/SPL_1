@@ -3,27 +3,29 @@
 int main ()
 {
     openGraphicalWindow();
-    Graphics_Graph();   
-
-    VF2_graph_isomorphism();
-
-    A_star_algorithm();
-
-    //BFS();
+    Graphics_Graph(); 
 
     Graph_FixedNodesAndEdges();
-
-    graphConstruction();
-
-    graphConsUsingGraphicalWindow();
-
-    graphRandomConstruction();
 
     MST_Kruskals_Algorithm ();
 
     MST_Prims_Algorithm ();
 
     Dijkstras_algorithm();
+
+    // BFS();
+
+    // DFS();
+
+    VF2_graph_isomorphism();
+
+    A_star_algorithm();
+
+    graphConstruction();
+
+    graphConsUsingGraphicalWindow();
+
+    graphRandomConstruction();
 
     randomGraphConsUsingGraphicalWindow ();
  

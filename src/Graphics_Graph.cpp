@@ -6,7 +6,7 @@ void openGraphicalWindow()
 {
     int gd = DETECT, gm;
     //initgraph(&gd, &gm, "");
-    initwindow(900, 600, "Graph Algorithm implementation & Visualization");
+    initwindow(900, 600, "Graph Algorithm Implementation & Visualization");
     //initwindow() function is used instead of initgraph()
 
 }

@@ -66,6 +66,8 @@ ll kruskal (ll nodes, ll edges)
             cout << "u -> v : " << u << "->" << v << ", weight = " << w << endl;
 
             answer += w;
+
+            graphConnection(u, v);
         }
         //else nothing to do, just skip the edge pair
     }
@@ -75,6 +77,9 @@ ll kruskal (ll nodes, ll edges)
 
 void MST_Kruskals_Algorithm ()
 {
+
+    void Graph_FixedNodesAndEdges();
+
     ll nodes, edges;
     cout << "Enter the number of nodes: ";
     cin >> nodes;

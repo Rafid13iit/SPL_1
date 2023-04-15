@@ -54,6 +54,7 @@ int findMST (int GRAPH[MAX][MAX])
 	for (int i = 1; i < v; i++)
 	{
 		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << GRAPH[parent[i]][i] << endl;
+		graphConnection(parent[i], i);
 	}
 
 	for (int i = 1; i < v; i++)
@@ -67,6 +68,9 @@ int findMST (int GRAPH[MAX][MAX])
 
 void MST_Prims_Algorithm ()
 {
+
+	void Graph_FixedNodesAndEdges();
+
     cout << "Enter the number of nodes: ";
     cin >> v;
     cout << "Enter the number of edges: ";

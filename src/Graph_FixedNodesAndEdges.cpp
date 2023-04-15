@@ -1,6 +1,16 @@
 #include <graphics.h>
 #include <header.h>
 
+int x[MAX], y[MAX];
+
+void graphConnection (int u, int v)
+{
+    setcolor(YELLOW);
+    //setlinestyle(0, 0, 2);
+    line(x[u], y[u], x[v], y[v]);
+    delay(1500);
+}
+
 void Graph_FixedNodesAndEdges() {
   int nodes = 6, edges = 9;
 
@@ -41,6 +51,7 @@ void Graph_FixedNodesAndEdges() {
   adj_matrix[2][4] = 1;
   adj_matrix[4][2] = 1;  // we have to Comment this line for directed graph
 
+  setcolor(WHITE);
 
   // Initialize graphics window
   initwindow(800, 600, "Graph");
