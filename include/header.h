@@ -14,6 +14,7 @@ typedef unsigned long long int llu;
 #define MAX 1000
 
 
+//Function Calls
 void openGraphicalWindow();
 void Graphics_Graph();
 void drawButton(int x, int y, int width, int height);
@@ -57,5 +58,6 @@ void Dijkstras_algorithm();
 int minDistance(int distance[], bool sptSet[]);
 void printSolution(int src, int dst, int distance[]);
 void dijkstra(int src, int dst);
+
 
 #endif // HEADER_H

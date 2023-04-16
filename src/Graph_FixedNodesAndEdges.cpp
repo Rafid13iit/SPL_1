@@ -1,4 +1,3 @@
-#include <graphics.h>
 #include <header.h>
 
 int x[MAX], y[MAX];
@@ -53,12 +52,9 @@ void Graph_FixedNodesAndEdges() {
 
   setcolor(WHITE);
 
-  // Initialize graphics window
-  initwindow(800, 600, "Graph");
 
   // Draw fixed nodes as circles with numbers
   int radius = 20;
-  int x[nodes], y[nodes];
 
   settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
   string label;
@@ -121,8 +117,6 @@ void Graph_FixedNodesAndEdges() {
   // Wait for user to close the window
   getch();
 
-  // Close the graphics window
-  closegraph();
 
 }
 

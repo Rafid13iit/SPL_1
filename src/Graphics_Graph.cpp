@@ -1,5 +1,3 @@
-#include <graphics.h>
-#include <conio.h>
 #include <header.h>
 
 void openGraphicalWindow()
@@ -8,7 +6,6 @@ void openGraphicalWindow()
     //initgraph(&gd, &gm, "");
     initwindow(900, 600, "Graph Algorithm Implementation & Visualization");
     //initwindow() function is used instead of initgraph()
-
 }
 
 void drawButton(int x, int y, int width, int height) 
@@ -49,10 +46,13 @@ void showList()
 
 
     while (1) {
+
         int x = mousex();
         int y = mousey();
 
         if (ismouseclick(WM_LBUTTONDOWN)) {
+            clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+
             if (x > 50 && x < 150 && y > 50 && y < 80) {
                 // button was clicked
                 //delay(250);
@@ -126,11 +126,9 @@ void showList()
                 break;
             }
         }
-
-        
+     
         
     }
-
 
 }
 
@@ -148,16 +146,17 @@ void Graphics_Graph()
         int x = mousex();
         int y = mousey();
         if (ismouseclick(WM_LBUTTONDOWN)) {
-            if (x > 50 && x < 150 && y > 50 && y < 80) {
+            if (x > 50 && x < 100 && y > 50 && y < 90) {
                 // button was clicked
                 cleardevice();
                 delay(100);
-                //getch();
+                getch();
                 showList();
-                break;
+                //break;
             }
         }    
     }
+
     getch();
     closegraph();
  

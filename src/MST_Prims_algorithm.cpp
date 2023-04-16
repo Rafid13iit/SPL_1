@@ -69,7 +69,7 @@ int findMST (int GRAPH[MAX][MAX])
 void MST_Prims_Algorithm ()
 {
 
-	void Graph_FixedNodesAndEdges();
+	Graph_FixedNodesAndEdges();
 
     cout << "Enter the number of nodes: ";
     cin >> v;

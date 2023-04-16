@@ -78,7 +78,7 @@ ll kruskal (ll nodes, ll edges)
 void MST_Kruskals_Algorithm ()
 {
 
-    void Graph_FixedNodesAndEdges();
+    Graph_FixedNodesAndEdges();
 
     ll nodes, edges;
     cout << "Enter the number of nodes: ";
@@ -123,20 +123,15 @@ void MST_Kruskals_Algorithm ()
 }
 
 /*
+6
 9
-14
-0 1 4
-1 2 8
-2 3 7 
-3 4 9
-4 5 10
-5 6 2
-6 7 1
-7 8 7
-0 7 8
-1 7 11
-2 8 2
-6 8 6
-2 5 4
-3 5 14
+0 1 5
+1 2 4
+2 3 3 
+3 4 2
+4 5 3
+0 5 1
+1 5 2
+1 4 6
+2 4 4
 */

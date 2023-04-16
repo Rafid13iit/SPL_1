@@ -5,7 +5,7 @@ int main ()
     openGraphicalWindow();
     Graphics_Graph(); 
 
-    Graph_FixedNodesAndEdges();
+    //Graph_FixedNodesAndEdges();
 
     MST_Kruskals_Algorithm ();
 
