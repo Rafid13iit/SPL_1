@@ -80,6 +80,11 @@ void MST_Kruskals_Algorithm ()
 
     Graph_FixedNodesAndEdges();
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "Kruskals");
+
+    freopen("graph_input.txt", "r", stdin);
+
     ll nodes, edges;
     cout << "Enter the number of nodes: ";
     cin >> nodes;

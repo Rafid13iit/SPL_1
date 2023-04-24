@@ -109,7 +109,7 @@ void Graph_FixedNodesAndEdges() {
     for (int j = i+1; j < nodes; j++) {
       if (adj_matrix[i][j] == 1) {
         line(x[i], y[i], x[j], y[j]);
-        delay(1000);
+        delay(300);
       }
     }
   }

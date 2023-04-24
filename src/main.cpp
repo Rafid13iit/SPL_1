@@ -7,27 +7,27 @@ int main ()
 
     //Graph_FixedNodesAndEdges();
 
-    MST_Kruskals_Algorithm ();
+    //MST_Kruskals_Algorithm ();
 
-    MST_Prims_Algorithm ();
+    //MST_Prims_Algorithm ();
 
-    Dijkstras_algorithm();
+    //Dijkstras_algorithm();
 
     // BFS();
 
     // DFS();
 
-    VF2_graph_isomorphism();
+    //VF2_graph_isomorphism();
 
-    A_star_algorithm();
+    //A_star_algorithm();
 
-    graphConstruction();
+    //graphConstruction();
 
-    graphConsUsingGraphicalWindow();
+    //graphConsUsingGraphicalWindow();
 
-    graphRandomConstruction();
+    //graphRandomConstruction();
 
-    randomGraphConsUsingGraphicalWindow ();
+    //randomGraphConsUsingGraphicalWindow ();
  
 
     return 0;
