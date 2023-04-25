@@ -10,6 +10,45 @@ void graphConnection (int u, int v)
     delay(1500);
 }
 
+void nodeColor (int u)
+{
+    setcolor(YELLOW);
+
+    int radius = 20;
+    circle(x[u], y[u], radius);
+    string label = to_string(u);
+    outtextxy(x[u]-radius/2, y[u]-radius/2, const_cast<char*>(label.c_str()));
+    delay(1500);
+}
+
+void nodeColor_1 (int u)
+{
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(x[u], y[u], 20, 20);
+
+    string label = to_string(u);
+    int textWidth = textwidth(const_cast<char*>(label.c_str()));
+    int textHeight = textheight(const_cast<char*>(label.c_str()));
+
+    setcolor(WHITE);
+    outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    delay(1500);
+}
+
+void nodeColor_2 (int u)
+{
+    setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(x[u], y[u], 20, 20);
+
+    string label = to_string(u);
+    int textWidth = textwidth(const_cast<char*>(label.c_str()));
+    int textHeight = textheight(const_cast<char*>(label.c_str()));
+
+    setcolor(WHITE);
+    outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    delay(1500);
+}
+ 
 void Graph_FixedNodesAndEdges() {
   int nodes = 6, edges = 9;
 

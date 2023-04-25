@@ -1,6 +1,5 @@
 #include <header.h>
 
-#define MAX 10
 
 int Graph[MAX][MAX];
 char Color[MAX]; //to keep track of the Color of each node.
@@ -11,6 +10,10 @@ void BFS()
 {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     outtextxy(400, 30, "BFS");
+
+    Graph_FixedNodesAndEdges();
+
+    freopen("graph_input_BFS_DFS.txt", "r", stdin);
 
     int nodeCount, edgeCount;
 
@@ -48,6 +51,7 @@ void BFS()
     end++;
 
     Color[sourceNode] = 'g';
+    nodeColor_1 (sourceNode);
     Level[sourceNode] = 0;
     Parent[sourceNode] = -1;
 
@@ -63,6 +67,8 @@ void BFS()
                 queue[end] = v;
                 end++;
                 Color[v] = 'g';
+                graphConnection(u, v);
+                nodeColor_1 (v);
                 Level[v] = Level[u] + 1;
                 Parent[v] = u;
             }
@@ -70,6 +76,7 @@ void BFS()
 
         start++;
         Color[u] = 'b';
+        nodeColor_2 (u);
     }
 
     cout << "Level, Parent and Color of each node:" << endl;
