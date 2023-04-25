@@ -60,49 +60,49 @@ void Graph_FixedNodesAndEdges() {
   string label;
 
   //1st node
-  x[0] = 70;
+  x[0] = 150;
   y[0] = 300;
   circle(x[0], y[0], radius);
   label = to_string(0);
   outtextxy(x[0]-radius/2, y[0]-radius/2, const_cast<char*>(label.c_str()));
 
   //2nd node
-  x[1] = 250;
+  x[1] = 330;
   y[1] = 150;
   circle(x[1], y[1], radius);
   label = to_string(1);
   outtextxy(x[1]-radius/2, y[1]-radius/2, const_cast<char*>(label.c_str()));
 
   //3rd node
-  x[2] = 250 + 220;
+  x[2] = 330 + 220;
   y[2] = 150;
   circle(x[2], y[2], radius);
   label = to_string(2);
   outtextxy(x[2]-radius/2, y[2]-radius/2, const_cast<char*>(label.c_str()));
 
   //4th node
-  x[3] = 250 + 220 + 180;
+  x[3] = 330 + 220 + 180;
   y[3] = 300;
   circle(x[3], y[3], radius);
   label = to_string(3);
   outtextxy(x[3]-radius/2, y[3]-radius/2, const_cast<char*>(label.c_str()));
 
   //5th node
-  x[4] = 250 + 220;
+  x[4] = 330 + 220;
   y[4] = 450;
   circle(x[4], y[4], radius);
   label = to_string(4);
   outtextxy(x[4]-radius/2, y[4]-radius/2, const_cast<char*>(label.c_str()));
 
   //6th node
-  x[5] = 250;
+  x[5] = 330;
   y[5] = 450;
   circle(x[5], y[5], radius);
   label = to_string(5);
   outtextxy(x[5]-radius/2, y[5]-radius/2, const_cast<char*>(label.c_str()));
 
   // Wait for a delay before proceeding to the next step
-  delay(2000);
+  delay(1000);
 
   // Draw edges as lines
   for (int i = 0; i < nodes; i++) {

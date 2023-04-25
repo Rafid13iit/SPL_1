@@ -1,6 +1,6 @@
 #include <header.h>
 
-#define MAX 6
+#define MAX 10
 
 int Graph[MAX][MAX];
 char Color[MAX]; //to keep track of the Color of each node.
@@ -9,7 +9,13 @@ int Parent[MAX]; //to keep track of the Parent node of each node.
 
 void BFS()
 {
-    int edgeCount;
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "BFS");
+
+    int nodeCount, edgeCount;
+
+    cout << "Enter the number of nodes: ";
+    cin >> nodeCount;
     cout << "Enter the number of edges: ";
     cin >> edgeCount;
 
@@ -26,14 +32,14 @@ void BFS()
     cin >> sourceNode;
 
     //step-1
-    for (int i = 0; i < MAX; ++i) {
+    for (int i = 0; i < nodeCount; ++i) {
         Color[i] = 'w';
         Level[i] = 99999999;
         Parent[i] = -1;
     }
 
     //step-2
-    int queue[MAX];
+    int queue[nodeCount];
     int start, end;
 
     start = 0;
@@ -49,7 +55,7 @@ void BFS()
     while (end - start > 0) { //continues until the queue is empty.
         int u = queue[start];
 
-        for (int i = 0; i < MAX; ++i) {
+        for (int i = 0; i < nodeCount; ++i) {
             int v = i;
 
             if (Graph[u][v] == 1 && Color[v] == 'w') {
@@ -67,7 +73,7 @@ void BFS()
     }
 
     cout << "Level, Parent and Color of each node:" << endl;
-    for (int i = 0; i < MAX; ++i) {
+    for (int i = 0; i < nodeCount; ++i) {
 
         cout << "Level[" << i << "] = " << Level[i] << endl;
         cout << "Parent[" << i << "] = " << Parent[i] << endl;
@@ -80,11 +86,15 @@ void BFS()
 
 /*
 6
-5 2
-5 1
-5 3
-1 3
+9
+0 1
+1 2
+2 3
+3 4
+4 5
+0 5
+1 5
 1 4
-4 2
-5
+2 4
+0
 */

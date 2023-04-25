@@ -77,6 +77,9 @@ void dijkstra(int src, int dst)
 
 void Dijkstras_algorithm()
 {
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "Dijkstras");
+
     cout << "Enter the number of vertices : ";
     cin >> vertex;
     cout << "Enter the number of edges : ";

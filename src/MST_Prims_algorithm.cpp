@@ -68,13 +68,13 @@ int findMST (int GRAPH[MAX][MAX])
 
 void MST_Prims_Algorithm ()
 {
- 
-	Graph_FixedNodesAndEdges();
-
+	
 	settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     outtextxy(400, 30, "Prims");
 
-	freopen("graph_input.txt", "r", stdin);
+	Graph_FixedNodesAndEdges();
+
+	//freopen("graph_input.txt", "r", stdin);
 
     //cout << "Enter the number of nodes: ";
 	outtextxy(20, 20, "Enter the number of nodes: ");

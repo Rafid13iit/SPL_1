@@ -77,11 +77,11 @@ ll kruskal (ll nodes, ll edges)
 
 void MST_Kruskals_Algorithm ()
 {
-
-    Graph_FixedNodesAndEdges();
-
+    
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     outtextxy(400, 30, "Kruskals");
+    
+    Graph_FixedNodesAndEdges();
 
     freopen("graph_input.txt", "r", stdin);
 

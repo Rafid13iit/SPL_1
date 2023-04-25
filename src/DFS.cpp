@@ -41,6 +41,9 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
 
 void DFS()
 {
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "DFS");
+
     int edge_count;
     cout << "Enter the number of edges in the graph: ";
     cin >> edge_count;

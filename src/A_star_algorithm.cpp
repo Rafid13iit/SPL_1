@@ -60,6 +60,10 @@ int Astar(int sx, int sy, int ex, int ey, int width, int height) {
 }
 
 void A_star_algorithm() {
+
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "A* Algorithm");
+
     int sx, sy, ex, ey;
     int width, height;
 

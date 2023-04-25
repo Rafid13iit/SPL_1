@@ -64,6 +64,10 @@ bool isIsomorphic() {
 }
 
 void VF2_graph_isomorphism() {
+
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    outtextxy(400, 30, "VF2");
+
     cin >> n >> m;
 
     for (int i = 0; i < m; i++) {
