@@ -13,6 +13,9 @@ void BFS()
 
     Graph_FixedNodesAndEdges();
 
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
+
     freopen("graph_input_BFS_DFS.txt", "r", stdin);
 
     int nodeCount, edgeCount;
@@ -28,6 +31,7 @@ void BFS()
         cin >> u >> v;
 
         Graph[u][v] = 1;
+        Graph[v][u] = 1;
     }
 
     int sourceNode;
@@ -52,6 +56,7 @@ void BFS()
 
     Color[sourceNode] = 'g';
     nodeColor_1 (sourceNode);
+    delay(1500);
     Level[sourceNode] = 0;
     Parent[sourceNode] = -1;
 
@@ -69,6 +74,7 @@ void BFS()
                 Color[v] = 'g';
                 graphConnection(u, v);
                 nodeColor_1 (v);
+                delay(1500);
                 Level[v] = Level[u] + 1;
                 Parent[v] = u;
             }
@@ -77,6 +83,7 @@ void BFS()
         start++;
         Color[u] = 'b';
         nodeColor_2 (u);
+        delay(1500);
     }
 
     cout << "Level, Parent and Color of each node:" << endl;
@@ -92,16 +99,17 @@ void BFS()
 
 
 /*
-6
-9
+7
+10
 0 1
 1 2
-2 3
+2 3 
 3 4
 4 5
 0 5
 1 5
-1 4
+1 6
+6 4
 2 4
 0
 */

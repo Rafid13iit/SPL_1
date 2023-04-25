@@ -68,6 +68,10 @@ ll kruskal (ll nodes, ll edges)
             answer += w;
 
             graphConnection(u, v);
+            nodeColor_1(u);
+            nodeColor_1(v);
+
+            delay(1000);
         }
         //else nothing to do, just skip the edge pair
     }
@@ -82,6 +86,9 @@ void MST_Kruskals_Algorithm ()
     outtextxy(400, 30, "Kruskals");
     
     Graph_FixedNodesAndEdges();
+
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
     freopen("graph_input.txt", "r", stdin);
 
@@ -128,8 +135,8 @@ void MST_Kruskals_Algorithm ()
 }
 
 /*
-6
-9
+7
+10
 0 1 5
 1 2 4
 2 3 3 
@@ -137,6 +144,7 @@ void MST_Kruskals_Algorithm ()
 4 5 3
 0 5 1
 1 5 2
-1 4 6
+1 6 6
+6 4 5
 2 4 4
 */

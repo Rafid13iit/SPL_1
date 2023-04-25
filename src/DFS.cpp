@@ -28,6 +28,8 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
 
     color[node] = 'g';
     nodeColor_1 (node);
+    delay(1500);
+
     //This loop iterates over all the nodes in the graph.
     for (int i = 0; i < node_count; ++i) {
         int adj = i;
@@ -41,6 +43,7 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
 
     color[node] = 'b';
     nodeColor_2 (node);
+    delay(1500);
 }
 
 void DFS()
@@ -49,6 +52,9 @@ void DFS()
     outtextxy(400, 30, "DFS");
 
     Graph_FixedNodesAndEdges();
+
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
     freopen("graph_input_BFS_DFS.txt", "r", stdin);
 
@@ -63,6 +69,7 @@ void DFS()
         cin >> u >> v;
 
         graph[u][v] = 1;
+        graph[v][u] = 1;
     }
 
     for (int i = 0; i < node_count; ++i) {
@@ -95,16 +102,17 @@ void DFS()
 }
 
 /*
-6
-9
+7
+10
 0 1
 1 2
-2 3
+2 3 
 3 4
 4 5
 0 5
 1 5
-1 4
+1 6
+6 4
 2 4
 0
 */

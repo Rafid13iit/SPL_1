@@ -18,7 +18,7 @@ void nodeColor (int u)
     circle(x[u], y[u], radius);
     string label = to_string(u);
     outtextxy(x[u]-radius/2, y[u]-radius/2, const_cast<char*>(label.c_str()));
-    delay(1500);
+    delay(1000);
 }
 
 void nodeColor_1 (int u)
@@ -32,7 +32,7 @@ void nodeColor_1 (int u)
 
     setcolor(WHITE);
     outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
-    delay(1500);
+    //delay(1000);
 }
 
 void nodeColor_2 (int u)
@@ -46,11 +46,11 @@ void nodeColor_2 (int u)
 
     setcolor(WHITE);
     outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
-    delay(1500);
+    //delay(1000);
 }
  
 void Graph_FixedNodesAndEdges() {
-  int nodes = 6, edges = 9;
+  int nodes = 7, edges = 10;
 
 
   int adj_matrix[nodes][nodes]; // Adjacency matrix to store the graph
@@ -83,8 +83,11 @@ void Graph_FixedNodesAndEdges() {
   adj_matrix[1][5] = 1;
   adj_matrix[5][1] = 1;  // we have to Comment this line for directed graph
 
-  adj_matrix[1][4] = 1;
-  adj_matrix[4][1] = 1;  // we have to Comment this line for directed graph
+  adj_matrix[1][6] = 1;
+  adj_matrix[6][1] = 1;  // we have to Comment this line for directed graph
+
+  adj_matrix[6][4] = 1;
+  adj_matrix[4][6] = 1;  // we have to Comment this line for directed graph
 
   adj_matrix[2][4] = 1;
   adj_matrix[4][2] = 1;  // we have to Comment this line for directed graph
@@ -140,6 +143,13 @@ void Graph_FixedNodesAndEdges() {
   label = to_string(5);
   outtextxy(x[5]-radius/2, y[5]-radius/2, const_cast<char*>(label.c_str()));
 
+  //7th node
+  x[6] = 440;
+  y[6] = 300;
+  circle(x[6], y[6], radius);
+  label = to_string(6);
+  outtextxy(x[6]-radius/2, y[6]-radius/2, const_cast<char*>(label.c_str()));
+
   // Wait for a delay before proceeding to the next step
   delay(1000);
 
@@ -152,10 +162,10 @@ void Graph_FixedNodesAndEdges() {
       }
     }
   }
-
-  // Wait for user to close the window
-  getch();
-
+  
+  outtextxy(240, 550, "Please press any key to continue");
+  
+  getch(); // waits for user to press any key
 
 }
 

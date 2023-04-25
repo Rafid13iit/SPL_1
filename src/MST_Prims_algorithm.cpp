@@ -74,6 +74,9 @@ void MST_Prims_Algorithm ()
 
 	Graph_FixedNodesAndEdges();
 
+	setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
+
 	//freopen("graph_input.txt", "r", stdin);
 
     //cout << "Enter the number of nodes: ";
