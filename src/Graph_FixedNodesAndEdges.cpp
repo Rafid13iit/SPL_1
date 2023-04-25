@@ -7,7 +7,7 @@ void graphConnection (int u, int v)
     setcolor(YELLOW);
     //setlinestyle(0, 0, 2);
     line(x[u], y[u], x[v], y[v]);
-    delay(1500);
+    delay(1800);
 }
 
 void nodeColor (int u)
@@ -107,6 +107,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[0], y[0], radius);
   label = to_string(0);
   outtextxy(x[0]-radius/2, y[0]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //2nd node
   x[1] = 330;
@@ -114,6 +115,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[1], y[1], radius);
   label = to_string(1);
   outtextxy(x[1]-radius/2, y[1]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //3rd node
   x[2] = 330 + 220;
@@ -121,6 +123,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[2], y[2], radius);
   label = to_string(2);
   outtextxy(x[2]-radius/2, y[2]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //4th node
   x[3] = 330 + 220 + 180;
@@ -128,6 +131,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[3], y[3], radius);
   label = to_string(3);
   outtextxy(x[3]-radius/2, y[3]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //5th node
   x[4] = 330 + 220;
@@ -135,6 +139,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[4], y[4], radius);
   label = to_string(4);
   outtextxy(x[4]-radius/2, y[4]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //6th node
   x[5] = 330;
@@ -142,6 +147,7 @@ void Graph_FixedNodesAndEdges() {
   circle(x[5], y[5], radius);
   label = to_string(5);
   outtextxy(x[5]-radius/2, y[5]-radius/2, const_cast<char*>(label.c_str()));
+  delay(300);
 
   //7th node
   x[6] = 440;

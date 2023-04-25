@@ -55,6 +55,8 @@ int findMST (int GRAPH[MAX][MAX])
 	{
 		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << GRAPH[parent[i]][i] << endl;
 		graphConnection(parent[i], i);
+		nodeColor_1(parent[i]);
+        nodeColor_1(i);
 	}
 
 	for (int i = 1; i < v; i++)
@@ -77,17 +79,17 @@ void MST_Prims_Algorithm ()
 	setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-	//freopen("graph_input.txt", "r", stdin);
+	freopen("graph_input.txt", "r", stdin);
 
-    //cout << "Enter the number of nodes: ";
-	outtextxy(20, 20, "Enter the number of nodes: ");
+    cout << "Enter the number of nodes: ";
+	//outtextxy(20, 20, "Enter the number of nodes: ");
     cin >> v;
-	std::string label_1 = std::to_string(v);
+	//std::string label_1 = std::to_string(v);
 
-    //cout << "Enter the number of edges: ";
-	outtextxy(20, 40, "Enter the number of edges: ");
+    cout << "Enter the number of edges: ";
+	//outtextxy(20, 40, "Enter the number of edges: ");
     cin >> edges;
-	std::string label_2 = std::to_string(edges);
+	//std::string label_2 = std::to_string(edges);
 
 
     for (int i = 0; i < v; i++) {

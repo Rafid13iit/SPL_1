@@ -64,6 +64,11 @@ void A_star_algorithm() {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     outtextxy(400, 30, "A* Algorithm");
 
+    Graph_FixedNodesAndEdges();
+
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
+
     int sx, sy, ex, ey;
     int width, height;
 
