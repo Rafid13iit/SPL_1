@@ -65,7 +65,7 @@ void showList()
         if (ismouseclick(WM_LBUTTONDOWN)) {
             clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
 
-            if (x > 50 && x < 150 && y > 50 && y < 80) {
+            if (x > 50 && x < 120 && y > 110 && y < 130) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -82,7 +82,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 90 && y < 120) {
+            else if (x > 50 && x < 120 && y > 150 && y < 170) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -99,15 +99,24 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 130 && y < 160) {
+            else if (x > 50 && x < 370 && y > 190 && y < 210) {
                 // button was clicked
                 cleardevice();
                 delay(100);
-                //Dijkstra();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Dijkstras");
+
+                graphOptions();
+                getch();
+                cleardevice();
+                delay(100);
+
+                Dijkstras_algorithm();
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 170 && y < 200) {
+            else if (x > 50 && x < 270 && y > 230 && y < 250) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -115,7 +124,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 210 && y < 240) {
+            else if (x > 50 && x < 370 && y > 270 && y < 290) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -123,7 +132,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 250 && y < 280) {
+            else if (x > 50 && x < 430 && y > 310 && y < 330) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -140,7 +149,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 290 && y < 320) {
+            else if (x > 50 && x < 470 && y > 350 && y < 370) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -157,7 +166,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 330 && y < 360) {
+            else if (x > 50 && x < 570 && y > 390 && y < 410) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -165,7 +174,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 150 && y > 370 && y < 400) {
+            else if (x > 50 && x < 570 && y > 430 && y < 450) {
                 // button was clicked
                 cleardevice();
                 delay(100);

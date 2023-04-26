@@ -78,7 +78,14 @@ void dijkstra(int src, int dst)
 void Dijkstras_algorithm()
 {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-    outtextxy(400, 30, "Dijkstras");
+    outtextxy(400, 30, "Kruskals");
+    
+    Graph_FixedNodesAndEdges();
+
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
+
+    freopen("graph_input.txt", "r", stdin);
 
     cout << "Enter the number of vertices : ";
     cin >> vertex;
