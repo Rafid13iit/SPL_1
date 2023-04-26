@@ -1,5 +1,17 @@
 #include <header.h>
 
+
+void graphOptions ()
+{
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+
+    outtextxy(100, 150, "1. Implement algorithm in a Fixed graph");
+
+    outtextxy(100, 300, "2. Implement algorithm in a Random graph");
+
+    outtextxy(100, 450, "3. Implement algorithm in a User Input graph");
+}
+
 void openGraphicalWindow()
 {
     int gd = DETECT, gm;
@@ -55,9 +67,17 @@ void showList()
 
             if (x > 50 && x < 150 && y > 50 && y < 80) {
                 // button was clicked
-                //delay(250);
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "BFS");
+
+                graphOptions();
+                getch();
+                cleardevice();
+                delay(100);
+
                 BFS();
                 break;
             }
@@ -66,6 +86,15 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "DFS");
+
+                graphOptions();
+                getch();
+                cleardevice();
+                delay(100);
+
                 DFS();
                 break;
             }
@@ -98,6 +127,15 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Prims");
+
+                graphOptions();
+                getch();
+                cleardevice();
+                delay(100);
+
                 MST_Prims_Algorithm();
                 break;
             }
@@ -106,6 +144,15 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Kruskals");
+
+                graphOptions();
+                getch();
+                cleardevice();
+                delay(100);
+                
                 MST_Kruskals_Algorithm();
                 break;
             }

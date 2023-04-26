@@ -7,7 +7,7 @@ void graphConnection (int u, int v)
     setcolor(YELLOW);
     //setlinestyle(0, 0, 2);
     line(x[u], y[u], x[v], y[v]);
-    delay(1800);
+    delay(1600);
 }
 
 void nodeColor (int u)
@@ -169,6 +169,7 @@ void Graph_FixedNodesAndEdges() {
     }
   }
   
+  settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
   outtextxy(240, 550, "Please press any key to continue");
   
   getch(); // waits for user to press any key
