@@ -1,5 +1,6 @@
-#include <graphics.h>
 #include <header.h>
+#include <globalVariable.h>
+
 
 void graphConstruction() {
   int nodes, edges;

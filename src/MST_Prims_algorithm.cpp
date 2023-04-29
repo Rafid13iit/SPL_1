@@ -1,6 +1,7 @@
 #include <header.h>
+#include <globalVariable.h>
 
-int GRAPH[MAX][MAX];
+int grapH[MAX][MAX];
 int v, edges;
 
 int selectMinVertex (vector<int>& value, vector<bool>& setMST)
@@ -20,7 +21,7 @@ int selectMinVertex (vector<int>& value, vector<bool>& setMST)
 	return vertex;
 }
 
-int findMST (int GRAPH[MAX][MAX])
+int findMST (int grapH[MAX][MAX])
 {
 	int parent[v], sum = 0;
 	vector<int> value (v, INT_MAX); //used edged relaxation
@@ -42,9 +43,9 @@ int findMST (int GRAPH[MAX][MAX])
 		for (int j = 0; j < v; j++)
 		{
 			
-			if (GRAPH[u][j] != 0 && setMST[j] == false && GRAPH[u][j] < value[j])
+			if (grapH[u][j] != 0 && setMST[j] == false && grapH[u][j] < value[j])
 			{
-				value[j] = GRAPH[u][j];
+				value[j] = grapH[u][j];
 				parent[j] = u;
 			}
 		}
@@ -53,7 +54,7 @@ int findMST (int GRAPH[MAX][MAX])
 	//print MST
 	for (int i = 1; i < v; i++)
 	{
-		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << GRAPH[parent[i]][i] << endl;
+		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << grapH[parent[i]][i] << endl;
 		graphConnection(parent[i], i);
 		nodeColor_1(parent[i]);
         nodeColor_1(i);
@@ -63,7 +64,7 @@ int findMST (int GRAPH[MAX][MAX])
 
 	for (int i = 1; i < v; i++)
 	{
-		sum += GRAPH[parent[i]][i];
+		sum += grapH[parent[i]][i];
 	}
 
 	return sum;
@@ -95,7 +96,7 @@ void MST_Prims_Algorithm ()
 
     for (int i = 0; i < v; i++) {
         for (int j = 0; j < v; j++) {
-            GRAPH[i][j] = 0;
+            grapH[i][j] = 0;
         }
     }
 
@@ -105,11 +106,11 @@ void MST_Prims_Algorithm ()
     for (int i = 0; i < edges; i++) 
 	{
         cin >> u1 >> u2 >> weight;
-        GRAPH[u1][u2] = weight;
-		GRAPH[u2][u1] = weight;
+        grapH[u1][u2] = weight;
+		grapH[u2][u1] = weight;
     }
 
-	cout << "MST cost is : " << findMST(GRAPH) << endl;
+	cout << "MST cost is : " << findMST(grapH) << endl;
 
 }
 

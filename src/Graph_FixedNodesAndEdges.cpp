@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 
 int x[MAX], y[MAX];
 
@@ -53,44 +54,59 @@ void Graph_FixedNodesAndEdges() {
   
     int nodes = 7, edges = 10;
 
+    NODES = nodes;
+    EDGES = edges;
+
     int adj_matrix[nodes][nodes]; // Adjacency matrix to store the graph
 
     for (int i = 0; i < nodes; i++) {
       for (int j = 0; j < nodes; j++) {
         adj_matrix[i][j] = 0;
+
+        GRAPH[i][j] = 0;
       }
     }
 
   //edge -> connection with vertices
     adj_matrix[0][1] = 1;
     adj_matrix[1][0] = 1;  // we have to Comment this line for directed graph
+    GRAPH[0][1] = GRAPH[1][0] = 1;
 
     adj_matrix[1][2] = 1;
     adj_matrix[2][1] = 1;  // we have to Comment this line for directed graph
-
+    GRAPH[1][2] = GRAPH[2][1] = 1;
+    
     adj_matrix[2][3] = 1;
     adj_matrix[3][2] = 1;  // we have to Comment this line for directed graph
+    GRAPH[2][3] = GRAPH[3][2] = 1;
 
     adj_matrix[3][4] = 1;
     adj_matrix[4][3] = 1;  // we have to Comment this line for directed graph
+    GRAPH[3][4] = GRAPH[4][3] = 1;
 
     adj_matrix[4][5] = 1;
     adj_matrix[5][4] = 1;  // we have to Comment this line for directed graph
+    GRAPH[4][5] = GRAPH[5][4] = 1;
 
     adj_matrix[0][5] = 1;
     adj_matrix[5][0] = 1;  // we have to Comment this line for directed graph
+    GRAPH[0][5] = GRAPH[5][0] = 1;
 
     adj_matrix[1][5] = 1;
     adj_matrix[5][1] = 1;  // we have to Comment this line for directed graph
+    GRAPH[1][5] = GRAPH[5][1] = 1;
 
     adj_matrix[1][6] = 1;
     adj_matrix[6][1] = 1;  // we have to Comment this line for directed graph
+    GRAPH[1][6] = GRAPH[6][1] = 1;
 
     adj_matrix[6][4] = 1;
     adj_matrix[4][6] = 1;  // we have to Comment this line for directed graph
+    GRAPH[6][4] = GRAPH[4][6] = 1;
 
     adj_matrix[2][4] = 1;
     adj_matrix[4][2] = 1;  // we have to Comment this line for directed graph
+    GRAPH[2][4] = GRAPH[4][2] = 1;
 
     setcolor(WHITE);
 

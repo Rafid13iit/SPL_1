@@ -11,7 +11,7 @@ using namespace std;
 
 typedef long long int ll;
 typedef unsigned long long int llu;
-#define MAX 1000
+#define MAX 100
 
 
 //Function Calls
@@ -19,7 +19,7 @@ void openGraphicalWindow();
 void Graphics_Graph();
 void drawButton(int x, int y, int width, int height);
 void showList();
-int graphOptions();
+void graphOptions();
 
 void VF2_graph_isomorphism();
 bool check(int u1, int u2);

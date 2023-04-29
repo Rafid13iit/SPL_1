@@ -1,1 +1,2 @@
-bin/graphConstruction.o: src/graphConstruction.cpp include/header.h
+bin/graphConstruction.o: src/graphConstruction.cpp include/header.h \
+ include/globalVariable.h

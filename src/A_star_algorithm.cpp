@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 
 const int dx[4] = {0, 0, 1, -1};
 const int dy[4] = {1, -1, 0, 0};

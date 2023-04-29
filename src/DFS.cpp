@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 
 
 int node_count, edge_count;

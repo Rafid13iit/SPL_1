@@ -1,7 +1,8 @@
 #include <header.h>
+#include <globalVariable.h>
 
 
-int graphOptions ()
+void graphOptions ()
 {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
 
@@ -10,7 +11,6 @@ int graphOptions ()
     outtextxy(100, 450, "3. Implement algorithm in a User Input graph");
 
     while (1) {
-        int check = 0;
 
         int x = mousex();
         int y = mousey();
@@ -23,9 +23,9 @@ int graphOptions ()
                 cleardevice();
                 delay(100);
 
-                check = 1;
+                CHOOSE = 1;
 
-                return check;
+                return ;
             }
 
             else if (x > 100 && x < 620 && y > 300 && y < 320) {
@@ -33,9 +33,9 @@ int graphOptions ()
                 cleardevice();
                 delay(100);
 
-                check = 2;
+                CHOOSE = 2;
 
-                return check;
+                return ;
             }
 
             else if (x > 100 && x < 620 && y > 450 && y < 470) {
@@ -43,9 +43,9 @@ int graphOptions ()
                 cleardevice();
                 delay(100);
 
-                check = 3;
+                CHOOSE = 3;
 
-                return check;
+                return ;
             }
         }
     }
@@ -112,15 +112,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "BFS");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "BFS");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "BFS");
 
@@ -145,15 +145,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "DFS");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "DFS");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "DFS");
 
@@ -178,15 +178,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Dijkstras");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Dijkstras");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Dijkstras");
 
@@ -211,15 +211,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "A* algorithm");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
@@ -244,15 +244,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "A* algorithm");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
@@ -277,15 +277,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Prims");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Prims");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Prims");
 
@@ -310,15 +310,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Kruskals");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Kruskals");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Kruskals");
 
@@ -343,15 +343,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Fleurys");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Fleurys");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Fleurys");
 
@@ -376,15 +376,15 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Tarjans");
 
-                int check = graphOptions();
+                graphOptions();
                 
-                if (check == 1){
+                if (CHOOSE == 1){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Tarjans");
 
                     Graph_FixedNodesAndEdges();
                 }
-                else if (check == 2){
+                else if (CHOOSE == 2){
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Tarjans");
 

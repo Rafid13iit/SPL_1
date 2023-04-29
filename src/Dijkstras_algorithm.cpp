@@ -1,4 +1,6 @@
 #include <header.h>
+#include <globalVariable.h>
+
 
 int vertex, edge;
 int graph_G[MAX][MAX];

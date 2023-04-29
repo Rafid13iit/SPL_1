@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 struct EdgesAndWeight{
     ll u, v, weight;
 } edgesAndweight[MAX];

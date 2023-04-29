@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 
 #define N 100
 

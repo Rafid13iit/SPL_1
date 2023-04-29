@@ -1,4 +1,5 @@
 #include <header.h>
+#include <globalVariable.h>
 
 
 int Graph[MAX][MAX];
@@ -16,27 +17,51 @@ void BFS()
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-    freopen("graph_input_BFS_DFS.txt", "r", stdin);
-
     int nodeCount, edgeCount;
+    int sourceNode;
 
-    cout << "Enter the number of nodes: ";
-    cin >> nodeCount;
-    cout << "Enter the number of edges: ";
-    cin >> edgeCount;
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        nodeCount = NODES;
+        edgeCount = EDGES;
+        
+        for (int i = 0; i < nodeCount; i++){
+            for (int j = 0; j < nodeCount; j++){
+                Graph[i][j] = GRAPH[i][j];
+            }
+        }
 
-    cout << "Enter the edges (u v) in the Graph: " << endl;
-    for (int i = 0; i < edgeCount; ++i) {
-        int u, v;
-        cin >> u >> v;
-
-        Graph[u][v] = 1;
-        Graph[v][u] = 1;
+        sourceNode = SOURCE;
     }
 
-    int sourceNode;
-    cout << "Enter the source node: ";
-    cin >> sourceNode;
+    else if (CHOOSE == 2){
+        //Later
+    }
+
+    else{
+        //for User input
+        freopen("graph_input_BFS_DFS.txt", "r", stdin);
+
+        cout << "Enter the number of nodes: ";
+        cin >> nodeCount;
+        cout << "Enter the number of edges: ";
+        cin >> edgeCount;
+
+        cout << "Enter the edges (u v) in the Graph: " << endl;
+        for (int i = 0; i < edgeCount; ++i) {
+            int u, v;
+            cin >> u >> v;
+
+            Graph[u][v] = 1;
+            Graph[v][u] = 1;
+
+        }
+
+        cout << "Enter the source node: ";
+        cin >> sourceNode;
+    }
+    
+    
 
     //step-1
     for (int i = 0; i < nodeCount; ++i) {
@@ -72,9 +97,11 @@ void BFS()
                 queue[end] = v;
                 end++;
                 Color[v] = 'g';
+
                 graphConnection(u, v);
                 nodeColor_1 (v);
                 delay(1500);
+
                 Level[v] = Level[u] + 1;
                 Parent[v] = u;
             }
@@ -82,6 +109,7 @@ void BFS()
 
         start++;
         Color[u] = 'b';
+
         nodeColor_2 (u);
         delay(1500);
     }
