@@ -1,15 +1,54 @@
 #include <header.h>
 
 
-void graphOptions ()
+int graphOptions ()
 {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
 
     outtextxy(100, 150, "1. Implement algorithm in a Fixed graph");
-
     outtextxy(100, 300, "2. Implement algorithm in a Random graph");
-
     outtextxy(100, 450, "3. Implement algorithm in a User Input graph");
+
+    while (1) {
+        int check = 0;
+
+        int x = mousex();
+        int y = mousey();
+
+        if (ismouseclick(WM_LBUTTONDOWN)) {
+            clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+
+            if (x > 100 && x < 620 && y > 150 && y < 170) {
+    
+                cleardevice();
+                delay(100);
+
+                check = 1;
+
+                return check;
+            }
+
+            else if (x > 100 && x < 620 && y > 300 && y < 320) {
+                
+                cleardevice();
+                delay(100);
+
+                check = 2;
+
+                return check;
+            }
+
+            else if (x > 100 && x < 620 && y > 450 && y < 470) {
+                
+                cleardevice();
+                delay(100);
+
+                check = 3;
+
+                return check;
+            }
+        }
+    }
 }
 
 void openGraphicalWindow()
@@ -73,10 +112,26 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "BFS");
 
-                graphOptions();
-                getch();
-                cleardevice();
-                delay(100);
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "BFS");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "BFS");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "BFS");
+
+                    graphConsUsingGraphicalWindow();
+                }
 
                 BFS();
                 break;
@@ -90,10 +145,26 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "DFS");
 
-                graphOptions();
-                getch();
-                cleardevice();
-                delay(100);
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "DFS");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "DFS");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "DFS");
+
+                    graphConsUsingGraphicalWindow();
+                }
 
                 DFS();
                 break;
@@ -107,10 +178,26 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Dijkstras");
 
-                graphOptions();
-                getch();
-                cleardevice();
-                delay(100);
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Dijkstras");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Dijkstras");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Dijkstras");
+
+                    graphConsUsingGraphicalWindow();
+                }
 
                 Dijkstras_algorithm();
                 break;
@@ -120,6 +207,31 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "A* algorithm");
+
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    graphConsUsingGraphicalWindow();
+                }
+
                 A_star_algorithm();
                 break;
             }
@@ -128,6 +240,31 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "A* algorithm");
+
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "A* algorithm");
+
+                    graphConsUsingGraphicalWindow();
+                }
+
                 //Johnsons();
                 break;
             }
@@ -140,10 +277,26 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Prims");
 
-                graphOptions();
-                getch();
-                cleardevice();
-                delay(100);
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Prims");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Prims");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Prims");
+
+                    graphConsUsingGraphicalWindow();
+                }
 
                 MST_Prims_Algorithm();
                 break;
@@ -157,10 +310,26 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "Kruskals");
 
-                graphOptions();
-                getch();
-                cleardevice();
-                delay(100);
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Kruskals");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Kruskals");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Kruskals");
+
+                    graphConsUsingGraphicalWindow();
+                }
                 
                 MST_Kruskals_Algorithm();
                 break;
@@ -170,6 +339,31 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Fleurys");
+
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Fleurys");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Fleurys");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Fleurys");
+
+                    graphConsUsingGraphicalWindow();
+                }
+
                 //Fleurys();
                 break;
             }
@@ -178,6 +372,31 @@ void showList()
                 // button was clicked
                 cleardevice();
                 delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Tarjans");
+
+                int check = graphOptions();
+                
+                if (check == 1){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Tarjans");
+
+                    Graph_FixedNodesAndEdges();
+                }
+                else if (check == 2){
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Tarjans");
+
+                    graphRandomConstruction();
+                }
+                else{
+                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                    outtextxy(400, 30, "Tarjans");
+
+                    graphConsUsingGraphicalWindow();
+                }
+
                 //Tarjans();
                 break;
             }

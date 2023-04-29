@@ -98,7 +98,7 @@ void Graph_FixedNodesAndEdges() {
     // Draw fixed nodes as circles with numbers
     int radius = 20;
 
-    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     string label;
 
     //1st node

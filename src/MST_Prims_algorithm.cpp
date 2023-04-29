@@ -72,11 +72,10 @@ int findMST (int GRAPH[MAX][MAX])
 
 void MST_Prims_Algorithm ()
 {
-	
-	settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-    outtextxy(400, 30, "Prims");
+	// settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    // outtextxy(400, 30, "Prims");
 
-	Graph_FixedNodesAndEdges();
+	// Graph_FixedNodesAndEdges();
 
 	setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text

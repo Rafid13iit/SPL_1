@@ -29,8 +29,7 @@ void graphConsUsingGraphicalWindow()
     adj_matrix[v][u] = 1; // we have to Comment this line for directed graph
   }
 
-  // Initialize graphics window
-  initwindow(800, 600, "Graph");
+//Graphical Works
 
   // Draw nodes as circles with numbers
   int radius = 20;
@@ -46,23 +45,25 @@ void graphConsUsingGraphicalWindow()
   }
 
   // Wait for a delay before proceeding to the next step
-  delay(5000);
+  delay(1500);
 
   // Draw edges as lines
   for (int i = 0; i < nodes; i++) {
     for (int j = i+1; j < nodes; j++) {
       if (adj_matrix[i][j] == 1) {
         line(x[i], y[i], x[j], y[j]);
-        delay(2000);
+        delay(1500);
       }
     }
   }
 
+  settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+  outtextxy(240, 550, "Please press any key to continue");
+
   // Wait for user to close the window
   getch();
 
-  // Close the graphics window
-  closegraph();
+  //closegraph();
 
 }
 
