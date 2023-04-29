@@ -206,7 +206,7 @@ void Graphics_Graph()
                 // button was clicked
                 cleardevice();
                 delay(100);
-                getch();
+                //getch();
                 showList();
                 //break;
             }

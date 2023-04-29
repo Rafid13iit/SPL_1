@@ -57,6 +57,8 @@ int findMST (int GRAPH[MAX][MAX])
 		graphConnection(parent[i], i);
 		nodeColor_1(parent[i]);
         nodeColor_1(i);
+
+		delay(1000);
 	}
 
 	for (int i = 1; i < v; i++)
