@@ -3,6 +3,7 @@
 
 
 int node_count, edge_count;
+int source_node;
 
 int graph[MAX][MAX];
 char color[MAX];
@@ -28,7 +29,11 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
     cout << "-----------------------------------------------" << endl;
 
     color[node] = 'g';
-    nodeColor_1 (node);
+
+    if (CHOOSE == 1) fixedNodeColor_1 (node); // for fixed graph
+    else if (CHOOSE == 2) ;//LATER
+    else nodeColor_1 (node); // for user input graph
+
     delay(1500);
 
     //This loop iterates over all the nodes in the graph.
@@ -37,13 +42,21 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
 
         if (graph[node][adj] == 1 && color[adj] == 'w') {
             parent[adj] = node;
-            graphConnection(i, node);
+
+            if (CHOOSE == 1) fixedGraphConnection(i, node); // for fixed graph
+            else if (CHOOSE == 2) ;//LATER
+            else graphConnection(i, node); // for user input graph
+
             DFS_algorithm(adj);
         }
     }
 
     color[node] = 'b';
-    nodeColor_2 (node);
+
+    if (CHOOSE == 1) fixedNodeColor_2 (node); // for fixed graph
+    else if (CHOOSE == 2) ;//LATER
+    else nodeColor_2 (node); // for user input graph
+
     delay(1500);
 }
 
@@ -57,28 +70,47 @@ void DFS()
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-    freopen("graph_input_BFS_DFS.txt", "r", stdin);
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        node_count = fixed_NODES;
+        edge_count = fixed_EDGES;
+        
+        for (int i = 0; i < node_count; i++){
+            for (int j = 0; j < node_count; j++){
+                graph[i][j] = fixed_GRAPH[i][j];
+            }
+        }
 
-    cout << "Enter the number of nodes in the graph: ";
-    cin >> node_count;
-    cout << "Enter the number of edges in the graph: ";
-    cin >> edge_count;
-
-    cout << "Enter the edges in the format 'u v': " << endl;
-    for (int i = 0; i < edge_count; ++i) {
-        int u, v;
-        cin >> u >> v;
-
-        graph[u][v] = 1;
-        graph[v][u] = 1;
+        source_node = fixed_SOURCE;
     }
+
+    else if (CHOOSE == 2){
+
+        //Later...
+
+    }
+
+    else {
+        //for User Input
+        cout << "SHUT UP" << endl;
+        node_count = NODES;
+        edge_count = EDGES;
+        
+        for (int i = 0; i < node_count; i++){
+            for (int j = 0; j < node_count; j++){
+                graph[i][j] = GRAPH[i][j];
+            }
+        }
+
+        source_node = SOURCE;
+    }
+
 
     for (int i = 0; i < node_count; ++i) {
         color[i] = 'w';
         parent[i] = -1;
     }
 
-    int source_node;
     cout << "Enter the source node: ";
     cin >> source_node;
 
