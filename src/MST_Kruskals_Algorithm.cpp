@@ -132,6 +132,9 @@ void MST_Kruskals_Algorithm ()
     
     cout << "MST cost is : " << kruskal(nodes, edges) << endl;
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
+
 }
 
 /*

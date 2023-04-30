@@ -1,52 +1,52 @@
 #include <header.h>
 #include <globalVariable.h>
 
-int x[MAX], y[MAX];
+int fixed_x[MAX], fixed_y[MAX];
 
-void graphConnection (int u, int v)
+void fixedGraphConnection (int u, int v)
 {
     setcolor(YELLOW);
     //setlinestyle(0, 0, 2);
-    line(x[u], y[u], x[v], y[v]);
+    line(fixed_x[u], fixed_y[u], fixed_x[v], fixed_y[v]);
     delay(1600);
 }
 
-void nodeColor (int u)
+void fixedNodeColor (int u)
 {
     setcolor(YELLOW);
 
     int radius = 20;
-    circle(x[u], y[u], radius);
+    circle(fixed_x[u], fixed_y[u], radius);
     string label = to_string(u);
-    outtextxy(x[u]-radius/2, y[u]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[u]-radius/2, fixed_y[u]-radius/2, const_cast<char*>(label.c_str()));
     delay(1000);
 }
 
-void nodeColor_1 (int u)
+void fixedNodeColor_1 (int u)
 {
     setfillstyle(SOLID_FILL, YELLOW);
-    fillellipse(x[u], y[u], 20, 20);
+    fillellipse(fixed_x[u], fixed_y[u], 20, 20);
 
     string label = to_string(u);
     int textWidth = textwidth(const_cast<char*>(label.c_str()));
     int textHeight = textheight(const_cast<char*>(label.c_str()));
 
     setcolor(WHITE);
-    outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[u]-textWidth/2, fixed_y[u]-textHeight/2, const_cast<char*>(label.c_str()));
     //delay(1000);
 }
 
-void nodeColor_2 (int u)
+void fixedNodeColor_2 (int u)
 {
     setfillstyle(SOLID_FILL, GREEN);
-    fillellipse(x[u], y[u], 20, 20);
+    fillellipse(fixed_x[u], fixed_y[u], 20, 20);
 
     string label = to_string(u);
     int textWidth = textwidth(const_cast<char*>(label.c_str()));
     int textHeight = textheight(const_cast<char*>(label.c_str()));
 
     setcolor(WHITE);
-    outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[u]-textWidth/2, fixed_y[u]-textHeight/2, const_cast<char*>(label.c_str()));
     //delay(1000);
 }
  
@@ -54,8 +54,8 @@ void Graph_FixedNodesAndEdges() {
   
     int nodes = 7, edges = 10;
 
-    NODES = nodes;
-    EDGES = edges;
+    fixed_NODES = nodes;
+    fixed_EDGES = edges;
 
     int adj_matrix[nodes][nodes]; // Adjacency matrix to store the graph
 
@@ -63,50 +63,50 @@ void Graph_FixedNodesAndEdges() {
       for (int j = 0; j < nodes; j++) {
         adj_matrix[i][j] = 0;
 
-        GRAPH[i][j] = 0;
+        fixed_GRAPH[i][j] = 0;
       }
     }
 
   //edge -> connection with vertices
     adj_matrix[0][1] = 1;
     adj_matrix[1][0] = 1;  // we have to Comment this line for directed graph
-    GRAPH[0][1] = GRAPH[1][0] = 1;
+    fixed_GRAPH[0][1] = fixed_GRAPH[1][0] = 1;
 
     adj_matrix[1][2] = 1;
-    adj_matrix[2][1] = 1;  // we have to Comment this line for directed graph
-    GRAPH[1][2] = GRAPH[2][1] = 1;
+    adj_matrix[2][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = 1;
     
     adj_matrix[2][3] = 1;
-    adj_matrix[3][2] = 1;  // we have to Comment this line for directed graph
-    GRAPH[2][3] = GRAPH[3][2] = 1;
+    adj_matrix[3][2] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[2][3] = fixed_GRAPH[3][2] = 1;
 
     adj_matrix[3][4] = 1;
-    adj_matrix[4][3] = 1;  // we have to Comment this line for directed graph
-    GRAPH[3][4] = GRAPH[4][3] = 1;
+    adj_matrix[4][3] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[3][4] = fixed_GRAPH[4][3] = 1;
 
     adj_matrix[4][5] = 1;
-    adj_matrix[5][4] = 1;  // we have to Comment this line for directed graph
-    GRAPH[4][5] = GRAPH[5][4] = 1;
+    adj_matrix[5][4] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = 1;
 
     adj_matrix[0][5] = 1;
-    adj_matrix[5][0] = 1;  // we have to Comment this line for directed graph
-    GRAPH[0][5] = GRAPH[5][0] = 1;
+    adj_matrix[5][0] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[0][5] = fixed_GRAPH[5][0] = 1;
 
     adj_matrix[1][5] = 1;
-    adj_matrix[5][1] = 1;  // we have to Comment this line for directed graph
-    GRAPH[1][5] = GRAPH[5][1] = 1;
+    adj_matrix[5][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][5] = fixed_GRAPH[5][1] = 1;
 
     adj_matrix[1][6] = 1;
-    adj_matrix[6][1] = 1;  // we have to Comment this line for directed graph
-    GRAPH[1][6] = GRAPH[6][1] = 1;
+    adj_matrix[6][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][6] = fixed_GRAPH[6][1] = 1;
 
     adj_matrix[6][4] = 1;
-    adj_matrix[4][6] = 1;  // we have to Comment this line for directed graph
-    GRAPH[6][4] = GRAPH[4][6] = 1;
+    adj_matrix[4][6] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[6][4] = fixed_GRAPH[4][6] = 1;
 
     adj_matrix[2][4] = 1;
-    adj_matrix[4][2] = 1;  // we have to Comment this line for directed graph
-    GRAPH[2][4] = GRAPH[4][2] = 1;
+    adj_matrix[4][2] = 1;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[2][4] = fixed_GRAPH[4][2] = 1;
 
     setcolor(WHITE);
 
@@ -118,59 +118,59 @@ void Graph_FixedNodesAndEdges() {
     string label;
 
     //1st node
-    x[0] = 150;
-    y[0] = 300;
-    circle(x[0], y[0], radius);
+    fixed_x[0] = 150;
+    fixed_y[0] = 300;
+    circle(fixed_x[0], fixed_y[0], radius);
     label = to_string(0);
-    outtextxy(x[0]-radius/2, y[0]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[0]-radius/2, fixed_y[0]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //2nd node
-    x[1] = 330;
-    y[1] = 150;
-    circle(x[1], y[1], radius);
+    fixed_x[1] = 330;
+    fixed_y[1] = 150;
+    circle(fixed_x[1], fixed_y[1], radius);
     label = to_string(1);
-    outtextxy(x[1]-radius/2, y[1]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[1]-radius/2, fixed_y[1]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //3rd node
-    x[2] = 330 + 220;
-    y[2] = 150;
-    circle(x[2], y[2], radius);
+    fixed_x[2] = 330 + 220;
+    fixed_y[2] = 150;
+    circle(fixed_x[2], fixed_y[2], radius);
     label = to_string(2);
-    outtextxy(x[2]-radius/2, y[2]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[2]-radius/2, fixed_y[2]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //4th node
-    x[3] = 330 + 220 + 180;
-    y[3] = 300;
-    circle(x[3], y[3], radius);
+    fixed_x[3] = 330 + 220 + 180;
+    fixed_y[3] = 300;
+    circle(fixed_x[3], fixed_y[3], radius);
     label = to_string(3);
-    outtextxy(x[3]-radius/2, y[3]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[3]-radius/2, fixed_y[3]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //5th node
-    x[4] = 330 + 220;
-    y[4] = 450;
-    circle(x[4], y[4], radius);
+    fixed_x[4] = 330 + 220;
+    fixed_y[4] = 450;
+    circle(fixed_x[4], fixed_y[4], radius);
     label = to_string(4);
-    outtextxy(x[4]-radius/2, y[4]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[4]-radius/2, fixed_y[4]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //6th node
-    x[5] = 330;
-    y[5] = 450;
-    circle(x[5], y[5], radius);
+    fixed_x[5] = 330;
+    fixed_y[5] = 450;
+    circle(fixed_x[5], fixed_y[5], radius);
     label = to_string(5);
-    outtextxy(x[5]-radius/2, y[5]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[5]-radius/2, fixed_y[5]-radius/2, const_cast<char*>(label.c_str()));
     delay(300);
 
     //7th node
-    x[6] = 440;
-    y[6] = 300;
-    circle(x[6], y[6], radius);
+    fixed_x[6] = 440;
+    fixed_y[6] = 300;
+    circle(fixed_x[6], fixed_y[6], radius);
     label = to_string(6);
-    outtextxy(x[6]-radius/2, y[6]-radius/2, const_cast<char*>(label.c_str()));
+    outtextxy(fixed_x[6]-radius/2, fixed_y[6]-radius/2, const_cast<char*>(label.c_str()));
 
     // Wait for a delay before proceeding to the next step
     delay(1000);
@@ -179,7 +179,7 @@ void Graph_FixedNodesAndEdges() {
     for (int i = 0; i < nodes; i++) {
       for (int j = i+1; j < nodes; j++) {
         if (adj_matrix[i][j] == 1) {
-          line(x[i], y[i], x[j], y[j]);
+          line(fixed_x[i], fixed_y[i], fixed_x[j], fixed_y[j]);
           delay(300);
         }
       }

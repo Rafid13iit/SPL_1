@@ -91,6 +91,9 @@ void VF2_graph_isomorphism() {
 
     if (isIsomorphic()) cout << "The two graphs are isomorphic." << endl;
     else cout << "The two graphs are not isomorphic." << endl;
+
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
     
 }
 

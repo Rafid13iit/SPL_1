@@ -100,6 +100,9 @@ void DFS()
 
     cout << "]" << endl;
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
+
 }
 
 /*

@@ -34,14 +34,18 @@ void BFS();
 void DFS();
 void DFS_algorithm(int node);
 
-void nodeColor (int u);
-void nodeColor_1 (int u);
-void nodeColor_2 (int u);
-void graphConnection (int u, int v);
+void fixedNodeColor (int u);
+void fixedNodeColor_1 (int u);
+void fixedNodeColor_2 (int u);
+void fixedGraphConnection (int u, int v);
 void Graph_FixedNodesAndEdges();
 
 void graphConstruction();
 
+void nodeColor (int u);
+void nodeColor_1 (int u);
+void nodeColor_2 (int u);
+void graphConnection (int u, int v);
 void graphConsUsingGraphicalWindow();
 
 void graphRandomConstruction();

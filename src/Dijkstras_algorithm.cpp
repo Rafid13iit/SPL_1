@@ -114,6 +114,9 @@ void Dijkstras_algorithm()
 	// Function call
 	dijkstra(src, dst);
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
+
 }
 
 /*

@@ -111,6 +111,9 @@ void MST_Prims_Algorithm ()
     }
 
 	cout << "MST cost is : " << findMST(grapH) << endl;
+	
+	settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
 
 }
 

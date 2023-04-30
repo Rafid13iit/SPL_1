@@ -22,6 +22,27 @@ void BFS()
 
     if (CHOOSE == 1){
         //for Fixed Graph
+        nodeCount = fixed_NODES;
+        edgeCount = fixed_EDGES;
+        
+        for (int i = 0; i < nodeCount; i++){
+            for (int j = 0; j < nodeCount; j++){
+                Graph[i][j] = fixed_GRAPH[i][j];
+            }
+        }
+
+        sourceNode = fixed_SOURCE;
+    }
+
+    else if (CHOOSE == 2){
+
+        //Later...
+
+    }
+
+    else {
+        //for User Input
+        cout << "SHUT UP" << endl;
         nodeCount = NODES;
         edgeCount = EDGES;
         
@@ -32,33 +53,6 @@ void BFS()
         }
 
         sourceNode = SOURCE;
-    }
-
-    else if (CHOOSE == 2){
-        //Later
-    }
-
-    else{
-        //for User input
-        freopen("graph_input_BFS_DFS.txt", "r", stdin);
-
-        cout << "Enter the number of nodes: ";
-        cin >> nodeCount;
-        cout << "Enter the number of edges: ";
-        cin >> edgeCount;
-
-        cout << "Enter the edges (u v) in the Graph: " << endl;
-        for (int i = 0; i < edgeCount; ++i) {
-            int u, v;
-            cin >> u >> v;
-
-            Graph[u][v] = 1;
-            Graph[v][u] = 1;
-
-        }
-
-        cout << "Enter the source node: ";
-        cin >> sourceNode;
     }
     
     
@@ -80,8 +74,13 @@ void BFS()
     end++;
 
     Color[sourceNode] = 'g';
-    nodeColor_1 (sourceNode);
+
+    if (CHOOSE == 1) fixedNodeColor_1 (sourceNode); //for fixed graph
+    else if (CHOOSE == 2) ;//LATER
+    else nodeColor_1 (sourceNode); // for use input graph
+    
     delay(1500);
+
     Level[sourceNode] = 0;
     Parent[sourceNode] = -1;
 
@@ -98,8 +97,14 @@ void BFS()
                 end++;
                 Color[v] = 'g';
 
-                graphConnection(u, v);
-                nodeColor_1 (v);
+                if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
+                else if (CHOOSE == 2) ;//LATER
+                else graphConnection(u, v); // for user input graph
+
+                if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
+                else if (CHOOSE == 2) ;//LATER
+                else nodeColor_1 (v); // for user input graph
+                
                 delay(1500);
 
                 Level[v] = Level[u] + 1;
@@ -110,7 +115,10 @@ void BFS()
         start++;
         Color[u] = 'b';
 
-        nodeColor_2 (u);
+        if (CHOOSE == 1) fixedNodeColor_2 (u); // for fixed graph
+        else if (CHOOSE == 2) ;//LATER
+        else nodeColor_2 (u); // for user input graph
+
         delay(1500);
     }
 
@@ -122,6 +130,9 @@ void BFS()
         cout << "Color[" << i << "] = " << Color[i] << endl;
         cout << endl;
     }
+
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
     
 }
 

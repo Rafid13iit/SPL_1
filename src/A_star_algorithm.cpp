@@ -78,4 +78,7 @@ void A_star_algorithm() {
     int distance = Astar(sx, sy, ex, ey, width, height);
     cout << distance << endl;
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
+
 }
