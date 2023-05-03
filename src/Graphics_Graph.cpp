@@ -295,7 +295,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Prims");
 
-                    graphConsUsingGraphicalWindow();
+                    weightedGraphConsUsingGraphicalWindow();
                 }
 
                 MST_Prims_Algorithm();
@@ -328,7 +328,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Kruskals");
 
-                    graphConsUsingGraphicalWindow();
+                    weightedGraphConsUsingGraphicalWindow();
                 }
                 
                 MST_Kruskals_Algorithm();

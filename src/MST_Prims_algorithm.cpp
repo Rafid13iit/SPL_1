@@ -2,14 +2,14 @@
 #include <globalVariable.h>
 
 int grapH[MAX][MAX];
-int v, edges;
+int nodes_P, edges_P;
 
 int selectMinVertex (vector<int>& value, vector<bool>& setMST)
 {
 	int minimum = INT_MAX;
 	int vertex;
 	
-	for (int i = 0; i < v; i++)
+	for (int i = 0; i < nodes_P; i++)
 	{
 		if (setMST[i] == false && value[i] < minimum)
 		{
@@ -23,16 +23,16 @@ int selectMinVertex (vector<int>& value, vector<bool>& setMST)
 
 int findMST (int grapH[MAX][MAX])
 {
-	int parent[v], sum = 0;
-	vector<int> value (v, INT_MAX); //used edged relaxation
-	vector<bool> setMST (v, false); //TRUE -> vertex is included in MST
+	int parent[nodes_P], sum = 0;
+	vector<int> value (nodes_P, INT_MAX); //used edged relaxation
+	vector<bool> setMST (nodes_P, false); //TRUE -> vertex is included in MST
 	
 	//Assuming start point as Node -> 0
 	parent[0] = -1; // start node has no parent
 	value[0] = 0; // start node has value = 0 to get picked 1st
 	
 	//from MST with (v-1) edges
-	for (int i = 0; i < v-1; i++)
+	for (int i = 0; i < nodes_P-1; i++)
 	{
 		//select best vertex applying greedy method
 		int u = selectMinVertex (value, setMST);
@@ -40,7 +40,7 @@ int findMST (int grapH[MAX][MAX])
 		setMST[u] = true; //include new vertex in MST
 		
 		//relax adjacent vertices (noy yet included in MST)
-		for (int j = 0; j < v; j++)
+		for (int j = 0; j < nodes_P; j++)
 		{
 			
 			if (grapH[u][j] != 0 && setMST[j] == false && grapH[u][j] < value[j])
@@ -52,17 +52,26 @@ int findMST (int grapH[MAX][MAX])
 	}
 	
 	//print MST
-	for (int i = 1; i < v; i++)
+	for (int i = 1; i < nodes_P; i++)
 	{
 		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << grapH[parent[i]][i] << endl;
-		graphConnection(parent[i], i);
-		nodeColor_1(parent[i]);
-        nodeColor_1(i);
+		
+		if (CHOOSE == 1) fixedGraphConnection(parent[i], i); // for fixed graph
+        else if (CHOOSE == 2) ;//LATER
+        else graphConnection(parent[i], i); // for user input graph
+
+		if (CHOOSE == 1) fixedNodeColor_1 (parent[i]); // for fixed graph
+        else if (CHOOSE == 2) ;//LATER
+        else nodeColor_1 (parent[i]); // for user input graph
+
+        if (CHOOSE == 1) fixedNodeColor_1 (i); // for fixed graph
+        else if (CHOOSE == 2) ;//LATER
+        else nodeColor_1 (i); // for user input graph
 
 		delay(1000);
 	}
 
-	for (int i = 1; i < v; i++)
+	for (int i = 1; i < nodes_P; i++)
 	{
 		sum += grapH[parent[i]][i];
 	}
@@ -81,34 +90,39 @@ void MST_Prims_Algorithm ()
 	setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-	freopen("graph_input.txt", "r", stdin);
-
-    cout << "Enter the number of nodes: ";
-	//outtextxy(20, 20, "Enter the number of nodes: ");
-    cin >> v;
-	//std::string label_1 = std::to_string(v);
-
-    cout << "Enter the number of edges: ";
-	//outtextxy(20, 40, "Enter the number of edges: ");
-    cin >> edges;
-	//std::string label_2 = std::to_string(edges);
-
-
-    for (int i = 0; i < v; i++) {
-        for (int j = 0; j < v; j++) {
-            grapH[i][j] = 0;
+	if (CHOOSE == 1){
+        //for Fixed Graph
+        nodes_P = fixed_NODES;
+        edges_P = fixed_EDGES;
+        
+        for (int i = 0; i < nodes_P; i++){
+            for (int j = 0; j < nodes_P; j++){
+                grapH[i][j] = fixed_GRAPH[i][j];
+            }
         }
+
     }
 
-	int u1, u2, weight;
+    else if (CHOOSE == 2){
 
-	cout << "Enter edges (u v) and it's weight:\n";
-    for (int i = 0; i < edges; i++) 
-	{
-        cin >> u1 >> u2 >> weight;
-        grapH[u1][u2] = weight;
-		grapH[u2][u1] = weight;
+        //Later...
+
     }
+
+    else {
+        //for User Input
+        nodes_P = NODES;
+        edges_P = EDGES;
+        
+        int k = 0;
+        for (int i = 0; i < nodes_P; i++){
+            for (int j = 0; j < nodes_P; j++){
+                grapH[i][j] = GRAPH[i][j];
+            }
+        }
+
+    }
+
 
 	cout << "MST cost is : " << findMST(grapH) << endl;
 	

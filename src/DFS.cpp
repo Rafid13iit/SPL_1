@@ -40,7 +40,7 @@ void DFS_algorithm(int node) { //'node' as an argument, which represents the nod
     for (int i = 0; i < node_count; ++i) {
         int adj = i;
 
-        if (graph[node][adj] == 1 && color[adj] == 'w') {
+        if (graph[node][adj] != 0 && color[adj] == 'w') {
             parent[adj] = node;
 
             if (CHOOSE == 1) fixedGraphConnection(i, node); // for fixed graph
@@ -92,7 +92,6 @@ void DFS()
 
     else {
         //for User Input
-        cout << "SHUT UP" << endl;
         node_count = NODES;
         edge_count = EDGES;
         
@@ -111,8 +110,6 @@ void DFS()
         parent[i] = -1;
     }
 
-    cout << "Enter the source node: ";
-    cin >> source_node;
 
     DFS_algorithm(source_node);
     parent[source_node] = -1;

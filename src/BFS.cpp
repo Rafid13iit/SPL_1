@@ -42,7 +42,6 @@ void BFS()
 
     else {
         //for User Input
-        cout << "SHUT UP" << endl;
         nodeCount = NODES;
         edgeCount = EDGES;
         
@@ -91,7 +90,7 @@ void BFS()
         for (int i = 0; i < nodeCount; ++i) {
             int v = i;
 
-            if (Graph[u][v] == 1 && Color[v] == 'w') {
+            if (Graph[u][v] != 0 && Color[v] == 'w') {
 
                 queue[end] = v;
                 end++;

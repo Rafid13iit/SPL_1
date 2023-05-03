@@ -1,7 +1,7 @@
 #include <header.h>
 #include <globalVariable.h>
 
-int x[MAX], y[MAX];
+//int x[MAX], y[MAX];
 
 void graphConnection (int u, int v)
 {

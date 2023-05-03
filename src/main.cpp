@@ -8,11 +8,14 @@ int GRAPH[MAX][MAX];
 int SOURCE = 0;
 int CHOOSE = 0;
 
+int x[MAX], y[MAX];
+
 //for Fixed Graph
 int fixed_NODES, fixed_EDGES;
 int fixed_U, fixed_V, fixed_WEIGHT;
 int fixed_GRAPH[MAX][MAX];
 int fixed_SOURCE = 0;
+
 
 int main ()
 {

@@ -9,6 +9,9 @@ extern int U, V, WEIGHT;
 extern int GRAPH[MAX][MAX];
 extern int SOURCE;
 extern int CHOOSE;
+
+extern int x[MAX], y[MAX];
+
 //for Fixed Graph
 extern int fixed_NODES, fixed_EDGES;
 extern int fixed_U, fixed_V, fixed_WEIGHT;

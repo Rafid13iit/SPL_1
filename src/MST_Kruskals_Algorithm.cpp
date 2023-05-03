@@ -7,6 +7,9 @@ struct EdgesAndWeight{
 ll ParenT[MAX];
 ll setRank[MAX] = {0};
 
+ll nodes_K, edges_K;
+ll adj_matrix[MAX][MAX]; // Adjacency matrix to store the graph
+
 
 //Disjoint Set starts
 void makeSet(int x)
@@ -46,15 +49,15 @@ void makeUnion (ll u, ll v)
 //Disjoint Set ends
 
 
-ll kruskal (ll nodes, ll edges)
+ll kruskal (ll nodes_K, ll edges_K)
 {
-    for(ll i = 0; i < nodes; i++){
+    for(ll i = 0; i < nodes_K; i++){
         makeSet(i);
     }
 
     ll answer = 0;
 
-    for(ll i = 0; i < edges; i++)
+    for(ll i = 0; i < edges_K; i++)
     {
         ll u = edgesAndweight[i].u;
         ll v = edgesAndweight[i].v;
@@ -68,9 +71,17 @@ ll kruskal (ll nodes, ll edges)
 
             answer += w;
 
-            graphConnection(u, v);
-            nodeColor_1(u);
-            nodeColor_1(v);
+            if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
+            else if (CHOOSE == 2) ;//LATER
+            else graphConnection(u, v); // for user input graph
+            
+            if (CHOOSE == 1) fixedNodeColor_1 (u); // for fixed graph
+            else if (CHOOSE == 2) ;//LATER
+            else nodeColor_1 (u); // for user input graph
+
+            if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
+            else if (CHOOSE == 2) ;//LATER
+            else nodeColor_1 (v); // for user input graph
 
             delay(1000);
         }
@@ -85,38 +96,78 @@ void MST_Kruskals_Algorithm ()
     // settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     // outtextxy(400, 30, "Kruskals");
     
-    // Graph_FixedNodesAndEdges();
+    // Graph_Fixednodes_K_KAndEdges();
 
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-    freopen("graph_input.txt", "r", stdin);
-
-    ll nodes, edges;
-    cout << "Enter the number of nodes: ";
-    cin >> nodes;
-    cout << "Enter the number of edges: ";
-    cin >> edges;
-
-    ll adj_matrix[nodes][nodes]; // Adjacency matrix to store the graph
-    for (ll i = 0; i < nodes; i++) {
-        for (ll j = 0; j < nodes; j++) {
-            adj_matrix[i][j] = 0;
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        nodes_K = fixed_NODES;
+        edges_K = fixed_EDGES;
+        
+        for (int i = 0; i < nodes_K; i++){
+            for (int j = 0; j < nodes_K; j++){
+                adj_matrix[i][j] = fixed_GRAPH[i][j];
+            }
         }
+        
+
+        int k = 0;
+        for (int i = 1; i < nodes_K; i++){
+            for (int j = 0; j < i; j++){
+
+                if (adj_matrix[i][j] != 0){
+                    edgesAndweight[k].u = i;
+                    edgesAndweight[k].v = j;
+                    edgesAndweight[k].weight = adj_matrix[i][j];
+
+                    k++;
+                }
+            }
+        }
+
     }
 
-    cout << "Enter edges (u v) and it's weight:\n";
-    for (int i = 0; i < edges; i++) {
-        cin >> edgesAndweight[i].u >> edgesAndweight[i].v >> edgesAndweight[i].weight;
-        adj_matrix[edgesAndweight[i].u][edgesAndweight[i].v] = 1;
-        adj_matrix[edgesAndweight[i].v][edgesAndweight[i].u] = 1; // Comment this line for directed graph
+    else if (CHOOSE == 2){
+
+        //Later...
+
+    }
+
+    else {
+        //for User Input
+        nodes_K = NODES;
+        edges_K = EDGES;
+        
+        for (int i = 0; i < nodes_K; i++){
+            for (int j = 0; j < nodes_K; j++){
+                adj_matrix[i][j] = GRAPH[i][j];
+            }
+        }
+        
+
+        int k = 0;
+        for (int i = 1; i < nodes_K; i++){
+            for (int j = 0; j < i; j++){
+
+                if (adj_matrix[i][j] != 0){
+                    edgesAndweight[k].u = i;
+                    edgesAndweight[k].v = j;
+                    edgesAndweight[k].weight = adj_matrix[i][j];
+
+                    k++;
+                }
+            }
+        }
+
     }
 
     //sorting by weight
     struct EdgesAndWeight temp;
 
-    for (ll i = 0; i < edges; i++){
-        for (ll j = i + 1; j < edges; j++){
+    for (ll i = 0; i < edges_K; i++){
+        for (ll j = i + 1; j < edges_K; j++){
             if (edgesAndweight[i].weight > edgesAndweight[j].weight){
 
                 temp = edgesAndweight[i];
@@ -130,7 +181,7 @@ void MST_Kruskals_Algorithm ()
     //     cout << edgesAndweight[i].weight << " " << edgesAndweight[i].u << " " << edgesAndweight[i].v << endl;
     // }
     
-    cout << "MST cost is : " << kruskal(nodes, edges) << endl;
+    cout << "MST cost is : " << kruskal(nodes_K, edges_K) << endl;
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     outtextxy(300, 550, "Successfully ended...");

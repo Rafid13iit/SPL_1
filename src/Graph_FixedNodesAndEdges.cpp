@@ -68,45 +68,45 @@ void Graph_FixedNodesAndEdges() {
     }
 
   //edge -> connection with vertices
-    adj_matrix[0][1] = 1;
-    adj_matrix[1][0] = 1;  // we have to Comment this line for directed graph
-    fixed_GRAPH[0][1] = fixed_GRAPH[1][0] = 1;
+    adj_matrix[0][1] = 5;
+    adj_matrix[1][0] = 5;  // we have to Comment this line for directed graph
+    fixed_GRAPH[0][1] = fixed_GRAPH[1][0] = 5;
 
-    adj_matrix[1][2] = 1;
-    adj_matrix[2][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = 1;
+    adj_matrix[1][2] = 4;
+    adj_matrix[2][1] = 4;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = 4;
     
-    adj_matrix[2][3] = 1;
-    adj_matrix[3][2] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[2][3] = fixed_GRAPH[3][2] = 1;
+    adj_matrix[2][3] = 3;
+    adj_matrix[3][2] = 3;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[2][3] = fixed_GRAPH[3][2] = 3;
 
-    adj_matrix[3][4] = 1;
-    adj_matrix[4][3] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[3][4] = fixed_GRAPH[4][3] = 1;
+    adj_matrix[3][4] = 2;
+    adj_matrix[4][3] = 2;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[3][4] = fixed_GRAPH[4][3] = 2;
 
-    adj_matrix[4][5] = 1;
-    adj_matrix[5][4] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = 1;
+    adj_matrix[4][5] = 3;
+    adj_matrix[5][4] = 3;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = 3;
 
     adj_matrix[0][5] = 1;
     adj_matrix[5][0] = 1;  // we have to Comment this line for directed fixed_GRAPH
     fixed_GRAPH[0][5] = fixed_GRAPH[5][0] = 1;
 
-    adj_matrix[1][5] = 1;
-    adj_matrix[5][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[1][5] = fixed_GRAPH[5][1] = 1;
+    adj_matrix[1][5] = 2;
+    adj_matrix[5][1] = 2;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][5] = fixed_GRAPH[5][1] = 2;
 
-    adj_matrix[1][6] = 1;
-    adj_matrix[6][1] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[1][6] = fixed_GRAPH[6][1] = 1;
+    adj_matrix[1][6] = 6;
+    adj_matrix[6][1] = 6;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[1][6] = fixed_GRAPH[6][1] = 6;
 
-    adj_matrix[6][4] = 1;
-    adj_matrix[4][6] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[6][4] = fixed_GRAPH[4][6] = 1;
+    adj_matrix[6][4] = 5;
+    adj_matrix[4][6] = 5;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[6][4] = fixed_GRAPH[4][6] = 5;
 
-    adj_matrix[2][4] = 1;
-    adj_matrix[4][2] = 1;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[2][4] = fixed_GRAPH[4][2] = 1;
+    adj_matrix[2][4] = 4;
+    adj_matrix[4][2] = 4;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[2][4] = fixed_GRAPH[4][2] = 4;
 
     setcolor(WHITE);
 
@@ -178,7 +178,7 @@ void Graph_FixedNodesAndEdges() {
     // Draw edges as lines
     for (int i = 0; i < nodes; i++) {
       for (int j = i+1; j < nodes; j++) {
-        if (adj_matrix[i][j] == 1) {
+        if (adj_matrix[i][j] != 0) {
           line(fixed_x[i], fixed_y[i], fixed_x[j], fixed_y[j]);
           delay(300);
         }

@@ -48,6 +48,8 @@ void nodeColor_2 (int u);
 void graphConnection (int u, int v);
 void graphConsUsingGraphicalWindow();
 
+void weightedGraphConsUsingGraphicalWindow();
+
 void graphRandomConstruction();
 
 void MST_Kruskals_Algorithm ();
