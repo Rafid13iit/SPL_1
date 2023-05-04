@@ -35,8 +35,17 @@ void BFS()
     }
 
     else if (CHOOSE == 2){
+        //for Random Input
+        nodeCount = NODES;
+        edgeCount = EDGES;
+        
+        for (int i = 0; i < nodeCount; i++){
+            for (int j = 0; j < nodeCount; j++){
+                Graph[i][j] = GRAPH[i][j];
+            }
+        }
 
-        //Later...
+        sourceNode = SOURCE;
 
     }
 
@@ -75,8 +84,8 @@ void BFS()
     Color[sourceNode] = 'g';
 
     if (CHOOSE == 1) fixedNodeColor_1 (sourceNode); //for fixed graph
-    else if (CHOOSE == 2) ;//LATER
-    else nodeColor_1 (sourceNode); // for use input graph
+    else if (CHOOSE == 2) nodeColor_1 (sourceNode); //for rabdom graph
+    else nodeColor_1 (sourceNode); // for user input graph
     
     delay(1500);
 
@@ -97,11 +106,11 @@ void BFS()
                 Color[v] = 'g';
 
                 if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
-                else if (CHOOSE == 2) ;//LATER
+                else if (CHOOSE == 2) graphConnection(u, v); // for random graph
                 else graphConnection(u, v); // for user input graph
 
                 if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
-                else if (CHOOSE == 2) ;//LATER
+                else if (CHOOSE == 2) nodeColor_1 (v); //for random graph
                 else nodeColor_1 (v); // for user input graph
                 
                 delay(1500);
@@ -115,7 +124,7 @@ void BFS()
         Color[u] = 'b';
 
         if (CHOOSE == 1) fixedNodeColor_2 (u); // for fixed graph
-        else if (CHOOSE == 2) ;//LATER
+        else if (CHOOSE == 2) nodeColor_2 (u); // for random graph
         else nodeColor_2 (u); // for user input graph
 
         delay(1500);

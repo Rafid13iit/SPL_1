@@ -72,15 +72,15 @@ ll kruskal (ll nodes_K, ll edges_K)
             answer += w;
 
             if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
-            else if (CHOOSE == 2) ;//LATER
+            else if (CHOOSE == 2) graphConnection(u, v); //for random graph
             else graphConnection(u, v); // for user input graph
             
             if (CHOOSE == 1) fixedNodeColor_1 (u); // for fixed graph
-            else if (CHOOSE == 2) ;//LATER
+            else if (CHOOSE == 2) nodeColor_1 (u); //for random graph
             else nodeColor_1 (u); // for user input graph
 
             if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
-            else if (CHOOSE == 2) ;//LATER
+            else if (CHOOSE == 2) nodeColor_1 (v); // for random graph
             else nodeColor_1 (v); // for user input graph
 
             delay(1000);
@@ -130,8 +130,30 @@ void MST_Kruskals_Algorithm ()
     }
 
     else if (CHOOSE == 2){
+        //for Random Input
+        nodes_K = NODES;
+        edges_K = EDGES;
+        
+        for (int i = 0; i < nodes_K; i++){
+            for (int j = 0; j < nodes_K; j++){
+                adj_matrix[i][j] = GRAPH[i][j];
+            }
+        }
+        
 
-        //Later...
+        int k = 0;
+        for (int i = 1; i < nodes_K; i++){
+            for (int j = 0; j < i; j++){
+
+                if (adj_matrix[i][j] != 0){
+                    edgesAndweight[k].u = i;
+                    edgesAndweight[k].v = j;
+                    edgesAndweight[k].weight = adj_matrix[i][j];
+
+                    k++;
+                }
+            }
+        }
 
     }
 

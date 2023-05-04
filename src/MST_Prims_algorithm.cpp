@@ -57,15 +57,15 @@ int findMST (int grapH[MAX][MAX])
 		cout << "u -> v : " << parent[i] << "->" << i << ", weight = " << grapH[parent[i]][i] << endl;
 		
 		if (CHOOSE == 1) fixedGraphConnection(parent[i], i); // for fixed graph
-        else if (CHOOSE == 2) ;//LATER
+        else if (CHOOSE == 2) graphConnection(parent[i], i); // for random graph
         else graphConnection(parent[i], i); // for user input graph
 
 		if (CHOOSE == 1) fixedNodeColor_1 (parent[i]); // for fixed graph
-        else if (CHOOSE == 2) ;//LATER
+        else if (CHOOSE == 2) nodeColor_1 (parent[i]); //for random graph
         else nodeColor_1 (parent[i]); // for user input graph
 
         if (CHOOSE == 1) fixedNodeColor_1 (i); // for fixed graph
-        else if (CHOOSE == 2) ;//LATER
+        else if (CHOOSE == 2) nodeColor_1 (i); //for random graph
         else nodeColor_1 (i); // for user input graph
 
 		delay(1000);
@@ -104,8 +104,16 @@ void MST_Prims_Algorithm ()
     }
 
     else if (CHOOSE == 2){
-
-        //Later...
+		//for Random Input
+        nodes_P = NODES;
+        edges_P = EDGES;
+        
+        int k = 0;
+        for (int i = 0; i < nodes_P; i++){
+            for (int j = 0; j < nodes_P; j++){
+                grapH[i][j] = GRAPH[i][j];
+            }
+        }
 
     }
 
