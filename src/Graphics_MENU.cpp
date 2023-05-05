@@ -584,7 +584,7 @@ void showList()
 
 }
 
-void Graphics_Graph() 
+void Graphics_MENU() 
 {
     
     drawButton(50, 50, 100, 50);

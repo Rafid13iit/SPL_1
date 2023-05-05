@@ -21,7 +21,7 @@ int main ()
 {
     openGraphicalWindow();
 
-    Graphics_Graph(); 
+    Graphics_MENU(); 
 
     //Graph_FixedNodesAndEdges();
     //MST_Kruskals_Algorithm ();

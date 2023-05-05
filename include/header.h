@@ -16,10 +16,10 @@ typedef unsigned long long int llu;
 
 //Function Calls
 void openGraphicalWindow();
-void Graphics_Graph();
 void drawButton(int x, int y, int width, int height);
 void showList();
 void graphOptions();
+void Graphics_MENU();
 
 void VF2_graph_isomorphism();
 bool check(int u1, int u2);
