@@ -14,51 +14,61 @@ void showWeight ()
     x = (fixed_x[0] + fixed_x[1]) / 2 - 15;
     y = (fixed_y[0] + fixed_y[1]) / 2 - 15;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(4);
     x = (fixed_x[1] + fixed_x[2]) / 2;
     y = (fixed_y[1] + fixed_y[2]) / 2 - 20;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(3);
     x = (fixed_x[2] + fixed_x[3]) / 2 + 15;
     y = (fixed_y[2] + fixed_y[3]) / 2 - 10;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(2);
     x = (fixed_x[3] + fixed_x[4]) / 2 + 10;
     y = (fixed_y[3] + fixed_y[4]) / 2;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(3);
     x = (fixed_x[4] + fixed_x[5]) / 2;
     y = (fixed_y[4] + fixed_y[5]) / 2 + 5;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(1);
     x = (fixed_x[0] + fixed_x[5]) / 2 - 20;
     y = (fixed_y[0] + fixed_y[5]) / 2 - 2;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(2);
     x = (fixed_x[1] + fixed_x[5]) / 2 - 20;
     y = (fixed_y[1] + fixed_y[5]) / 2;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(6);
     x = (fixed_x[1] + fixed_x[6]) / 2 + 10;
     y = (fixed_y[1] + fixed_y[6]) / 2 - 10;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(5);
     x = (fixed_x[4] + fixed_x[6]) / 2 + 5;
     y = (fixed_y[4] + fixed_y[6]) / 2 - 20;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 
     label = to_string(4);
     x = (fixed_x[2] + fixed_x[4]) / 2 + 10;
     y = (fixed_y[2] + fixed_y[4]) / 2;
     outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
 }
 
 void fixedGraphConnection (int u, int v)
@@ -243,12 +253,9 @@ void Graph_FixedNodesAndEdges() {
       }
     }
     
-    showWeight();
-
-    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-    outtextxy(240, 550, "Please press any key to continue");
+    //showWeight();
     
-    getch(); // waits for user to press any key
+    //getch()
 
 }
 

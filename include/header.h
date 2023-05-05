@@ -38,6 +38,7 @@ void fixedNodeColor (int u);
 void fixedNodeColor_1 (int u);
 void fixedNodeColor_2 (int u);
 void fixedGraphConnection (int u, int v);
+void showWeight ();
 void Graph_FixedNodesAndEdges();
 
 void graphConstruction();
