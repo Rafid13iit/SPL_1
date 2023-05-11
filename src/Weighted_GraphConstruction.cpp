@@ -3,11 +3,25 @@
 
 //int x[MAX], y[MAX];
 
-void weightedGraphConsUsingGraphicalWindow()
+void showWeight_2 (int weight, int i, int j)
+{
+    int x1, y1;
+    string label;
+
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+
+    label = to_string(weight);
+    x1 = (x[i] + x[j]) / 2 - 25;
+    y1 = (y[i] + y[j]) / 2 - 25;
+    outtextxy(x1, y1, const_cast<char*>(label.c_str()));
+    delay(500);
+}
+
+void Weighted_GraphConstruction()
 {
   int nodesWeighted, edgesWeighted, srcNodeWeighted;
 
-  freopen("graph_input.txt", "r", stdin);
+  freopen("graph_input_weighted.txt", "r", stdin);
 
   cout << "Enter the number of nodes: ";
   cin >> nodesWeighted;
@@ -36,6 +50,8 @@ void weightedGraphConsUsingGraphicalWindow()
     adj_matrix[v][u] = adj_matrix[u][v]; // we have to Comment this line for directed graph
 
     GRAPH[u][v] = GRAPH[v][u] = adj_matrix[u][v];
+
+
   }
 
 //Graphical Works
@@ -61,17 +77,11 @@ void weightedGraphConsUsingGraphicalWindow()
       if (adj_matrix[i][j] != 0) {
         line(x[i], y[i], x[j], y[j]);
         delay(1500);
+
+        showWeight_2(adj_matrix[i][j], i, j);
       }
     }
   }
-
-  settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-  outtextxy(240, 550, "Please press any key to continue");
-
-  // Wait for user to close the window
-  getch();
-
-  //closegraph();
 
 }
 

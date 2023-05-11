@@ -129,7 +129,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "BFS");
 
-                    graphRandomConstruction();
+                    Random_GraphConstruction();
 
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
                     outtextxy(240, 550, "Please press any key to continue");
@@ -140,7 +140,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "BFS");
 
-                    graphConsUsingGraphicalWindow();
+                    UserInput_GraphConstruction();
 
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
                     outtextxy(240, 550, "Please press any key to continue");
@@ -177,7 +177,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "DFS");
 
-                    graphRandomConstruction();
+                    Random_GraphConstruction();
 
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
                     outtextxy(240, 550, "Please press any key to continue");
@@ -188,7 +188,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "DFS");
 
-                    graphConsUsingGraphicalWindow();
+                    UserInput_GraphConstruction();
 
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
                     outtextxy(240, 550, "Please press any key to continue");
@@ -227,7 +227,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Dijkstras");
 
-                    graphRandomConstruction();
+                    WeightedRandom_GraphConstruction();
 
                     //showWeight();
 
@@ -240,7 +240,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Dijkstras");
 
-                    graphConsUsingGraphicalWindow();
+                    Weighted_GraphConstruction();
 
                     //showWeight();
 
@@ -281,7 +281,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
-                    graphRandomConstruction();
+                    WeightedRandom_GraphConstruction();
 
                     //showWeight();
 
@@ -294,7 +294,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "A* algorithm");
 
-                    graphConsUsingGraphicalWindow();
+                    Weighted_GraphConstruction();
 
                     //showWeight();
 
@@ -335,7 +335,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Johnson's");
 
-                    graphRandomConstruction();
+                    WeightedRandom_GraphConstruction();
 
                     //showWeight();
 
@@ -348,7 +348,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Johnson's");
 
-                    graphConsUsingGraphicalWindow();
+                    Weighted_GraphConstruction();
 
                     //showWeight();
 
@@ -389,7 +389,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Prims");
 
-                    graphRandomConstruction();
+                    WeightedRandom_GraphConstruction();
 
                     //showWeight();
 
@@ -402,7 +402,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Prims");
 
-                    weightedGraphConsUsingGraphicalWindow();
+                    Weighted_GraphConstruction();
 
                     //showWeight();
 
@@ -443,7 +443,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Kruskals");
 
-                    graphRandomConstruction();
+                    WeightedRandom_GraphConstruction();
 
                     //showWeight();
 
@@ -456,7 +456,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Kruskals");
 
-                    weightedGraphConsUsingGraphicalWindow();
+                    Weighted_GraphConstruction();
 
                     //showWeight();
 
@@ -497,7 +497,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Fleurys");
 
-                    graphRandomConstruction();
+                    Random_GraphConstruction();
 
                     //showWeight();
 
@@ -510,7 +510,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Fleurys");
 
-                    graphConsUsingGraphicalWindow();
+                    UserInput_GraphConstruction();
 
                     //showWeight();
 
@@ -551,7 +551,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Tarjans");
 
-                    graphRandomConstruction();
+                    Random_GraphConstruction();
 
                     //showWeight();
 
@@ -564,7 +564,7 @@ void showList()
                     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                     outtextxy(400, 30, "Tarjans");
 
-                    graphConsUsingGraphicalWindow();
+                    UserInput_GraphConstruction();
 
                     //showWeight();
 

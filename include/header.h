@@ -37,7 +37,9 @@ void DFS_algorithm(int node);
 void fixedNodeColor (int u);
 void fixedNodeColor_1 (int u);
 void fixedNodeColor_2 (int u);
+void fixedNodeColor_3 (int u);
 void fixedGraphConnection (int u, int v);
+void fixedGraphConnection_1 (int u, int v);
 void showWeight ();
 void Graph_FixedNodesAndEdges();
 
@@ -47,11 +49,14 @@ void nodeColor (int u);
 void nodeColor_1 (int u);
 void nodeColor_2 (int u);
 void graphConnection (int u, int v);
-void graphConsUsingGraphicalWindow();
+void UserInput_GraphConstruction();
 
-void weightedGraphConsUsingGraphicalWindow();
+void showWeight_2 (int weight, int i, int j);
+void Weighted_GraphConstruction();
 
-void graphRandomConstruction();
+void Random_GraphConstruction();
+
+void WeightedRandom_GraphConstruction();
 
 void MST_Kruskals_Algorithm ();
 void makeSet(int x);
@@ -63,12 +68,10 @@ void MST_Prims_Algorithm ();
 int selectMinVertex (vector<int>& value, vector<bool>& setMST);
 int findMST (int graph[MAX][MAX]);
 
-void randomGraphConsUsingGraphicalWindow ();
-
 void Dijkstras_algorithm();
 int minDistance(int distance[], bool sptSet[]);
-void printSolution(int src, int dst, int distance[]);
-void dijkstra(int src, int dst);
+void printSolution(int src, int distance[]);
+void dijkstra(int src);
 
 
 #endif // HEADER_H

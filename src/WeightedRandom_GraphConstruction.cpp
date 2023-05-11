@@ -5,7 +5,7 @@
 #include <ctime> //for time(0) function
 
 
-void graphRandomConstruction() {
+void WeightedRandom_GraphConstruction() {
     int nodes, edges;
 
     cout << "Enter the number of nodes: ";
@@ -45,7 +45,7 @@ void graphRandomConstruction() {
       v = rand() % nodes;
 
       if (u != v && adj_matrix[u][v] == 0) {
-        adj_matrix[u][v] = rand() % 20 + 1; // generates random value from 1 to 20
+        adj_matrix[u][v] = rand() % 10 + 1; // generates random value from 1 to 20
 
         adj_matrix[v][u] = adj_matrix[u][v]; // Comment this line for directed graph
         GRAPH[u][v] = GRAPH[v][u] = adj_matrix[u][v];
@@ -78,15 +78,11 @@ void graphRandomConstruction() {
         if (adj_matrix[i][j] != 0) {
           line(x[i], y[i], x[j], y[j]);
           delay(1500);
+
+          showWeight_2(adj_matrix[i][j], i, j);
         }
       }
     }
-
-    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-    outtextxy(240, 550, "Please press any key to continue");
-
-    // Wait for user to close the window
-    getch();
 
 }
 

@@ -6,7 +6,7 @@
 void graphConnection (int u, int v)
 {
     setcolor(YELLOW);
-    //setlinestyle(0, 0, 2);
+    setlinestyle(0, 0, 2);
     line(x[u], y[u], x[v], y[v]);
     delay(1600);
 }
@@ -50,7 +50,7 @@ void nodeColor_2 (int u)
     //delay(1000);
 }
 
-void graphConsUsingGraphicalWindow()
+void UserInput_GraphConstruction()
 {
   int nodes, edges, srcNode;
 
@@ -92,6 +92,7 @@ void graphConsUsingGraphicalWindow()
 
   // Draw nodes as circles with numbers
   int radius = 20;
+  setlinestyle(0, 0, 1);
 
   settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
   for (int i = 0; i < nodes; i++) {

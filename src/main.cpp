@@ -31,11 +31,9 @@ int main ()
     // DFS();
     //VF2_graph_isomorphism();
     //A_star_algorithm();
-    //graphConstruction();
-    //graphConsUsingGraphicalWindow();
-    //graphRandomConstruction();
-    //randomGraphConsUsingGraphicalWindow ();
- 
+    //Weighted_GraphConstruction();
+    //UserInput_GraphConstruction();
+    //Random_GraphConstruction();
 
     return 0;
 }

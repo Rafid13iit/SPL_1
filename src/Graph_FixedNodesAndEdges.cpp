@@ -74,7 +74,15 @@ void showWeight ()
 void fixedGraphConnection (int u, int v)
 {
     setcolor(YELLOW);
-    //setlinestyle(0, 0, 2);
+    setlinestyle(0, 0, 2);
+    line(fixed_x[u], fixed_y[u], fixed_x[v], fixed_y[v]);
+    delay(1600);
+}
+
+void fixedGraphConnection_1 (int u, int v)
+{
+    setcolor(GREEN);
+    setlinestyle(0, 0, 2);
     line(fixed_x[u], fixed_y[u], fixed_x[v], fixed_y[v]);
     delay(1600);
 }
@@ -107,6 +115,20 @@ void fixedNodeColor_1 (int u)
 void fixedNodeColor_2 (int u)
 {
     setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(fixed_x[u], fixed_y[u], 20, 20);
+
+    string label = to_string(u);
+    int textWidth = textwidth(const_cast<char*>(label.c_str()));
+    int textHeight = textheight(const_cast<char*>(label.c_str()));
+
+    setcolor(WHITE);
+    outtextxy(fixed_x[u]-textWidth/2, fixed_y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    //delay(1000);
+}
+
+void fixedNodeColor_3 (int u)
+{
+    setfillstyle(SOLID_FILL, LIGHTCYAN);
     fillellipse(fixed_x[u], fixed_y[u], 20, 20);
 
     string label = to_string(u);
@@ -177,7 +199,7 @@ void Graph_FixedNodesAndEdges() {
     fixed_GRAPH[2][4] = fixed_GRAPH[4][2] = 4;
 
     setcolor(WHITE);
-
+    //setlinestyle(0, 0, 0);
 
     // Draw fixed nodes as circles with numbers
     int radius = 20;
