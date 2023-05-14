@@ -9,6 +9,7 @@ int SOURCE = 0;
 int CHOOSE = 0;
 
 int x[MAX], y[MAX];
+int prevNodeIndex[MAX];
 
 //for Fixed Graph
 int fixed_NODES, fixed_EDGES;

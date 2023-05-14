@@ -41,6 +41,7 @@ void fixedNodeColor_3 (int u);
 void fixedGraphConnection (int u, int v);
 void fixedGraphConnection_1 (int u, int v);
 void showWeight ();
+void showFixedNodeDistance(int node, int distance);
 void Graph_FixedNodesAndEdges();
 
 void graphConstruction();
@@ -49,6 +50,7 @@ void nodeColor (int u);
 void nodeColor_1 (int u);
 void nodeColor_2 (int u);
 void graphConnection (int u, int v);
+void showNodeDistance(int node, int distance);
 void UserInput_GraphConstruction();
 
 void showWeight_2 (int weight, int i, int j);

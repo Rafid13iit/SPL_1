@@ -11,6 +11,7 @@ extern int SOURCE;
 extern int CHOOSE;
 
 extern int x[MAX], y[MAX];
+extern int prevNodeIndex[MAX];
 
 //for Fixed Graph
 extern int fixed_NODES, fixed_EDGES;

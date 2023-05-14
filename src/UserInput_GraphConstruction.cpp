@@ -3,6 +3,15 @@
 
 //int x[MAX], y[MAX];
 
+void showNodeDistance(int node, int distance)
+{
+    string label;
+
+    label = to_string(distance);
+    outtextxy(x[node]+10, y[node]-40, const_cast<char*>(label.c_str()));
+    delay(500);
+}
+
 void graphConnection (int u, int v)
 {
     setcolor(YELLOW);

@@ -2,6 +2,20 @@
 #include <globalVariable.h>
 
 int fixed_x[MAX], fixed_y[MAX];
+int radius;
+int prevColor;
+
+void showFixedNodeDistance(int node, int distance)
+{
+    string label;
+
+    label = to_string(distance);
+    setcolor(LIGHTCYAN);
+    outtextxy(fixed_x[node]+6, fixed_y[node]-40, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    setcolor(prevColor);
+}
 
 void showWeight ()
 {
@@ -77,6 +91,8 @@ void fixedGraphConnection (int u, int v)
     setlinestyle(0, 0, 2);
     line(fixed_x[u], fixed_y[u], fixed_x[v], fixed_y[v]);
     delay(1600);
+
+    setcolor(prevColor);
 }
 
 void fixedGraphConnection_1 (int u, int v)
@@ -85,17 +101,19 @@ void fixedGraphConnection_1 (int u, int v)
     setlinestyle(0, 0, 2);
     line(fixed_x[u], fixed_y[u], fixed_x[v], fixed_y[v]);
     delay(1600);
+
+    setcolor(prevColor);
 }
 
 void fixedNodeColor (int u)
 {
     setcolor(YELLOW);
 
-    int radius = 20;
-    circle(fixed_x[u], fixed_y[u], radius);
     string label = to_string(u);
     outtextxy(fixed_x[u]-radius/2, fixed_y[u]-radius/2, const_cast<char*>(label.c_str()));
     delay(1000);
+
+    setcolor(prevColor);
 }
 
 void fixedNodeColor_1 (int u)
@@ -199,10 +217,12 @@ void Graph_FixedNodesAndEdges() {
     fixed_GRAPH[2][4] = fixed_GRAPH[4][2] = 4;
 
     setcolor(WHITE);
-    //setlinestyle(0, 0, 0);
+    prevColor = getcolor();
+
+    setlinestyle(0, 0, 1);
 
     // Draw fixed nodes as circles with numbers
-    int radius = 20;
+    radius = 20;
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     string label;

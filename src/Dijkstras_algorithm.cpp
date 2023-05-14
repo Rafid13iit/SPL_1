@@ -5,7 +5,7 @@
 int vertex, edge;
 int graph_G[MAX][MAX];
 int cost[MAX][MAX];
-int prevNodeIndex = 0;
+//int prevNodeIndex[MAX];
 
 //finds the vertex with minimum distance value,
 //from the set of vertices not yet included in shortest path tree
@@ -20,12 +20,9 @@ int minDistance(int distance[], bool sptSet[])
 		if (sptSet[i] == false && distance[i] <= min){
 			min = distance[i];
 
-            prevNodeIndex = min_index;
             min_index = i;
         }
     }
-
-    if (prevNodeIndex == -1) prevNodeIndex = 0;
 
 	return min_index;
 }
@@ -60,14 +57,20 @@ void dijkstra(int src)
 	// Distance of source vertex from itself is always 0
 	distance[src] = 0;
 
+    //updating distance value for Source
+    if (CHOOSE == 1) showFixedNodeDistance(src, distance[src]); // for fixed graph
+    else if (CHOOSE == 2) showNodeDistance(src, distance[src]); // for random graph
+    else showNodeDistance(src, distance[src]); // for user input graph
+
+
     // it finds shortest path for all vertices
     for (int count = 0; count < vertex-1; count++) {
 
 	    int u = minDistance(distance, sptSet);
 
-        if (CHOOSE == 1) fixedGraphConnection_1(prevNodeIndex, u); // for fixed graph
-        else if (CHOOSE == 2) graphConnection(prevNodeIndex, u); // for random graph
-        else graphConnection(prevNodeIndex, u); // for user input graph
+        if (CHOOSE == 1) fixedGraphConnection_1(prevNodeIndex[u], u); // for fixed graph
+        else if (CHOOSE == 2) graphConnection(prevNodeIndex[u], u); // for random graph
+        else graphConnection(prevNodeIndex[u], u); // for user input graph
 
         delay(2000);
 
@@ -86,6 +89,7 @@ void dijkstra(int src)
 			if (!sptSet[v] && (graph_G[u][v] != 0) && (distance[u] != INT_MAX) && (distance[u] + cost[u][v] < distance[v])){
 				
                 distance[v] = distance[u] + cost[u][v];
+                prevNodeIndex[v] = u;
 
                 if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
                 else if (CHOOSE == 2) graphConnection(u, v); // for random graph
@@ -97,7 +101,11 @@ void dijkstra(int src)
                 else if (CHOOSE == 2) nodeColor_1 (v); //for random graph
                 else nodeColor_1 (v); // for user input graph
 
-                delay(500);
+                //updating distance value
+                if (CHOOSE == 1) showFixedNodeDistance(v, distance[v]); // for fixed graph
+                else if (CHOOSE == 2) showNodeDistance(v, distance[v]); // for random graph
+                else showNodeDistance(v, distance[v]); // for user input graph
+                //delay(500);
             }
         }
 
@@ -105,7 +113,7 @@ void dijkstra(int src)
         else if (CHOOSE == 2) nodeColor_2 (u); //for random graph
         else nodeColor_2 (u); // for user input graph
 
-        delay(2000);
+        delay(500);
     }
 
 	printSolution(src, distance);
@@ -124,6 +132,7 @@ void Dijkstras_algorithm()
 
     memset(cost, INT_MAX, sizeof(cost));
     memset(graph_G, 0, sizeof(graph_G));
+    memset(prevNodeIndex, 0, sizeof(prevNodeIndex));
     
     int src;
 
@@ -135,7 +144,10 @@ void Dijkstras_algorithm()
         for (int i = 0; i < vertex; i++){
             for (int j = 0; j < vertex; j++){
                 graph_G[i][j] = fixed_GRAPH[i][j];
-                if (graph_G[i][j] != 0) cost[i][j] = graph_G[i][j];
+
+                if (graph_G[i][j] != 0) {
+                    cost[i][j] = graph_G[i][j];
+                }
             }
         }
 
