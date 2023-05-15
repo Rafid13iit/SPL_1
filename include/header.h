@@ -49,7 +49,9 @@ void graphConstruction();
 void nodeColor (int u);
 void nodeColor_1 (int u);
 void nodeColor_2 (int u);
+void nodeColor_3 (int u);
 void graphConnection (int u, int v);
+void graphConnection_1 (int u, int v);
 void showNodeDistance(int node, int distance);
 void UserInput_GraphConstruction();
 

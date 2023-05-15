@@ -8,6 +8,7 @@ void showNodeDistance(int node, int distance)
     string label;
 
     label = to_string(distance);
+    setcolor(LIGHTCYAN);
     outtextxy(x[node]+10, y[node]-40, const_cast<char*>(label.c_str()));
     delay(500);
 }
@@ -15,6 +16,14 @@ void showNodeDistance(int node, int distance)
 void graphConnection (int u, int v)
 {
     setcolor(YELLOW);
+    setlinestyle(0, 0, 2);
+    line(x[u], y[u], x[v], y[v]);
+    delay(1600);
+}
+
+void graphConnection_1 (int u, int v)
+{
+    setcolor(GREEN);
     setlinestyle(0, 0, 2);
     line(x[u], y[u], x[v], y[v]);
     delay(1600);
@@ -48,6 +57,20 @@ void nodeColor_1 (int u)
 void nodeColor_2 (int u)
 {
     setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(x[u], y[u], 20, 20);
+
+    string label = to_string(u);
+    int textWidth = textwidth(const_cast<char*>(label.c_str()));
+    int textHeight = textheight(const_cast<char*>(label.c_str()));
+
+    setcolor(WHITE);
+    outtextxy(x[u]-textWidth/2, y[u]-textHeight/2, const_cast<char*>(label.c_str()));
+    //delay(1000);
+}
+
+void nodeColor_3 (int u)
+{
+    setfillstyle(SOLID_FILL, LIGHTCYAN);
     fillellipse(x[u], y[u], 20, 20);
 
     string label = to_string(u);

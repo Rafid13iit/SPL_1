@@ -52,6 +52,7 @@ void dijkstra(int src)
 	for (int i = 0; i < vertex; i++){
 		distance[i] = INT_MAX;
         sptSet[i] = false;
+        prevNodeIndex[i] = 0;
     }
 
 	// Distance of source vertex from itself is always 0
@@ -64,21 +65,21 @@ void dijkstra(int src)
 
 
     // it finds shortest path for all vertices
-    for (int count = 0; count < vertex-1; count++) {
+    for (int count = 0; count < vertex; count++) {
 
 	    int u = minDistance(distance, sptSet);
 
         if (CHOOSE == 1) fixedGraphConnection_1(prevNodeIndex[u], u); // for fixed graph
-        else if (CHOOSE == 2) graphConnection(prevNodeIndex[u], u); // for random graph
-        else graphConnection(prevNodeIndex[u], u); // for user input graph
+        else if (CHOOSE == 2) graphConnection_1(prevNodeIndex[u], u); // for random graph
+        else graphConnection_1(prevNodeIndex[u], u); // for user input graph
 
-        delay(2000);
+        delay(1000);
 
         if (CHOOSE == 1) fixedNodeColor_3 (u); // for fixed graph
-        else if (CHOOSE == 2) nodeColor_1 (u); //for random graph
-        else nodeColor_1 (u); // for user input graph
+        else if (CHOOSE == 2) nodeColor_3 (u); //for random graph
+        else nodeColor_3 (u); // for user input graph
 
-        delay(2000);
+        delay(1000);
 
 		// Marking the picked vertex as processed
 		sptSet[u] = true;
@@ -132,7 +133,6 @@ void Dijkstras_algorithm()
 
     memset(cost, INT_MAX, sizeof(cost));
     memset(graph_G, 0, sizeof(graph_G));
-    memset(prevNodeIndex, 0, sizeof(prevNodeIndex));
     
     int src;
 
