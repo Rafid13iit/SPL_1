@@ -110,11 +110,13 @@ void dijkstra(int src)
             }
         }
 
+        delay(400);
+        
         if (CHOOSE == 1) fixedNodeColor_2 (u); // for fixed graph
         else if (CHOOSE == 2) nodeColor_2 (u); //for random graph
         else nodeColor_2 (u); // for user input graph
 
-        delay(500);
+        delay(1000);
     }
 
 	printSolution(src, distance);
