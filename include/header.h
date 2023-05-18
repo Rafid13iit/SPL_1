@@ -22,9 +22,7 @@ void graphOptions();
 void Graphics_MENU();
 
 void VF2_graph_isomorphism();
-bool check(int u1, int u2);
-bool dfs(int u1, int u2);
-bool isIsomorphic();
+bool isIsomorphic(const vector<vector<int>>& g1, const vector<vector<int>>& g2);
 
 void A_star_algorithm();
 int Astar(int sx, int sy, int ex, int ey, int width, int height);

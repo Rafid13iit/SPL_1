@@ -94,6 +94,8 @@ void showList()
     outtextxy(50, y, "Connectivity Eulerian Path finding (Fleury's)");
     y += 40;
     outtextxy(50, y, "Strongly Connected Components (Tarjan's)");
+    y += 40;
+    outtextxy(50, y, "Isomorphishm (VF2)");
 
 
     while (1) {
@@ -113,42 +115,27 @@ void showList()
                 outtextxy(400, 30, "BFS");
 
                 graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "BFS");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "BFS");
-
                     Graph_FixedNodesAndEdges();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "BFS");
-
                     Random_GraphConstruction();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "BFS");
-
                     UserInput_GraphConstruction();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
 
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
+
                 BFS();
+
                 break;
             }
 
@@ -161,40 +148,24 @@ void showList()
                 outtextxy(400, 30, "DFS");
 
                 graphOptions();
+                    
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "DFS");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "DFS");
-
                     Graph_FixedNodesAndEdges();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "DFS");
-
                     Random_GraphConstruction();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "DFS");
-
                     UserInput_GraphConstruction();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 DFS();
                 break;
@@ -209,52 +180,33 @@ void showList()
                 outtextxy(400, 30, "Dijkstras");
 
                 graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Dijkstras");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Dijkstras");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Dijkstras");
-
                     WeightedRandom_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Dijkstras");
-
                     Weighted_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 Dijkstras_algorithm();
                 break;
             }
 
-            else if (x > 50 && x < 270 && y > 230 && y < 250) {
+            else if (x > 50 && x < 280 && y > 230 && y < 250) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -263,46 +215,27 @@ void showList()
                 outtextxy(400, 30, "A* algorithm");
 
                 graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "A* algorithm");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "A* algorithm");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "A* algorithm");
-
                     WeightedRandom_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "A* algorithm");
-
                     Weighted_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 A_star_algorithm();
                 break;
@@ -318,45 +251,26 @@ void showList()
 
                 graphOptions();
                 
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Johnson's");
+                
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Johnson's");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Johnson's");
-
                     WeightedRandom_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Johnson's");
-
                     Weighted_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 //Johnsons();
                 break;
@@ -371,46 +285,27 @@ void showList()
                 outtextxy(400, 30, "Prims");
 
                 graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Prims");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Prims");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Prims");
-
                     WeightedRandom_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Prims");
-
                     Weighted_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 MST_Prims_Algorithm();
                 break;
@@ -426,45 +321,26 @@ void showList()
 
                 graphOptions();
                 
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Kruskals");
+                
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Kruskals");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Kruskals");
-
                     WeightedRandom_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Kruskals");
-
                     Weighted_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
                 
                 MST_Kruskals_Algorithm();
                 break;
@@ -480,45 +356,26 @@ void showList()
 
                 graphOptions();
                 
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Fleurys");
+
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Fleurys");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Fleurys");
-
                     Random_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Fleurys");
-
                     UserInput_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
+                
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
 
                 //Fleurys();
                 break;
@@ -533,48 +390,64 @@ void showList()
                 outtextxy(400, 30, "Tarjans");
 
                 graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Tarjans");
                 
                 if (CHOOSE == 1){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Tarjans");
-
                     Graph_FixedNodesAndEdges();
-
                     showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else if (CHOOSE == 2){
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Tarjans");
-
                     Random_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
                 else{
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                    outtextxy(400, 30, "Tarjans");
-
                     UserInput_GraphConstruction();
-
                     //showWeight();
-
-                    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                    outtextxy(240, 550, "Please press any key to continue");
-
-                    getch(); // waits for user to press any key
                 }
 
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
+
                 //Tarjans();
+                break;
+            }
+
+            else if (x > 50 && x < 290 && y > 470 && y < 490) {
+                // button was clicked
+                cleardevice();
+                delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "VF2");
+
+                graphOptions();
+                
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "VF2");
+                
+                if (CHOOSE == 1){
+                    Graph_FixedNodesAndEdges();
+                    showWeight();
+                }
+                else if (CHOOSE == 2){
+                    Random_GraphConstruction();
+                    //showWeight();
+                }
+                else{
+                    UserInput_GraphConstruction();
+                    //showWeight();
+                }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
+
+                VF2_graph_isomorphism();
                 break;
             }
         }
