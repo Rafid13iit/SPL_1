@@ -51,14 +51,6 @@ void graphOptions ()
     }
 }
 
-void openGraphicalWindow()
-{
-    int gd = DETECT, gm;
-    //initgraph(&gd, &gm, "");
-    initwindow(900, 600, "Graph Algorithm Implementation & Visualization");
-    //initwindow() function is used instead of initgraph()
-}
-
 void drawButton(int x, int y, int width, int height) 
 {
     line(x, y, width, height);
@@ -457,20 +449,28 @@ void showList()
 
 }
 
+
+void openGraphicalWindow()
+{
+    int gd = DETECT, gm;
+    //initgraph(&gd, &gm, "");
+    initwindow(900, 680, "Graph Algorithm Implementation & Visualization");
+    //initwindow() function is used instead of initgraph()
+}
+
 void Graphics_MENU() 
 {
     
     drawButton(50, 50, 100, 50);
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 4);
+    outtextxy(200, 190, "***************************");
 
-    outtextxy(200, 140, "***************************");
+    outtextxy(350, 260, "Welcome");
+    outtextxy(425, 310, "to");
+    outtextxy(260, 360, "Graph Algorithms");
 
-    outtextxy(350, 200, "Welcome");
-    outtextxy(425, 250, "to");
-    outtextxy(260, 300, "Graph Algorithms");
-
-    outtextxy(200, 380, "***************************");
+    outtextxy(200, 440, "***************************");
 
     while (1) {
         int x = mousex();
