@@ -2,6 +2,18 @@
 #include <globalVariable.h>
 
 
+void prevWindowArrow ()
+{
+    //this part is for to go back to the previous window
+    int x2 = 50;
+    int y2 = 70;
+    // Draw the arrow line
+    line(x2, y2, x2 + 60, y2);
+    // Draw the arrowhead
+    line(x2, y2, x2 + 30, y2 - 20);
+    line(x2, y2, x2 + 30, y2 + 20);
+}
+
 void graphOptions ()
 {
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
@@ -59,35 +71,40 @@ void drawButton(int x, int y, int width, int height)
 }
 
 
-void showList() 
+void showList()
 {
     int y = 50;
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
 
     outtextxy(400, y, "MENU");
-    y += 60;
+    y += 90;
+
+
+    prevWindowArrow ();
+    
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 1);
 
-    outtextxy(50, y, "BFS");
+    outtextxy(100, y, "BFS");
     y += 40;
-    outtextxy(50, y, "DFS");
+    outtextxy(100, y, "DFS");
     y += 40;
-    outtextxy(50, y, "Shortest path (Dijkstra's)");
+    outtextxy(100, y, "Shortest path (Dijkstra's)");
     y += 40;
-    outtextxy(50, y, "Shortest path (A*)");
+    outtextxy(100, y, "Shortest path (A*)");
     y += 40;
-    outtextxy(50, y, "Shortest path (Johnson's)");
+    outtextxy(100, y, "Shortest path (Johnson's)");
     y += 40;
-    outtextxy(50, y, "Minimum spanning tree (Prim's)");
+    outtextxy(100, y, "Minimum spanning tree (Prim's)");
     y += 40;
-    outtextxy(50, y, "Minimum spanning tree (Kruskal's)");
+    outtextxy(100, y, "Minimum spanning tree (Kruskal's)");
     y += 40;
-    outtextxy(50, y, "Connectivity Eulerian Path finding (Fleury's)");
+    outtextxy(100, y, "Connectivity Eulerian Path finding (Fleury's)");
     y += 40;
-    outtextxy(50, y, "Strongly Connected Components (Tarjan's)");
+    outtextxy(100, y, "Strongly Connected Components (Tarjan's)");
     y += 40;
-    outtextxy(50, y, "Isomorphishm (VF2)");
+    outtextxy(100, y, "Isomorphishm (VF2)");
+
 
 
     while (1) {
@@ -98,7 +115,17 @@ void showList()
         if (ismouseclick(WM_LBUTTONDOWN)) {
             clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
 
-            if (x > 50 && x < 120 && y > 110 && y < 130) {
+            ////this part is for to go back to the previous window
+            if (x > 50 && x < 110 && y > 50 && y < 90) {
+                // button was clicked
+                cleardevice();
+                delay(100);
+                //getch();
+                Graphics_MENU();
+                //break;
+            }
+
+            else if (x > 100 && x < 170 && y > 140 && y < 160) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -131,7 +158,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 120 && y > 150 && y < 170) {
+            else if (x > 100 && x < 170 && y > 180 && y < 200) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -163,7 +190,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 370 && y > 190 && y < 210) {
+            else if (x > 100 && x < 420 && y > 210 && y < 240) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -198,7 +225,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 280 && y > 230 && y < 250) {
+            else if (x > 100 && x < 330 && y > 260 && y < 280) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -233,7 +260,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 370 && y > 270 && y < 290) {
+            else if (x > 100 && x < 420 && y > 300 && y < 320) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -268,7 +295,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 430 && y > 310 && y < 330) {
+            else if (x > 100 && x < 480 && y > 340 && y < 360) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -303,7 +330,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 470 && y > 350 && y < 370) {
+            else if (x > 100 && x < 520 && y > 380 && y < 400) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -338,7 +365,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 570 && y > 390 && y < 410) {
+            else if (x > 100 && x < 620 && y > 420 && y < 440) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -373,7 +400,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 570 && y > 430 && y < 450) {
+            else if (x > 100 && x < 620 && y > 460 && y < 480) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -408,7 +435,7 @@ void showList()
                 break;
             }
 
-            else if (x > 50 && x < 290 && y > 470 && y < 490) {
+            else if (x > 100 && x < 340 && y > 500 && y < 520) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -476,6 +503,7 @@ void Graphics_MENU()
         int x = mousex();
         int y = mousey();
         if (ismouseclick(WM_LBUTTONDOWN)) {
+            clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
             if (x > 50 && x < 100 && y > 50 && y < 90) {
                 // button was clicked
                 cleardevice();
@@ -488,6 +516,6 @@ void Graphics_MENU()
     }
 
     getch();
-    closegraph();
+    //closegraph();
  
 }
