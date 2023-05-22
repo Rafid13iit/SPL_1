@@ -62,6 +62,22 @@ void fleuryAlgorithm(vector<vector<int>>& graph, int start) {
             int cnt = dfs(graph, start, v, visited);
             if (cnt - v_count <= 2) {
                 cout << "Edge: " << start << " -> " << v << endl;
+
+                if (CHOOSE == 1) fixedNodeColor_1 (start); // for fixed graph
+                else if (CHOOSE == 2) nodeColor_1 (start); //for random graph
+                else nodeColor_1 (start); // for user input graph
+                delay(500);
+
+                if (CHOOSE == 1) fixedGraphConnection(start, v); // for fixed graph
+                else if (CHOOSE == 2) graphConnection(start, v); // for random graph
+                else graphConnection(start, v); // for user input graph
+                delay(500);
+
+                if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
+                else if (CHOOSE == 2) nodeColor_1 (v); //for random graph
+                else nodeColor_1 (v); // for user input graph
+                delay(500);
+
                 if (isBridge(graph, v, start))
                     v_count--;
                 graph[start][v] = graph[v][start] = 0;

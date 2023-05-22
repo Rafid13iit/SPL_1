@@ -4,14 +4,18 @@
 
 void prevWindowArrow ()
 {
+    setcolor(YELLOW);
     //this part is for to go back to the previous window
     int x2 = 50;
     int y2 = 70;
     // Draw the arrow line
+    setlinestyle(0, 0, 2);
     line(x2, y2, x2 + 60, y2);
     // Draw the arrowhead
     line(x2, y2, x2 + 30, y2 - 20);
     line(x2, y2, x2 + 30, y2 + 20);
+
+    setcolor(WHITE);
 }
 
 void graphOptions ()
@@ -77,6 +81,7 @@ void graphOptions ()
 
 void drawButton(int x, int y, int width, int height) 
 {
+    setlinestyle(0, 0, 2);
     line(x, y, width, height);
     line(x, y+20, width, height+20);
     line(x, y+40, width, height+40);
@@ -88,6 +93,7 @@ void showList()
     int y = 50;
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
 
+    setcolor(YELLOW);
     outtextxy(400, y, "MENU");
     y += 90;
 
@@ -96,6 +102,7 @@ void showList()
     
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 1);
+    setcolor(WHITE);
 
     outtextxy(100, y, "BFS");
     y += 40;
@@ -498,18 +505,29 @@ void openGraphicalWindow()
 
 void Graphics_MENU() 
 {
-    
+    setcolor(YELLOW);
     drawButton(50, 50, 100, 50);
 
-    settextstyle(GOTHIC_FONT, HORIZ_DIR, 4);
-    outtextxy(200, 190, "***************************");
 
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 4);
+
+    outtextxy(200, 190, "***************************");
+    for (int i = 205; i < 440; i += 15){
+        outtextxy(200, i, "*");
+    }
+
+    setcolor(LIGHTCYAN);
     outtextxy(350, 260, "Welcome");
     outtextxy(425, 310, "to");
     outtextxy(260, 360, "Graph Algorithms");
 
-    outtextxy(200, 440, "***************************");
+    setcolor(YELLOW);
+    for (int i = 205; i < 440; i += 15){
+        outtextxy(668, i, "*");
+    }
+    outtextxy(200, 445, "***************************");
 
+    setcolor(WHITE);
     while (1) {
         int x = mousex();
         int y = mousey();
