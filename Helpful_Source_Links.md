@@ -11,3 +11,5 @@
 5. https://www.gatevidyalay.com/graph-isomorphism/
 
 6. https://www.techcrashcourse.com/2015/08/c-program-draw-bar-graph-using-graphics.html?m=1
+
+7. https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm
