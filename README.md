@@ -19,5 +19,8 @@ C, C++, Visual Studio, Codeblocks, Git, Github
 
 ### Supervisor’s Name: 
 Kishan Kumar Ganguly
+Assistant Professor,
+Institute of Information Technology (IIT),
+University of Dhaka (DU)
 
 
