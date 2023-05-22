@@ -18,9 +18,9 @@ To visualize the algorithms, I will create interactive visualizations that allow
 C, C++, Visual Studio, Codeblocks, Git, Github
 
 ### Supervisor’s Name: 
-Kishan Kumar Ganguly\n
-Assistant Professor,\n
-Institute of Information Technology (IIT),\n
+Kishan Kumar Ganguly<br>
+Assistant Professor,<br>
+Institute of Information Technology (IIT),<br>
 University of Dhaka (DU)
 
 
