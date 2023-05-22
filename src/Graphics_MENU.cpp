@@ -391,7 +391,7 @@ void showList()
 
                 if (CHOOSE == 1){
                     Graph_FixedNodesAndEdges();
-                    showWeight();
+                    //showWeight();
                 }
                 else if (CHOOSE == 2){
                     Random_GraphConstruction();
@@ -407,7 +407,7 @@ void showList()
 
                 getch(); // waits for user to press any key
 
-                //Fleurys();
+                EulerianPathFind_Fleurys();
                 break;
             }
 

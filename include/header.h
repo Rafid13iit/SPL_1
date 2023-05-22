@@ -23,15 +23,12 @@ void graphOptions();
 void Graphics_MENU();
 
 void VF2_graph_isomorphism();
-bool isIsomorphic();
 
 void A_star_algorithm();
-int Astar(int sx, int sy, int ex, int ey, int width, int height);
 
 void BFS();
 
 void DFS();
-void DFS_algorithm(int node);
 
 void fixedNodeColor (int u);
 void fixedNodeColor_1 (int u);
@@ -62,19 +59,12 @@ void Random_GraphConstruction();
 void WeightedRandom_GraphConstruction();
 
 void MST_Kruskals_Algorithm ();
-void makeSet(int x);
-ll findParent (ll x);
-void makeUnion (ll u, ll v);
-ll kruskal (ll nodes, ll edges);
 
 void MST_Prims_Algorithm ();
-int selectMinVertex (vector<int>& value, vector<bool>& setMST);
-int findMST (int graph[MAX][MAX]);
 
 void Dijkstras_algorithm();
-int minDistance(int distance[], bool sptSet[]);
-void printSolution(int src, int distance[]);
-void dijkstra(int src);
+
+void EulerianPathFind_Fleurys();
 
 
 #endif // HEADER_H
