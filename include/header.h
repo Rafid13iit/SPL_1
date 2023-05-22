@@ -16,6 +16,7 @@ typedef unsigned long long int llu;
 
 //Function Calls
 void openGraphicalWindow();
+void prevWindowArrow ();
 void drawButton(int x, int y, int width, int height);
 void showList();
 void graphOptions();

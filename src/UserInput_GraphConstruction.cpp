@@ -154,8 +154,6 @@ void UserInput_GraphConstruction()
   // Wait for user to close the window
   getch();
 
-  //closegraph();
-
 }
 
 /*

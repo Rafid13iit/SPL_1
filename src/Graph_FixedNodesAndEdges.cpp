@@ -295,9 +295,6 @@ void Graph_FixedNodesAndEdges() {
       }
     }
     
-    //showWeight();
-    
-    //getch()
 
 }
 

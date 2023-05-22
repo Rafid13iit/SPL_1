@@ -16,6 +16,8 @@ void prevWindowArrow ()
 
 void graphOptions ()
 {
+    prevWindowArrow();
+
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
 
     outtextxy(100, 150, "1. Implement algorithm in a Fixed graph");
@@ -30,7 +32,17 @@ void graphOptions ()
         if (ismouseclick(WM_LBUTTONDOWN)) {
             clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
 
-            if (x > 100 && x < 620 && y > 150 && y < 170) {
+            ////this part is for to go back to the previous window
+            if (x > 50 && x < 110 && y > 50 && y < 90) {
+                // button was clicked
+                cleardevice();
+                delay(100);
+                //getch();
+                showList();
+                //break;
+            }
+
+            else if (x > 100 && x < 620 && y > 150 && y < 170) {
     
                 cleardevice();
                 delay(100);
@@ -154,7 +166,6 @@ void showList()
                 getch(); // waits for user to press any key
 
                 BFS();
-
                 break;
             }
 

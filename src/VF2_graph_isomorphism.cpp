@@ -66,6 +66,24 @@ bool isIsomorphic() {
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     outtextxy(300, 550, "Successfully ended...");
+
+
+    prevWindowArrow();
+
+    int x = mousex();
+    int y = mousey();
+    if (ismouseclick(WM_LBUTTONDOWN)) {
+        clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+        if (x > 50 && x < 110 && y > 50 && y < 90) {
+            // button was clicked
+            cleardevice();
+            delay(100);
+            //getch();
+            showList();
+            //break;
+        }
+    } 
+    
 }
 
 //Example 1
