@@ -1,4 +1,4 @@
-# Title : Graph Algorithm Implementation and Visualization
+# Title : Graph Algorithm Implementation & Visualization
 
 ## Project Description: 
 
