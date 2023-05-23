@@ -432,8 +432,8 @@ void showList()
                 outtextxy(400, 30, "Tarjans");
                 
                 if (CHOOSE == 1){
-                    Graph_FixedNodesAndEdges();
-                    showWeight();
+                    Directed_FixedGraph();
+                    //showWeight();
                 }
                 else if (CHOOSE == 2){
                     Random_GraphConstruction();
@@ -449,7 +449,7 @@ void showList()
 
                 getch(); // waits for user to press any key
 
-                //Tarjans();
+                TarjansAlgo_SCC();
                 break;
             }
 

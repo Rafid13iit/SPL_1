@@ -8,6 +8,7 @@ using namespace std;
 
 #include <cstdlib> //it's used for the srand(), rand() functions, which generates random numbers.
 #include <ctime> //for time(0) function
+#include <cmath>
 
 typedef long long int ll;
 typedef unsigned long long int llu;
@@ -40,6 +41,9 @@ void showWeight ();
 void showFixedNodeDistance(int node, int distance);
 void Graph_FixedNodesAndEdges();
 
+void drawDirectedLine(int startX, int startY, int endX, int endY);
+void Directed_FixedGraph ();
+
 void graphConstruction();
 
 void nodeColor (int u);
@@ -65,6 +69,8 @@ void MST_Prims_Algorithm ();
 void Dijkstras_algorithm();
 
 void EulerianPathFind_Fleurys();
+
+void TarjansAlgo_SCC();
 
 
 #endif // HEADER_H

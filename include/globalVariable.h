@@ -19,5 +19,11 @@ extern int fixed_U, fixed_V, fixed_WEIGHT;
 extern int fixed_GRAPH[MAX][MAX];
 extern int fixed_SOURCE;
 
+//for Directed Fixed Graph
+extern int directedFixed_NODES, directedFixed_EDGES;
+extern int directedFixed_U, directedFixed_V, directedFixed_WEIGHT;
+extern int directedFixed_GRAPH[MAX][MAX];
+extern int directedFixed_SOURCE;
+
 
 #endif // GLOBALVARIABLE_H

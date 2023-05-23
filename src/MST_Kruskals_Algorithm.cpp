@@ -101,6 +101,12 @@ void MST_Kruskals_Algorithm ()
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
+    circle(715, 70, 15);
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(715, 70, 15, 15);
+    outtextxy(735, 47, "minimum");
+    outtextxy(735, 68, "spanning tree");
+
     if (CHOOSE == 1){
         //for Fixed Graph
         nodes_K = fixed_NODES;

@@ -17,6 +17,12 @@ int fixed_U, fixed_V, fixed_WEIGHT;
 int fixed_GRAPH[MAX][MAX];
 int fixed_SOURCE = 0;
 
+//for Directed Fixed Graph
+int directedFixed_NODES, directedFixed_EDGES;
+int directedFixed_U, directedFixed_V, directedFixed_WEIGHT;
+int directedFixed_GRAPH[MAX][MAX];
+int directedFixed_SOURCE = 0;
+
 
 int main ()
 {
