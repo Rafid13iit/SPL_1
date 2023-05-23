@@ -17,6 +17,16 @@ void BFS()
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
+    circle(750, 70, 15);
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(750, 70, 15, 15);
+    outtextxy(770, 58, "visiting");
+
+    circle(750, 120, 15);
+    setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(750, 120, 15, 15);
+    outtextxy(770, 108, "invented");
+
     int nodeCount, edgeCount;
     int sourceNode;
 

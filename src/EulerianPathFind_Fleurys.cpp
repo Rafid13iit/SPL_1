@@ -93,6 +93,11 @@ void EulerianPathFind_Fleurys() {
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
+    circle(730, 70, 15);
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(730, 70, 15, 15);
+    outtextxy(750, 58, "euler path");
+
     int n, m;
     vector<vector<int>> graphForEulerPathFind(MAX, vector<int>(MAX, 0));
     
@@ -164,3 +169,28 @@ void EulerianPathFind_Fleurys() {
     }
 
 }
+
+/*
+6
+8
+0 1
+0 2
+1 2
+1 3
+1 4
+3 4
+3 5
+4 5
+
+output:
+
+Euler Path:
+Edge: 3 -> 1
+Edge: 1 -> 0
+Edge: 0 -> 2
+Edge: 2 -> 1
+Edge: 1 -> 4
+Edge: 4 -> 3
+Edge: 3 -> 5
+Edge: 5 -> 4
+*/

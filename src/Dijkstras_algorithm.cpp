@@ -133,6 +133,21 @@ void Dijkstras_algorithm()
     setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
     bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
+    circle(700, 70, 15);
+    setfillstyle(SOLID_FILL, LIGHTCYAN);
+    fillellipse(700, 70, 15, 15);
+    outtextxy(720, 58, "selected node");
+
+    circle(700, 120, 15);
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(700, 120, 15, 15);
+    outtextxy(720, 108, "neighbour");
+
+    circle(700, 170, 15);
+    setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(700, 170, 15, 15);
+    outtextxy(720, 158, "shortest path");
+
     memset(cost, INT_MAX, sizeof(cost));
     memset(graph_G, 0, sizeof(graph_G));
     

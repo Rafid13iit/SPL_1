@@ -499,7 +499,7 @@ void openGraphicalWindow()
 {
     int gd = DETECT, gm;
     //initgraph(&gd, &gm, "");
-    initwindow(900, 680, "Graph Algorithm Implementation & Visualization");
+    initwindow(920, 680, "Graph Algorithm Implementation & Visualization");
     //initwindow() function is used instead of initgraph()
 }
 
