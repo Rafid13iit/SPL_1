@@ -13,3 +13,5 @@
 6. https://www.techcrashcourse.com/2015/08/c-program-draw-bar-graph-using-graphics.html?m=1
 
 7. https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm
+
+8. https://www.youtube.com/watch?v=DgXR2OWQnLc&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P 
