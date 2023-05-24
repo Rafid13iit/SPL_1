@@ -2,45 +2,47 @@
 #include <globalVariable.h>
 
 //structure can be used here
-int vertex, edge;
-int graph_G[MAX][MAX];
-int cost[MAX][MAX];
+int vertex1, edge1;
+int graphForBellman[MAX][MAX];
+int Cost[MAX][MAX];
 
 
-void printSolution(int src, int dst, int distance[])
+void printSolutionBellmanFord(int src, int distance[])
 {
-    if (distance[dst] == INT_MAX) {
-        cout << "There is no path from vertex " << src << " to vertex " << dst << endl;
-    }
+    for (int i = 1; i < vertex1; i++){
+        if (distance[i] == INT_MAX) {
+            cout << "There is no path from vertex " << src << " to vertex " << i << endl;
+        }
 
-    else{
-        cout << "SoureVertex \t DestinationVertex \t Distance from Source" << endl;
-        cout << "     " << src << " \t\t\t" << dst << " \t\t\t" << distance[dst] << endl;
+        else{
+            cout << "SoureVertex \t DestinationVertex \t Distance from Source" << endl;
+            cout << "     " << src << " \t\t\t" << i << " \t\t\t" << distance[i] << endl;
+        }
     }
 }
 
 
-void bellmanFord(int src, int dst)
+void bellmanFord(int src)
 {
-	int distance[vertex];
+	int distance[vertex1];
 
 	// Initializes all distances as INFINITE
-	for (int i = 0; i < vertex; i++){
+	for (int i = 0; i < vertex1; i++){
 		distance[i] = INT_MAX;
     }
 
-	// Distance of source vertex from itself is always 0
+	// Distance of source vertex1 from itself is always 0
 	distance[src] = 0;
 
-    for (int count = 1; count <= vertex-1; count++){
+    for (int count = 1; count <= vertex1-1; count++){
 
-        // Updating distance value of the adjacent vertices of the picked vertex.
-        for (int u = 0; u < vertex; u++) {
-            for (int v = 0; v < vertex; v++){
+        // Updating distance value of the adjacent vertices of the picked vertex1.
+        for (int u = 0; u < vertex1; u++) {
+            for (int v = 0; v < vertex1; v++){
 
-                if ((graph_G[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + cost[u][v] < distance[v])){
+                if ((graphForBellman[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
                     
-                    distance[v] = distance[u] + cost[u][v];
+                    distance[v] = distance[u] + Cost[u][v];
                 }
             }
         }
@@ -52,10 +54,10 @@ void bellmanFord(int src, int dst)
     // step guarantees shortest distances if graph doesn't
     // contain negative weight cycle.  If we get a shorter
     // path, then there is a cycle.
-    for (int u = 0; u < vertex; u++) {
-		for (int v = 0; v < vertex; v++){
+    for (int u = 0; u < vertex1; u++) {
+		for (int v = 0; v < vertex1; v++){
 
-			if ((graph_G[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + cost[u][v] < distance[v])){
+			if ((graphForBellman[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
 				
                 cout << "Graph contains negative weight cycle!" << endl;
                 return ; // If negative cycle is detected, simply returned
@@ -64,37 +66,117 @@ void bellmanFord(int src, int dst)
     }
 	
 
-	printSolution(src, dst, distance);
+	printSolutionBellmanFord(src, distance);
 }
 
 
 void BellmanFord_algorithm()
 {
-    cout << "Enter the number of vertices : ";
-    cin >> vertex;
-    cout << "Enter the number of edges : ";
-    cin >> edge;
+    // settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+    // outtextxy(400, 30, "Dijkstras");
+    
+    // Graph_FixedNodesAndEdges();
 
-    int u, v, w;
-    memset(cost, INT_MAX, sizeof(cost));
-    memset(graph_G, -1, sizeof(graph_G));
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
 
-    cout << "Enter edges (u to v) and its costs :" << endl;
-    for (int i = 0; i < edge; i++){
-        cin >> u >> v >> w;
+    circle(700, 70, 15);
+    setfillstyle(SOLID_FILL, LIGHTCYAN);
+    fillellipse(700, 70, 15, 15);
+    outtextxy(720, 58, "selected node");
 
-        //Directed Graph
-        graph_G[u][v] = 1;
-        cost[u][v] = w;
+    circle(700, 120, 15);
+    setfillstyle(SOLID_FILL, YELLOW);
+    fillellipse(700, 120, 15, 15);
+    outtextxy(720, 108, "neighbour");
+
+    circle(700, 170, 15);
+    setfillstyle(SOLID_FILL, GREEN);
+    fillellipse(700, 170, 15, 15);
+    outtextxy(720, 158, "shortest path");
+
+
+    memset(Cost, INT_MAX, sizeof(Cost));
+    memset(graphForBellman, -1, sizeof(graphForBellman));
+
+    int sreForBellman;
+
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        vertex1 = fixed_NODES;
+        edge1 = fixed_EDGES;
+        
+        for (int i = 0; i < vertex1; i++){
+            for (int j = 0; j < vertex1; j++){
+                graphForBellman[i][j] = fixed_GRAPH[i][j];
+
+                if (graphForBellman[i][j] != 0) {
+                    Cost[i][j] = graphForBellman[i][j];
+                }
+            }
+        }
+
+        sreForBellman = SOURCE;
+
     }
 
-    int src, dst;
+    else if (CHOOSE == 2){
+        //for Random Input
+        vertex1 = NODES;
+        edge1 = EDGES;
+        
+        for (int i = 0; i < vertex1; i++){
+            for (int j = 0; j < vertex1; j++){
+                graphForBellman[i][j] = GRAPH[i][j];
+                if (graphForBellman[i][j] != 0) Cost[i][j] = graphForBellman[i][j];
+            }
+        }
 
-    cout << "Enter source and destination vertex : ";
-    cin >> src >> dst;
+        sreForBellman = SOURCE;
+
+    }
+
+    else {
+        //for User Input
+        vertex1 = NODES;
+        edge1 = EDGES;
+        
+        for (int i = 0; i < vertex1; i++){
+            for (int j = 0; j < vertex1; j++){
+                graphForBellman[i][j] = GRAPH[i][j];
+                if (graphForBellman[i][j] != 0) Cost[i][j] = graphForBellman[i][j];
+            }
+        }
+        
+        sreForBellman = SOURCE;
+
+    }
 
 	// Function call
-	bellmanFord(src, dst);
+	bellmanFord(sreForBellman);
+
+
+    settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+    outtextxy(300, 550, "Successfully ended...");
+
+
+    prevWindowArrow();
+
+    int x = mousex();
+    int y = mousey();
+    if (ismouseclick(WM_LBUTTONDOWN)) {
+        clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+        if (x > 50 && x < 110 && y > 50 && y < 90) {
+            // button was clicked
+            cleardevice();
+            delay(100);
+            //getch();
+            showList();
+            //break;
+        }
+    } 
+
+}
 
 
 
