@@ -30,11 +30,20 @@ void showWeight ()
     outtextxy(x, y, const_cast<char*>(label.c_str()));
     delay(500);
 
-    label = to_string(4);
-    x = (fixed_x[1] + fixed_x[2]) / 2;
-    y = (fixed_y[1] + fixed_y[2]) / 2 - 20;
-    outtextxy(x, y, const_cast<char*>(label.c_str()));
-    delay(500);
+    if (COUNT == 1){
+      label = to_string(-4);
+      x = (fixed_x[1] + fixed_x[2]) / 2;
+      y = (fixed_y[1] + fixed_y[2]) / 2 - 20;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+    else {
+      label = to_string(4);
+      x = (fixed_x[1] + fixed_x[2]) / 2;
+      y = (fixed_y[1] + fixed_y[2]) / 2 - 20;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
 
     label = to_string(3);
     x = (fixed_x[2] + fixed_x[3]) / 2 + 15;
@@ -48,11 +57,20 @@ void showWeight ()
     outtextxy(x, y, const_cast<char*>(label.c_str()));
     delay(500);
 
-    label = to_string(3);
-    x = (fixed_x[4] + fixed_x[5]) / 2;
-    y = (fixed_y[4] + fixed_y[5]) / 2 + 5;
-    outtextxy(x, y, const_cast<char*>(label.c_str()));
-    delay(500);
+    if (COUNT == 1){
+      label = to_string(-3);
+      x = (fixed_x[4] + fixed_x[5]) / 2;
+      y = (fixed_y[4] + fixed_y[5]) / 2 + 5;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+    else{
+      label = to_string(3);
+      x = (fixed_x[4] + fixed_x[5]) / 2;
+      y = (fixed_y[4] + fixed_y[5]) / 2 + 5;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
 
     label = to_string(1);
     x = (fixed_x[0] + fixed_x[5]) / 2 - 20;
@@ -180,9 +198,17 @@ void Graph_FixedNodesAndEdges() {
     adj_matrix[1][0] = 5;  // we have to Comment this line for directed graph
     fixed_GRAPH[0][1] = fixed_GRAPH[1][0] = 5;
 
-    adj_matrix[1][2] = 4;
-    adj_matrix[2][1] = 4;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = 4;
+    if (COUNT == 1){
+      adj_matrix[1][2] = -4;
+      adj_matrix[2][1] = -4;  // we have to Comment this line for directed fixed_GRAPH
+      fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = -4;
+    }
+    else{
+      adj_matrix[1][2] = 4;
+      adj_matrix[2][1] = 4;  // we have to Comment this line for directed fixed_GRAPH
+      fixed_GRAPH[1][2] = fixed_GRAPH[2][1] = 4;
+    }
+    
     
     adj_matrix[2][3] = 3;
     adj_matrix[3][2] = 3;  // we have to Comment this line for directed fixed_GRAPH
@@ -192,9 +218,16 @@ void Graph_FixedNodesAndEdges() {
     adj_matrix[4][3] = 2;  // we have to Comment this line for directed fixed_GRAPH
     fixed_GRAPH[3][4] = fixed_GRAPH[4][3] = 2;
 
-    adj_matrix[4][5] = 3;
-    adj_matrix[5][4] = 3;  // we have to Comment this line for directed fixed_GRAPH
-    fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = 3;
+    if(COUNT == 1) {
+      adj_matrix[4][5] = -3;
+    adj_matrix[5][4] = -3;  // we have to Comment this line for directed fixed_GRAPH
+    fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = -3;
+    }
+    else{
+      adj_matrix[4][5] = 3;
+      adj_matrix[5][4] = 3;  // we have to Comment this line for directed fixed_GRAPH
+      fixed_GRAPH[4][5] = fixed_GRAPH[5][4] = 3;
+    }
 
     adj_matrix[0][5] = 1;
     adj_matrix[5][0] = 1;  // we have to Comment this line for directed fixed_GRAPH

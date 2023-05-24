@@ -159,7 +159,7 @@ void BellmanFord_algorithm()
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     outtextxy(300, 550, "Successfully ended...");
 
-
+    COUNT = 0;
     prevWindowArrow();
 
     int x = mousex();

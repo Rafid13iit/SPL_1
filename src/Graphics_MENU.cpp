@@ -245,7 +245,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 330 && y > 260 && y < 280) {
+            else if (x > 100 && x < 500 && y > 260 && y < 280) {
 
                 COUNT = 1; // COUNT changed beacuse it will indicate that it will
                            // be a negative weighted fixed graph
@@ -319,7 +319,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 480 && y > 340 && y < 360) {
+            else if (x > 100 && x < 450 && y > 340 && y < 360) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -354,7 +354,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 520 && y > 380 && y < 400) {
+            else if (x > 100 && x < 550 && y > 380 && y < 400) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -389,7 +389,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 620 && y > 420 && y < 440) {
+            else if (x > 100 && x < 550 && y > 420 && y < 440) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -424,7 +424,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 620 && y > 460 && y < 480) {
+            else if (x > 100 && x < 680 && y > 460 && y < 480) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -459,7 +459,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 340 && y > 500 && y < 520) {
+            else if (x > 100 && x < 670 && y > 500 && y < 520) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -494,7 +494,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 340 && y > 540 && y < 560) {
+            else if (x > 100 && x < 380 && y > 540 && y < 560) {
                 // button was clicked
                 cleardevice();
                 delay(100);
