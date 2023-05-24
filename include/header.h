@@ -68,6 +68,8 @@ void MST_Prims_Algorithm ();
 
 void Dijkstras_algorithm();
 
+void BellmanFord_algorithm();
+
 void EulerianPathFind_Fleurys();
 
 void TarjansAlgo_SCC();
