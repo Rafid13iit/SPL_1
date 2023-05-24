@@ -25,5 +25,7 @@ extern int directedFixed_U, directedFixed_V, directedFixed_WEIGHT;
 extern int directedFixed_GRAPH[MAX][MAX];
 extern int directedFixed_SOURCE;
 
+extern int COUNT;
+
 
 #endif // GLOBALVARIABLE_H

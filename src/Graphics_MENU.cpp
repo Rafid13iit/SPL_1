@@ -110,6 +110,8 @@ void showList()
     y += 40;
     outtextxy(100, y, "Shortest path (Dijkstra's)");
     y += 40;
+    outtextxy(100, y, "Shortest path (Bellman Ford)");
+    y += 40;
     outtextxy(100, y, "Shortest path (A*)");
     y += 40;
     outtextxy(100, y, "Shortest path (Johnson's)");
@@ -244,6 +246,45 @@ void showList()
             }
 
             else if (x > 100 && x < 330 && y > 260 && y < 280) {
+
+                COUNT = 1; // COUNT changed beacuse it will indicate that it will
+                           // be a negative weighted fixed graph
+
+                // button was clicked
+                cleardevice();
+                delay(100);
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Bellman Ford");
+
+                graphOptions();
+                
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "Bellman Ford");
+                
+                if (CHOOSE == 1){
+                    Graph_FixedNodesAndEdges();
+                    showWeight();
+                }
+                else if (CHOOSE == 2){
+                    Random_GraphConstruction();
+                    //showWeight();
+                }
+                else{
+                    UserInput_GraphConstruction();
+                    //showWeight();
+                }
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(240, 550, "Please press any key to continue");
+
+                getch(); // waits for user to press any key
+
+                BellmanFord_algorithm();
+                break;
+            }
+
+            else if (x > 100 && x < 420 && y > 300 && y < 320) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -278,7 +319,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 420 && y > 300 && y < 320) {
+            else if (x > 100 && x < 480 && y > 340 && y < 360) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -313,7 +354,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 480 && y > 340 && y < 360) {
+            else if (x > 100 && x < 520 && y > 380 && y < 400) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -348,7 +389,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 520 && y > 380 && y < 400) {
+            else if (x > 100 && x < 620 && y > 420 && y < 440) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -383,7 +424,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 620 && y > 420 && y < 440) {
+            else if (x > 100 && x < 620 && y > 460 && y < 480) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -418,7 +459,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 620 && y > 460 && y < 480) {
+            else if (x > 100 && x < 340 && y > 500 && y < 520) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -453,7 +494,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 340 && y > 500 && y < 520) {
+            else if (x > 100 && x < 340 && y > 540 && y < 560) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -487,6 +528,8 @@ void showList()
                 VF2_graph_isomorphism();
                 break;
             }
+
+            
         }
      
         

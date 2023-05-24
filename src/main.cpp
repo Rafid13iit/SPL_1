@@ -23,6 +23,8 @@ int directedFixed_U, directedFixed_V, directedFixed_WEIGHT;
 int directedFixed_GRAPH[MAX][MAX];
 int directedFixed_SOURCE = 0;
 
+int COUNT = 0;
+
 
 int main ()
 {
