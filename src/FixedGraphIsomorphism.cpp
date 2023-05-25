@@ -81,7 +81,7 @@ void FixedGraphIsomorphism() {
     fixed_isomorphism_x1[2] = 130 + 220;
     fixed_isomorphism_y1[2] = 450;
     circle(fixed_isomorphism_x1[2], fixed_isomorphism_y1[2], radiusFor_isomorphicGraph_1);
-    label = to_string(3);
+    label = to_string(2);
     outtextxy(fixed_isomorphism_x1[2]-radiusFor_isomorphicGraph_1/2, fixed_isomorphism_y1[2]-radiusFor_isomorphicGraph_1/2, const_cast<char*>(label.c_str()));
     delay(300);
 
@@ -172,7 +172,7 @@ void FixedGraphIsomorphism() {
     fixed_isomorphism_x2[1] = 530 + 220;
     fixed_isomorphism_y2[1] = 150;
     circle(fixed_isomorphism_x2[1], fixed_isomorphism_y2[1], radiusFor_isomorphicGraph_2);
-    label = to_string(1);
+    label = to_string(2);
     outtextxy(fixed_isomorphism_x2[1]-radiusFor_isomorphicGraph_2/2, fixed_isomorphism_y2[1]-radiusFor_isomorphicGraph_2/2, const_cast<char*>(label.c_str()));
     delay(300);
 
@@ -180,7 +180,7 @@ void FixedGraphIsomorphism() {
     fixed_isomorphism_x2[2] = 530 + 220;
     fixed_isomorphism_y2[2] = 450;
     circle(fixed_isomorphism_x2[2], fixed_isomorphism_y2[2], radiusFor_isomorphicGraph_2);
-    label = to_string(3);
+    label = to_string(1);
     outtextxy(fixed_isomorphism_x2[2]-radiusFor_isomorphicGraph_2/2, fixed_isomorphism_y2[2]-radiusFor_isomorphicGraph_2/2, const_cast<char*>(label.c_str()));
     delay(300);
 

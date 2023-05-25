@@ -41,6 +41,8 @@ bool isIsomorphic() {
     unordered_map<int, int> degreeCount1, degreeCount2;
 
     for (int i = 0; i < n1; i++) {
+        fixedNodeColor_1(i);
+        delay(100);
         for (int j = 0; j < n1; j++) {
             degreeCount1[i] += g1[i][j];
             degreeCount2[i] += g2[i][j];

@@ -32,8 +32,7 @@ void tarjanDFS(int u, vector<vector<int>>& graph, vector<int>& discoveryTime, ve
         }
 
         SCCs.push_back(scc);
-
-        cout << "HELLO";
+        
     }
 }
 
@@ -44,7 +43,7 @@ vector<vector<int>> tarjanSCC(vector<vector<int>>& graph) {
     /*the discovery time of each vertex during the Tarjan's algorithm. */
 
     vector<int> lowLink(n, -1);
-    /*the Lowg-link value of a node is the smallest/lowest
+    /*the Low-link value of a node is the smallest/lowest
     node id reachable from that node when doing a DFS (including itself)*/
 
     vector<bool> onStack(n, false);
@@ -65,7 +64,7 @@ vector<vector<int>> tarjanSCC(vector<vector<int>>& graph) {
             tarjanDFS(i, graph, discoveryTime, lowLink, onStack, nodeStack, SCCs, time);
         }
     }
-    cout << "HELLo";
+
     return SCCs;
 }
 
@@ -78,7 +77,6 @@ void TarjansAlgo_SCC() {
 
     vector<vector<int>> graphForTarjans;
 
-    cout << "HELLO";
 
     if (CHOOSE == 1){
         //for Fixed graphForTarjans
@@ -127,12 +125,23 @@ void TarjansAlgo_SCC() {
     vector<vector<int>> SCCs = tarjanSCC(graphForTarjans);
 
     cout << "Strongly Connected Components:" << endl;
-    
+    int i = 0;
     for (const auto& scc : SCCs) {
         for (int vertex : scc) {
             cout << vertex << " ";
+            if (i == 0){
+                fixedNodeColor_1(vertex);
+            }
+            else if (i == 1){
+                fixedNodeColor_2(vertex);
+            }
+            else if (i == 2){
+                fixedNodeColor_3(vertex);
+            }
         }
         cout << endl;
+        delay(1000);
+        i++;
     }
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);

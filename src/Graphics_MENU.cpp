@@ -503,15 +503,17 @@ void showList()
 
                             settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
                             outtextxy(240, 550, "Please press any key to continue");
+
+                            getch(); // waits for user to press any key
+
+                            VF2_graph_isomorphism();
                             
                         }
                     }
                 }                  
                 
 
-                getch(); // waits for user to press any key
-
-                VF2_graph_isomorphism();
+                
                 break;
             }
 
