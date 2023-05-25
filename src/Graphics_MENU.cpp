@@ -95,7 +95,7 @@ void showList()
 
     setcolor(YELLOW);
     outtextxy(400, y, "MENU");
-    y += 90;
+    y += 130;
 
 
     prevWindowArrow ();
@@ -111,8 +111,6 @@ void showList()
     outtextxy(100, y, "Shortest path (Dijkstra's)");
     y += 40;
     outtextxy(100, y, "Shortest path (Bellman Ford)");
-    y += 40;
-    outtextxy(100, y, "Shortest path (Johnson's)");
     y += 40;
     outtextxy(100, y, "Minimum spanning tree (Prim's)");
     y += 40;
@@ -144,7 +142,7 @@ void showList()
                 //break;
             }
 
-            else if (x > 100 && x < 170 && y > 140 && y < 160) {
+            else if (x > 100 && x < 170 && y > 180 && y < 200) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -176,7 +174,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 170 && y > 180 && y < 200) {
+            else if (x > 100 && x < 170 && y > 220 && y < 240) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -208,7 +206,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 420 && y > 210 && y < 240) {
+            else if (x > 100 && x < 420 && y > 260 && y < 280) {
 
                 COUNT = 0;
 
@@ -246,7 +244,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 500 && y > 260 && y < 280) {
+            else if (x > 100 && x < 500 && y > 300 && y < 320) {
 
                 COUNT = 1; // COUNT changed beacuse it will indicate that it will
                            // be a negative weighted fixed graph
@@ -285,6 +283,7 @@ void showList()
                 break;
             }
 
+            /*
             else if (x > 100 && x < 450 && y > 300 && y < 320) {
                 // button was clicked
                 cleardevice();
@@ -319,6 +318,7 @@ void showList()
                 //Johnsons();
                 break;
             }
+            */
 
             else if (x > 100 && x < 550 && y > 340 && y < 360) {
                 // button was clicked
@@ -474,34 +474,38 @@ void showList()
                 outtextxy(100, 150, "1. Implement algorithm in a Fixed graph");
 
                 while(1){
-                if (ismouseclick(WM_LBUTTONDOWN)) {
-                    clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
 
-                    ////this part is for to go back to the previous window
-                    if (x > 50 && x < 110 && y > 50 && y < 90) {
-                        // button was clicked
-                        cleardevice();
-                        delay(100);
-                        //getch();
-                        showList();
-                        //break;
+                    int x = mousex();
+                    int y = mousey();
+
+                    if (ismouseclick(WM_LBUTTONDOWN)) {
+                        clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+
+                        ////this part is for to go back to the previous window
+                        if (x > 50 && x < 110 && y > 50 && y < 90) {
+                            // button was clicked
+                            cleardevice();
+                            delay(100);
+                            //getch();
+                            showList();
+                            //break;
+                        }
+                        else if (x > 100 && x < 620 && y > 150 && y < 170) {
+        
+                            cleardevice();
+                            delay(100);
+
+                            
+                            settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                            outtextxy(400, 30, "VF2");
+                            
+                            FixedGraphIsomorphism();
+
+                            settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                            outtextxy(240, 550, "Please press any key to continue");
+                            
+                        }
                     }
-                    else if (x > 100 && x < 620 && y > 150 && y < 170) {
-    
-                        cleardevice();
-                        delay(100);
-
-                        
-                        settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                        outtextxy(400, 30, "VF2");
-                        
-                        FixedGraphIsomorphism();
-
-                        settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                        outtextxy(240, 550, "Please press any key to continue");
-                        
-                    }
-                }
                 }                  
                 
 
