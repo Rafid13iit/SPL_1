@@ -42,7 +42,10 @@ void showFixedNodeDistance(int node, int distance);
 void Graph_FixedNodesAndEdges();
 
 void drawDirectedLine(int startX, int startY, int endX, int endY);
+void showWeightDirectedGraph ();
 void Directed_FixedGraph ();
+
+void FixedGraphIsomorphism();
 
 void graphConstruction();
 

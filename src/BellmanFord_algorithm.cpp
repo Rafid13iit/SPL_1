@@ -34,18 +34,55 @@ void bellmanFord(int src)
 	// Distance of source vertex1 from itself is always 0
 	distance[src] = 0;
 
+    //updating distance value for Source
+    if (CHOOSE == 1) showFixedNodeDistance(src, distance[src]); // for fixed graph
+    else if (CHOOSE == 2) showNodeDistance(src, distance[src]); // for random graph
+    else showNodeDistance(src, distance[src]); // for user input graph
+
     for (int count = 1; count <= vertex1-1; count++){
 
         // Updating distance value of the adjacent vertices of the picked vertex1.
         for (int u = 0; u < vertex1; u++) {
+
+            if (CHOOSE == 1) fixedNodeColor_3 (u); // for fixed graph
+            else if (CHOOSE == 2) nodeColor_3 (u); //for random graph
+            else nodeColor_3 (u); // for user input graph
+
             for (int v = 0; v < vertex1; v++){
 
-                if ((graphForBellman[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
+                if ((graphForBellman[u][v] != 0) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
                     
                     distance[v] = distance[u] + Cost[u][v];
+                    prevNodeIndex[v] = u;
+
+                    if (CHOOSE == 1) fixedGraphConnection(u, v); // for fixed graph
+                    else if (CHOOSE == 2) graphConnection(u, v); // for random graph
+                    else graphConnection(u, v); // for user input graph
+
+                    delay(500);
+
+                    if (CHOOSE == 1) fixedNodeColor_1 (v); // for fixed graph
+                    else if (CHOOSE == 2) nodeColor_1 (v); //for random graph
+                    else nodeColor_1 (v); // for user input graph
+
+                    //updating distance value
+                    if (CHOOSE == 1) showFixedNodeDistance(v, distance[v]); // for fixed graph
+                    else if (CHOOSE == 2) showNodeDistance(v, distance[v]); // for random graph
+                    else showNodeDistance(v, distance[v]); // for user input graph
+                    //delay(500);
                 }
             }
+
+            delay(400);
+        
+            if (CHOOSE == 1) fixedNodeColor_2 (u); // for fixed graph
+            else if (CHOOSE == 2) nodeColor_2 (u); //for random graph
+            else nodeColor_2 (u); // for user input graph
+
+            delay(1000);
         }
+
+        
 
     }
 
@@ -57,7 +94,7 @@ void bellmanFord(int src)
     for (int u = 0; u < vertex1; u++) {
 		for (int v = 0; v < vertex1; v++){
 
-			if ((graphForBellman[u][v] != -1) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
+			if ((graphForBellman[u][v] != 0) && (distance[u] != INT_MAX) && (distance[u] + Cost[u][v] < distance[v])){
 				
                 cout << "Graph contains negative weight cycle!" << endl;
                 return ; // If negative cycle is detected, simply returned
@@ -97,7 +134,7 @@ void BellmanFord_algorithm()
 
 
     memset(Cost, INT_MAX, sizeof(Cost));
-    memset(graphForBellman, -1, sizeof(graphForBellman));
+    memset(graphForBellman, 0, sizeof(graphForBellman));
 
     int sreForBellman;
 

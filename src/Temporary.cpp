@@ -1,3 +1,6 @@
+/*
+
+
 #include <header.h>
 #include <globalVariable.h>
 
@@ -15,18 +18,35 @@ struct Node {
     //overloaded operator <  is used to order the elements in the priority queue
     /*The overloaded operator < compares the f-value (g+h) of two nodes, 
     where a node with a lower f-value is considered to have higher priority. */
+    
+    /*
+    
+    
     bool operator<(const Node &other) const {
         return g + h > other.g + other.h;
     }
+
+
+    */
+
     /*The function "return g + h > other.g + other.h" returns true if 
     the f-value of the current node is greater than the f-value of the other node. */
+
+
+
+    /*
 };
+
+
 
 int Astar(int sx, int sy, int ex, int ey, int width, int height) {
     priority_queue<Node> q;
     unordered_map<int, unordered_map<int, bool>> visited;
     /*The priority queue is used to store the nodes to be visited and 
     the unordered_map is used to store the nodes that have already been visited.*/
+
+
+    /*
 
     q.push(Node(sx, sy, 0, abs(sx - ex) + abs(sy - ey)));
 
@@ -99,3 +119,5 @@ void A_star_algorithm() {
     } 
 
 }
+
+*/

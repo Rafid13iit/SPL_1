@@ -19,6 +19,11 @@ extern int fixed_U, fixed_V, fixed_WEIGHT;
 extern int fixed_GRAPH[MAX][MAX];
 extern int fixed_SOURCE;
 
+//for Fixed Graph
+extern int fixed_NODES_2, fixed_EDGES_2;
+extern int fixed_GRAPH_2[MAX][MAX];
+extern int fixed_SOURCE_2;
+
 //for Directed Fixed Graph
 extern int directedFixed_NODES, directedFixed_EDGES;
 extern int directedFixed_U, directedFixed_V, directedFixed_WEIGHT;

@@ -112,8 +112,6 @@ void showList()
     y += 40;
     outtextxy(100, y, "Shortest path (Bellman Ford)");
     y += 40;
-    outtextxy(100, y, "Shortest path (A*)");
-    y += 40;
     outtextxy(100, y, "Shortest path (Johnson's)");
     y += 40;
     outtextxy(100, y, "Minimum spanning tree (Prim's)");
@@ -211,6 +209,9 @@ void showList()
             }
 
             else if (x > 100 && x < 420 && y > 210 && y < 240) {
+
+                COUNT = 0;
+
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -263,8 +264,8 @@ void showList()
                 outtextxy(400, 30, "Bellman Ford");
                 
                 if (CHOOSE == 1){
-                    Graph_FixedNodesAndEdges();
-                    showWeight();
+                    Directed_FixedGraph();
+                    showWeightDirectedGraph();
                 }
                 else if (CHOOSE == 2){
                     Random_GraphConstruction();
@@ -284,42 +285,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 420 && y > 300 && y < 320) {
-                // button was clicked
-                cleardevice();
-                delay(100);
-
-                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                outtextxy(400, 30, "A* algorithm");
-
-                graphOptions();
-
-                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                outtextxy(400, 30, "A* algorithm");
-                
-                if (CHOOSE == 1){
-                    Graph_FixedNodesAndEdges();
-                    showWeight();
-                }
-                else if (CHOOSE == 2){
-                    WeightedRandom_GraphConstruction();
-                    //showWeight();
-                }
-                else{
-                    Weighted_GraphConstruction();
-                    //showWeight();
-                }
-
-                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
-                outtextxy(240, 550, "Please press any key to continue");
-
-                getch(); // waits for user to press any key
-
-                A_star_algorithm();
-                break;
-            }
-
-            else if (x > 100 && x < 450 && y > 340 && y < 360) {
+            else if (x > 100 && x < 450 && y > 300 && y < 320) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -354,7 +320,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 550 && y > 380 && y < 400) {
+            else if (x > 100 && x < 550 && y > 340 && y < 360) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -389,7 +355,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 550 && y > 420 && y < 440) {
+            else if (x > 100 && x < 550 && y > 380 && y < 400) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -424,7 +390,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 680 && y > 460 && y < 480) {
+            else if (x > 100 && x < 680 && y > 420 && y < 440) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -459,7 +425,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 670 && y > 500 && y < 520) {
+            else if (x > 100 && x < 670 && y > 460 && y < 480) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -494,7 +460,7 @@ void showList()
                 break;
             }
 
-            else if (x > 100 && x < 380 && y > 540 && y < 560) {
+            else if (x > 100 && x < 380 && y > 500 && y < 520) {
                 // button was clicked
                 cleardevice();
                 delay(100);
@@ -502,21 +468,74 @@ void showList()
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
                 outtextxy(400, 30, "VF2");
 
-                graphOptions();
+                prevWindowArrow();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                outtextxy(100, 150, "1. Implement algorithm in a Fixed graph");
+
+                while(1){
+                if (ismouseclick(WM_LBUTTONDOWN)) {
+                    clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
+
+                    ////this part is for to go back to the previous window
+                    if (x > 50 && x < 110 && y > 50 && y < 90) {
+                        // button was clicked
+                        cleardevice();
+                        delay(100);
+                        //getch();
+                        showList();
+                        //break;
+                    }
+                    else if (x > 100 && x < 620 && y > 150 && y < 170) {
+    
+                        cleardevice();
+                        delay(100);
+
+                        
+                        settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                        outtextxy(400, 30, "VF2");
+                        
+                        FixedGraphIsomorphism();
+
+                        settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
+                        outtextxy(240, 550, "Please press any key to continue");
+                        
+                    }
+                }
+                }                  
                 
+
+                getch(); // waits for user to press any key
+
+                VF2_graph_isomorphism();
+                break;
+            }
+
+            /*
+
+            else if (x > 100 && x < 420 && y > 540 && y < 560) {
+                // button was clicked
+                cleardevice();
+                delay(100);
+
                 settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
-                outtextxy(400, 30, "VF2");
+                outtextxy(400, 30, "A* algorithm");
+
+                graphOptions();
+
+                settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
+                outtextxy(400, 30, "A* algorithm");
                 
                 if (CHOOSE == 1){
                     Graph_FixedNodesAndEdges();
                     showWeight();
                 }
                 else if (CHOOSE == 2){
-                    Random_GraphConstruction();
+                    WeightedRandom_GraphConstruction();
                     //showWeight();
                 }
                 else{
-                    UserInput_GraphConstruction();
+                    Weighted_GraphConstruction();
                     //showWeight();
                 }
 
@@ -525,9 +544,11 @@ void showList()
 
                 getch(); // waits for user to press any key
 
-                VF2_graph_isomorphism();
+                A_star_algorithm();
                 break;
             }
+
+            */
 
             
         }

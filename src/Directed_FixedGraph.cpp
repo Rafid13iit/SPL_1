@@ -24,6 +24,94 @@ void drawDirectedLine(int startX, int startY, int endX, int endY) {
     line(arrowEndX, arrowEndY, arrowEndX - arrowSize * cos(angle - M_PI / 6), arrowEndY - arrowSize * sin(angle - M_PI / 6));
 }
 
+
+void showWeightDirectedGraph ()
+{
+    int x, y;
+    string label;
+
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+
+    label = to_string(5);
+    x = (directedFixed_x[0] + directedFixed_x[1]) / 2 - 15;
+    y = (directedFixed_y[0] + directedFixed_y[1]) / 2 - 15;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    if (COUNT == 1){
+      label = to_string(-3);
+      x = (directedFixed_x[1] + directedFixed_x[2]) / 2;
+      y = (directedFixed_y[1] + directedFixed_y[2]) / 2 - 20;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+    else {
+      label = to_string(4);
+      x = (directedFixed_x[1] + directedFixed_x[2]) / 2;
+      y = (directedFixed_y[1] + directedFixed_y[2]) / 2 - 20;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+
+    label = to_string(3);
+    x = (directedFixed_x[2] + directedFixed_x[3]) / 2 + 15;
+    y = (directedFixed_y[2] + directedFixed_y[3]) / 2 - 10;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    label = to_string(2);
+    x = (directedFixed_x[3] + directedFixed_x[4]) / 2 + 10;
+    y = (directedFixed_y[3] + directedFixed_y[4]) / 2;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    if (COUNT == 1){
+      label = to_string(-2);
+      x = (directedFixed_x[4] + directedFixed_x[5]) / 2;
+      y = (directedFixed_y[4] + directedFixed_y[5]) / 2 + 5;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+    else{
+      label = to_string(3);
+      x = (directedFixed_x[4] + directedFixed_x[5]) / 2;
+      y = (directedFixed_y[4] + directedFixed_y[5]) / 2 + 5;
+      outtextxy(x, y, const_cast<char*>(label.c_str()));
+      delay(500);
+    }
+
+    label = to_string(1);
+    x = (directedFixed_x[0] + directedFixed_x[5]) / 2 - 20;
+    y = (directedFixed_y[0] + directedFixed_y[5]) / 2 - 2;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    label = to_string(2);
+    x = (directedFixed_x[1] + directedFixed_x[5]) / 2 - 20;
+    y = (directedFixed_y[1] + directedFixed_y[5]) / 2;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    label = to_string(6);
+    x = (directedFixed_x[1] + directedFixed_x[6]) / 2 + 10;
+    y = (directedFixed_y[1] + directedFixed_y[6]) / 2 - 10;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    label = to_string(5);
+    x = (directedFixed_x[4] + directedFixed_x[6]) / 2 + 5;
+    y = (directedFixed_y[4] + directedFixed_y[6]) / 2 - 20;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+
+    label = to_string(4);
+    x = (directedFixed_x[2] + directedFixed_x[4]) / 2 + 10;
+    y = (directedFixed_y[2] + directedFixed_y[4]) / 2;
+    outtextxy(x, y, const_cast<char*>(label.c_str()));
+    delay(500);
+}
+
+
 void Directed_FixedGraph ()
 {
       
@@ -45,9 +133,14 @@ void Directed_FixedGraph ()
   //edge -> connection with vertices
     adj_matrix[0][1] = 5;
     directedFixed_GRAPH[0][1]  = 5;
-
-    adj_matrix[1][2] = 4;
-    directedFixed_GRAPH[1][2] = 4;
+    if (COUNT == 1){
+      adj_matrix[1][2] = -3;
+      directedFixed_GRAPH[1][2] = -3;
+    }
+    else{
+      adj_matrix[1][2] = 4;
+      directedFixed_GRAPH[1][2] = 4;
+    }
     
     adj_matrix[2][3] = 3;
     directedFixed_GRAPH[2][3] = 3;
@@ -55,8 +148,14 @@ void Directed_FixedGraph ()
     adj_matrix[4][3] = 2;
     directedFixed_GRAPH[4][3] = 2;
 
-    adj_matrix[4][5] = 3;
-    directedFixed_GRAPH[4][5] = 3;
+    if(COUNT == 1) {
+      adj_matrix[4][5] = -2;
+      directedFixed_GRAPH[4][5] = -2;
+    }
+    else{
+      adj_matrix[4][5] = 3;
+      directedFixed_GRAPH[4][5] = 3;
+    }
 
     adj_matrix[5][0] = 1;
     directedFixed_GRAPH[5][0] = 1;

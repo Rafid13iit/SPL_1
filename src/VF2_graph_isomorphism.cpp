@@ -6,21 +6,33 @@ int g2[MAX][MAX];
 
 bool isIsomorphic() {
     int n1, m1;
-    cin >> n1 >> m1;
 
-    for (int i = 0; i < m1; i++) {
-        int u, v;
-        cin >> u >> v;
-        g1[u][v] = g1[v][u] = 1;
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        n1 = fixed_NODES;
+        m1 = fixed_EDGES;
+        
+        for (int i = 0; i < n1; i++){
+            for (int j = 0; j < n1; j++){
+                g1[i][j] = fixed_GRAPH[i][j];
+            }
+        }
+
     }
 
     int n2, m2;
-    cin >> n2 >> m2;
 
-    for (int i = 0; i < m2; i++) {
-        int u, v;
-        cin >> u >> v;
-        g2[u][v] = g2[v][u] = 1;
+    if (CHOOSE == 1){
+        //for Fixed Graph
+        n2 = fixed_NODES_2;
+        m2 = fixed_EDGES_2;
+        
+        for (int i = 0; i < n2; i++){
+            for (int j = 0; j < n2; j++){
+                g2[i][j] = fixed_GRAPH_2[i][j];
+            }
+        }
+
     }
 
     if (n1 != n2)
@@ -55,6 +67,10 @@ bool isIsomorphic() {
 }
 
  void VF2_graph_isomorphism() {
+
+    setfillstyle(SOLID_FILL, BLACK); // to erase the line "Please press any key to continue"
+    bar(230, 500, 230 + 500, 500 + 600); // draws a rectangle over the text
+    
     
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 3);
     outtextxy(400, 30, "VF2");
